@@ -1,11 +1,11 @@
 #include <iostream>
 
+#include "MenuPrincipal.h"
+
 using namespace std;
 
-#include "Libro.h"
-
-int main()
-{
-    cout << "Hello world!" << endl;
+int main() {
+    MenuPrincipal menu;
+    menu.mostrarMenu();
     return 0;
 }
