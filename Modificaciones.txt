@@ -1,0 +1,10 @@
+## Cambios Proyecto
+
+- quito el precio de la clase libro, porque el precio lo tiene la membresia, los libros en esta biblioteca no se venden
+- El uso de **`const`** y referencias en getters y setters garantiza eficiencia y seguridad al llamar y recibir mparametros, pero no limita la capacidad de modificar el estado del objeto cuando sea necesario.
+- cambie fecha por año de publicaicon
+- Agrego datos en Persona
+- En el constructor parametrizado de la clase derivada, incluir los atributos heredados es necesario para inicializarlos correctamente utilizando el constructor de la clase base. Esto asegura que todos los atributos de la clase, tanto los heredados como los específicos de la clase derivada, se inicialicen de manera adecuada. (Usuario.h)
+- Utilizar _nombreArchivo.c_str() en lugar de una cadena literal como "usuarios.dat" permite que el nombre del archivo sea más flexible y fácil de modificar.
+    - Al no usar la cadena literal “usuarios.dat” si en algun momento decido cambiar el nombre del archivo, solo debo hacerlo en la declaracion de la variable
+- usar **`const Usuario& usuario`** garantiza que el objeto **`usuario`** no será modificado dentro de las funciones **`guardar`** y **`guardar(int, const Usuario&)`**, lo que hace el código más seguro y claro
