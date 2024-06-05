@@ -64,6 +64,7 @@
 		<Unit filename="MembresiaManager.h" />
 		<Unit filename="MenuPrincipal.cpp" />
 		<Unit filename="MenuPrincipal.h" />
+		<Unit filename="Modificaciones.txt" />
 		<Unit filename="Pago.cpp" />
 		<Unit filename="Pago.h" />
 		<Unit filename="PagoArchivo.cpp" />
