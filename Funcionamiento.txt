@@ -1,0 +1,83 @@
+1. **Menu Inicio**
+    1. **Iniciar Sesion:** 
+        - **Validación de Usuarios:** Validar el correo y la contraseña. Para validar busco los datos segun el permiso que se haya ingresado como para una validacion extra??
+        - **Usuario con Permisos Absolutos:** Crear por codigo un superusuario con permisos absolutos para pruebas.
+    
+    2. **Registro**     
+        **AGREGAR DNI AL REGISTRO DE LOS USUARIOS**        
+        Debo validar que el mail contenga un @ para que sea un mail valido        
+        Tambien se puede verificar que los datos sean correctos antes de agregar el usuario.
+        
+        **a. Registro Blibliotecarios:**      
+        Clave maestra para registrar bibliotecarios. Asegurarnos de que esta clave esté almacenada de manera segura.
+        
+        **b. Registro Clientes:**        
+        Los registros los creo y los valido desde UsuarioManager, Selecciono el permiso, pido los datos, si es 1(biblio) pido la clave maestra, si es 2 pido la membresia.        
+        Luego de hacer el registro debo volver al menu inicio para poder iniciar sesion o seguir registrando usuarios
+        
+2.  **Menú Principal**
+    
+**a. Menú del Bibliotecario:**    
+    Crearlo en la clase bibliotecario y llamarlo desde MenuPrincipal    
+    En cada uno de los manager debo hacer un menuAdministrador para los agregar, mod, eliminar y listar
+    
+    1. **Administrar Libros:** Opciones para agregar, modificar, eliminar y listar libros.        
+        Llamo al menu de administrador de LibroManager
+        
+    2. **Administrar Autores:** Similar a los libros, pero enfocado en los autores.        
+        Llamo al menu de administrador de AutorManager
+        
+    3. **Administrar Categorías:** Permitir agregar, modificar y eliminar categorías.        
+        Llamo al menu de administrador de CategoriaManager
+        
+    4. **Administrar Usuarios:** Alta, baja, modificación y listado de usuarios (clientes y bibliotecarios).        
+        Llamo al menu de administrador de UsuarioManager
+        
+    5. **Administrar Membresías:** Gestionar diferentes planes de membresía, ver usuarios con sus membresías, etc.        
+        Llamo al menu de administrador de MembresiaManager
+        
+    
+  **b. Menú del Cliente:**    
+    Crarlo en la clase Cliente y llamarlo desde MenuPrincipal
+    
+    1. **Ver Libros:** Listar libros con opciones para filtrar por categoría, autor, nombre, etc.        
+        Voy a un menu que sea 
+        > Listar por Categoria
+        > Listar por Nombre
+        > Listar por Apellido
+        > Listar por Autor
+        
+        Los listar los defino en la clase de Libro (Libro Manager)
+        
+    2. **Pedir Libro:** Registrar la solicitud de préstamo de un libro.        
+        La **validacion de la membresia** puedo hacerla en la clase Cliente o en la clase Membresia        
+        Debo validar la membresia del cliente. Se puede hacer tomando el usuario del login o pidiendo volver a ingresar el dni. En base a ese dato traer el timpo de membresia. Con el tipo de membresia (1 o 2) puedo saber cuantos libros puede retirar por mes y en simultaneo. Tengo que validar estos datos con el nro de registros de prestamos activos (estado true) y de registros durante el mes en curso de la membresia       
+        Si la validacion da FALSE se podria mostrar un mensaje “Supero el limite de libros este mes” o tambien dividir en si supero el limite de libros por mes o si supero el limite de libros en simultaneo.  Esto hay que verlo segun la dificultad del desarrollo. Y podemos llevar al usuario al menu principal o a devolver un libro (si es por liros en simultaneo).
+        
+        Si la validacion da TRUE voy a un menu
+        > * muestro el listado de libros: ID - Nombre - Autor *
+        > Ingrese el id del libro a solicitar: 
+        > Confirma que quiere solicitar el libro * a * hasta el dia * fecha *
+        
+        SI > creo un registro de prestamo
+        NO > return
+        
+    3. **Devolver Libro:** Registrar la devolución de un libro.        
+        Listar los libros que figuren en el archivo de prestamos con estado true (los prestamos que esten con este estado son los que van a estar en vigencia). Cuando los libros se toman en prestamo, debe restarse 1 al stock disponible del libro segun id. Aca vamos a tener que ver si nos funciona tener mas de uno en stock y que se vaya actualizando segun la cantidad de usuarios que lo pidan. Va a depender del tiempo que tengamos para desarrollarlo. En un principio podemos dejar 1 de cada uno.
+        Si hay prestamos activos muestro> ID Prestamo - ID Libro - Titulo - Autor / sino “No hay prestamos activos”
+        
+        Voy a menu
+        > Ingresar el Id del libro a devolver
+        
+        Cambiar el estado del prestamo segun id del prestamo a False. Cuando pasa a False debo sumar 1 en el stock disponible del libro segun id
+        
+    4. **Mi Membresía:** Ver y gestionar la membresía del cliente.        
+        Creo el menu de administrador de membresia en MembresiaManager y de ahi lo divido segun permisos de usuario.         
+        Aca como cliente puedo cambiar el tipo de membresia o cancelar mi suscripcion. En caso que la membresia figure vencida debe aparecerme un cout > desea abonar su membresia? SI/NO
+        Me debe figurar la fecha de vencimiento, y los datos de la membresia activa,
+        
+    5. **Administrar Pagos:** Ver historial de pagos, realizar nuevos pagos.        
+        Aca debo tomar el id del usuario activo para filtrar los registros de todos los pagos. Se van a listar por fecha del mas reciente al mas antiguo, debe aparecer la fecha, el monto, la membresia abonada y el metodo de pago.
+        
+    6. **Ver Historial de Préstamos:** Mostrar un historial de todos los libros prestados y devueltos por el cliente.        
+        Aca como hicimos antes, tomamos el id del usuario y filtramos los prestamos de este cliente. Aca va a ser importante filtrar del mas reciente al mas antiguo y que figure el id de prestamo, el titulo del libro, la fecha de prestamo, la fecha de devolucion y el estado (en prestamo / devuelto)
