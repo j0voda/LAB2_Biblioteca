@@ -6,6 +6,6 @@ using namespace std;
 
 int main() {
     MenuPrincipal menu;
-    menu.mostrarMenu();
+    menu.menuInicio();
     return 0;
 }

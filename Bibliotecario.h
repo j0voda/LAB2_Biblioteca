@@ -1,11 +1,26 @@
 #pragma once
 #include "Usuario.h"
+#include "UsuarioManager.h"
+#include "LibroManager.h"
+#include "CategoriaManager.h"
+#include "AutorManager.h"
+#include "MembresiaManager.h"
+
+using namespace std;
+
 
 class Bibliotecario : public Usuario {
+private:
+    LibroManager libroManager;
+    CategoriaManager categoriaManager;
+    AutorManager autorManager;
+    MembresiaManager membresiaManager;
+
 public:
-    // Constructor por defecto
     Bibliotecario();
 
-    // Constructor parametrizado
     Bibliotecario(const string &nombre, const string &apellido, const string &telefono, const string &mail, int id, const string &clave, int permisos);
+
+    bool ingresarClave();
+    void menuBibliotecario();
 };

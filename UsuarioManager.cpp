@@ -11,6 +11,154 @@ void listarUsuariosPorNombre();
 void listarUsuariosPorApellido(); ///desarrollar
 
 
+Usuario UsuarioManager::crearUsuario(int permisos){ //crear una instancia de Usuario (Cliente o un Bibliotecario)
+
+    string nombre, apellido, telefono, mail, clave;
+    bool membresia;
+
+    cout << "Ingrese el nombre del nuevo usuario: ";
+    getline(cin, nombre); //uso getLine para obtener los espacios tambien
+    cout << "Ingrese apellido: ";
+    getline(cin, apellido);
+    cout << "Ingrese teléfono: ";
+    getline(cin, telefono);
+    cout << "Ingrese email: ";
+    getline(cin, mail);
+    cout << "Ingrese una nueva clave: ";
+    getline(cin, clave);
+
+    int id = _usuarioArchivo.getNuevoID();
+
+    if (permisos == 1) {
+
+        Bibliotecario bibliotecario(nombre, apellido, telefono, mail, id, clave, permisos);
+
+        if(bibliotecario.ingresarClave()== false){
+            return Usuario(); //clave incorrecta
+        }
+        if (_usuarioArchivo.guardar(bibliotecario)) {
+            cout << "Bibliotecario agregado con éxito." << endl;
+            return bibliotecario;
+
+        } else {
+            cout << "Error al agregar el bibliotecario." << endl;
+            return Usuario();
+        }
+
+    } else if (permisos == 2) {
+
+        Cliente cliente(nombre, apellido, telefono, mail, id, clave, permisos, false);
+
+        if (_usuarioArchivo.guardar(cliente)) {
+            cliente.asignarMembresia(_membresiaManager);
+            return cliente;
+        } else {
+            cout << "Error al agregar el cliente." << endl;
+            return Usuario();
+        }
+    }
+    cout << "Permisos inválidos." << endl;
+    return Usuario(); // En caso de un permiso no válido, me devuelve un usuario vacío
+}
+
+void UsuarioManager::modificarUsuario() {
+    int id;
+    cout << "Ingrese el ID del usuario a modificar: "; //Aca deberia listar los usuarios
+    cin >> id;
+
+    int index = _usuarioArchivo.buscarById(id);
+    if (index == -1) {
+        cout << "Usuario no encontrado." << endl;
+        return;
+    }
+
+    Usuario usuario = _usuarioArchivo.leer(index);
+    mostrarUsuario(usuario);
+
+    cout << "Ingrese los nuevos datos del usuario." << endl;
+
+    int permisos = usuario.getPermisos();
+    Usuario nuevoUsuario = crearUsuario(permisos);
+    nuevoUsuario.setId(id);
+
+    if (_usuarioArchivo.modificar(index, nuevoUsuario)) {
+        cout << "Usuario modificado con éxito." << endl;
+    } else {
+        cout << "Error al modificar el usuario." << endl;
+    }
+}
+
+void UsuarioManager::mostrarUsuario(const Usuario &registro) {
+    cout << "ID: " << registro.getId() << endl;
+    cout << "Nombre: " << registro.getNombre() << endl;
+    cout << "Apellido: " << registro.getApellido() << endl;
+    cout << "Teléfono: " << registro.getTelefono() << endl;
+    cout << "Email: " << registro.getMail() << endl;
+    cout << "Clave: " << registro.getClave() << endl; //Solo va a mostrarse en el acceso del bibliotecario
+    cout << "Permisos: " << registro.getPermisos() << endl; //Aca deberia aparecer biblio o cliente, no el num
+    cout << "-----" << endl;
+}
+
+void UsuarioManager::eliminarUsuario() {
+    int id;
+    cout << "Ingrese el ID del usuario a eliminar: ";
+    cin >> id;
+
+    int index = _usuarioArchivo.buscarById(id);
+    if (index == -1) {
+        cout << "Usuario no encontrado." << endl;
+        return;
+    }
+
+    //  falta implementar una lógica para marcar al usuario como eliminado
+    // o reescribir todos los usuarios excepto el eliminado.
+}
+
+
+Usuario UsuarioManager::validarLogin(const string &mail, const string &clave, int permisos) {
+    vector<Usuario> usuarios = _usuarioArchivo.leerTodos();
+    for (const auto &usuario : usuarios) {
+        if (usuario.getMail() == mail && usuario.getClave() == clave) {
+            return usuario;
+        }
+    }
+    return Usuario(); // Retornar un usuario vacío si no se encuentra
+}
+
+
+
+/*void UsuarioManager::listarUsuarios() {
+    vector<Usuario> usuarios = _usuarioArchivo.cargarUsuarios();
+    for (const Usuario &usuario : usuarios) {
+        mostrarUsuario(usuario);
+    }
+}*/
+
+void UsuarioManager::agregarUsuario() { //Solicita los permisos antes de llamar a crearUsuario
+
+    int permisos;
+
+    cout << "Ingrese permisos (1 para Bibliotecario, 2 para Cliente): ";
+    cin >> permisos;
+    cin.ignore();
+
+    Usuario usuario = crearUsuario(permisos);
+}
+
+void UsuarioManager::listarBibliotecarios() {
+    vector<Usuario> bibliotecarios = _usuarioArchivo.leerPorPermisos(1); // 1 permisos de bibliotecario
+    for (const Usuario &bibliotecario : bibliotecarios) {
+        mostrarUsuario(bibliotecario);
+    }
+}
+
+void UsuarioManager::listarClientes() {
+    vector<Usuario> clientes = _usuarioArchivo.leerPorPermisos(2); // 2 permisos de cliente
+    for (const Usuario &cliente : clientes) {
+        mostrarUsuario(cliente);
+    }
+}
+
 void UsuarioManager::menuAdministrarUsuarios(){
     int opcion;
     do
@@ -106,169 +254,7 @@ void UsuarioManager::menuClienteMembresia(int idUsuario) {
     } while (opcion != 0);
 }
 
-Usuario UsuarioManager::crearUsuario(int permisos){ //crear una instancia de Usuario (Cliente o un Bibliotecario)
-
-    string nombre, apellido, telefono, mail, clave;
-    bool membresia;
-
-    cout << "Ingrese el nombre del nuevo usuario: ";
-    getline(cin, nombre); //uso getLine para obtener los espacios tambien
-    cout << "Ingrese apellido: ";
-    getline(cin, apellido);
-    cout << "Ingrese teléfono: ";
-    getline(cin, telefono);
-    cout << "Ingrese email: ";
-    cin >> mail;
-    getline(cin, mail);
-    cout << "Ingrese una nueva clave: ";
-    getline(cin, clave);
-
-    int id = _usuarioArchivo.getNuevoID();
-
-    if (permisos == 1) {
-
-        string claveMaestra;
-        cout << "Ingrese la clave maestra para registrar un bibliotecario: ";
-        getline(cin, claveMaestra);
-        if (claveMaestra != "4321") {
-            cout << "Clave maestra incorrecta. No se puede registrar como bibliotecario." << endl;
-            return Usuario();
-        }
-        Bibliotecario bibliotecario(nombre, apellido, telefono, mail, id, clave, permisos);
-        if (_usuarioArchivo.guardar(bibliotecario)) {
-            cout << "Bibliotecario agregado con éxito." << endl;
-            return bibliotecario;
-        } else {
-            cout << "Error al agregar el bibliotecario." << endl;
-            return Usuario();
-        }
-
-    } else if (permisos == 2) {
-        return Cliente(nombre, apellido, telefono, mail, id, clave, permisos,membresia);
-    }
-
-    cout << "Permisos inválidos." << endl;
-    return Usuario(); // En caso de un permiso no válido, me devuelve un usuario vacío
-}
-
-void UsuarioManager::agregarUsuario() { //Solicita los permisos antes de llamar a crearUsuario
-
-    int permisos;
-
-    cout << "Ingrese permisos (1 para Bibliotecario, 2 para Cliente): ";
-    cin >> permisos;
-    cin.ignore();
-
-    Usuario usuario = crearUsuario(permisos);
-
-    if (usuario.getId() == -1) {
-        cout << "Error al crear el usuario." << endl;
-        return;
-    }
-
-    if (_usuarioArchivo.guardar(usuario)) {
-        cout << "Usuario agregado con éxito." << endl;
-        if (permisos == 2) {
-            int tipoMembresia;
-            cout << "Ingrese su membresía (1 para Básica, 2 para Premium): ";
-            cin >> tipoMembresia;
-            cin.ignore();
-
-            Fecha fechaInicio = Fecha::obtenerFechaActual();
-            Fecha fechaFin = fechaInicio.sumarMes(1);
-
-            Membresia membresia(_membresiaManager.getNuevoID(), usuario.getId(), tipoMembresia, fechaInicio, fechaFin, true);
-            _membresiaManager.guardarMembresia(membresia);
-            cout << "Membresía asignada con éxito." << endl;
-        }
-    } else {
-        cout << "Error al agregar el usuario." << endl;
-    }
-}
-
-Usuario UsuarioManager::validarLogin(const string &mail, const string &clave, int permisos) {
-    vector<Usuario> usuarios = _usuarioArchivo.leerTodos();
-    for (const auto &usuario : usuarios) {
-        if (usuario.getMail() == mail && usuario.getClave() == clave) {
-            return usuario;
-        }
-    }
-    return Usuario(); // Retornar un usuario vacío si no se encuentra
-}
-
-void UsuarioManager::modificarUsuario() {
-    int id;
-    cout << "Ingrese el ID del usuario a modificar: "; //Aca deberia listar los usuarios
-    cin >> id;
-
-    int index = _usuarioArchivo.buscarById(id);
-    if (index == -1) {
-        cout << "Usuario no encontrado." << endl;
-        return;
-    }
-
-    Usuario usuario = _usuarioArchivo.leer(index);
-    mostrarUsuario(usuario);
-
-    cout << "Ingrese los nuevos datos del usuario." << endl;
-
-    int permisos = usuario.getPermisos();
-    Usuario nuevoUsuario = crearUsuario(permisos);
-    nuevoUsuario.setId(id);
-
-    if (_usuarioArchivo.modificar(index, nuevoUsuario)) {
-        cout << "Usuario modificado con éxito." << endl;
-    } else {
-        cout << "Error al modificar el usuario." << endl;
-    }
-}
-
-/*void UsuarioManager::listarUsuarios() {
-    vector<Usuario> usuarios = _usuarioArchivo.cargarUsuarios();
-    for (const Usuario &usuario : usuarios) {
-        mostrarUsuario(usuario);
-    }
-}*/
-///Aca se podria hacer un "Listar" que lleve a un submenu con "Listar por Nombre, apellido..."
-
-void UsuarioManager::listarBibliotecarios() {
-    vector<Usuario> bibliotecarios = _usuarioArchivo.leerPorPermisos(1); // 1 permisos de bibliotecario
-    for (const Usuario &bibliotecario : bibliotecarios) {
-        mostrarUsuario(bibliotecario);
-    }
-}
-
-void UsuarioManager::listarClientes() {
-    vector<Usuario> clientes = _usuarioArchivo.leerPorPermisos(2); // 2 permisos de cliente
-    for (const Usuario &cliente : clientes) {
-        mostrarUsuario(cliente);
-    }
-}
 
 
 
-void UsuarioManager::eliminarUsuario() {
-    int id;
-    cout << "Ingrese el ID del usuario a eliminar: ";
-    cin >> id;
 
-    int index = _usuarioArchivo.buscarById(id);
-    if (index == -1) {
-        cout << "Usuario no encontrado." << endl;
-        return;
-    }
-
-    //  falta implementar una lógica para marcar al usuario como eliminado
-    // o reescribir todos los usuarios excepto el eliminado.
-}
-
-void UsuarioManager::mostrarUsuario(const Usuario &registro) {
-    cout << "ID: " << registro.getId() << endl;
-    cout << "Nombre: " << registro.getNombre() << endl;
-    cout << "Apellido: " << registro.getApellido() << endl;
-    cout << "Teléfono: " << registro.getTelefono() << endl;
-    cout << "Email: " << registro.getMail() << endl;
-    cout << "Clave: " << registro.getClave() << endl; //Solo va a mostrarse en el acceso del bibliotecario
-    cout << "Permisos: " << registro.getPermisos() << endl; //Aca deberia aparecer biblio o cliente, no el num
-    cout << "-----" << endl;
-}

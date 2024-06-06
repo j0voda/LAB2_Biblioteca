@@ -6,14 +6,27 @@
 #include "CategoriaManager.h"
 #include "AutorManager.h"
 #include "MembresiaManager.h"
-#include "PagoArchivo.h"
+//#include "PagoArchivo.h"
+#include "Fecha.h"
 
 using namespace std;
 
 class MenuPrincipal {
+private:
+    UsuarioManager _usuarioManager;
+    LibroManager _libroManager;
+    CategoriaManager _categoriaManager;
+    AutorManager _autorManager;
+    MembresiaManager _membresiaManager;
+    Bibliotecario _bibliotecario;
+    Cliente _cliente;
+    //PagoArchivo pagoArchivo;
+
 public:
-    void mostrarMenu();
+    void menuInicio();
     void iniciarSesion();
-    void menuBibliotecario();
-    void menuCliente();
+    void registrarse();
+
+    //void menuCliente();
+    //void registro();
 };

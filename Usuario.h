@@ -1,5 +1,11 @@
 #pragma once
+#include <iostream>
+#include<cstdlib>
+#include<cstring>
+
 #include "Persona.h"
+
+using namespace std;
 
 class Usuario : public Persona {
 private:
@@ -10,13 +16,10 @@ private:
     int _permisos; // 1: Bibliotecario 2: Cliente
 
 public:
-    // Constructor por defecto
     Usuario();
 
-    // Constructor parametrizado
     Usuario(const string &nombre, const string &apellido, const string &telefono, const string &mail, int id, const string &clave, int permisos);
 
-    // Getters y Setters
     int getId() const;
     void setId(int id);
 

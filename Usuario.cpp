@@ -1,12 +1,5 @@
-#include <iostream>
-#include<cstdlib>
-#include<cstring>
-
-using namespace std;
-
 #include "Usuario.h"
 
-// Constructor por defecto
 Usuario::Usuario() : Persona() {
     _id = 0;
     _telefono = "";
@@ -15,7 +8,6 @@ Usuario::Usuario() : Persona() {
     _permisos = 0;
 }
 
-// Constructor parametrizado
 Usuario::Usuario(const string &nombre, const string &apellido, const string &telefono, const string &mail, int id, const string &clave, int permisos)
     : Persona(nombre, apellido) {
     _id = id;
@@ -25,7 +17,6 @@ Usuario::Usuario(const string &nombre, const string &apellido, const string &tel
     _permisos = permisos;
 }
 
-// Getters y Setters
 int Usuario::getId() const {
     return _id;
 }
@@ -46,7 +37,6 @@ string Usuario::getMail() const {
 void Usuario::setMail(const string& mail) {
     _mail = mail;
 }
-
 
 string Usuario::getClave() const {
     return _clave;

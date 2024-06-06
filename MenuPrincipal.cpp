@@ -1,7 +1,6 @@
 #include "MenuPrincipal.h"
-#include "Fecha.h"
 
-void MenuPrincipal::mostrarMenu() {
+void MenuPrincipal::menuInicio() {
     int opcion;
 
     do {
@@ -18,7 +17,7 @@ void MenuPrincipal::mostrarMenu() {
                 iniciarSesion();
                 break;
             case 2:
-                // Lógica para registrarse (puedes implementar esta función similar a iniciarSesion)
+                registrarse();// Lógica para registrarse (puedes implementar esta función similar a iniciarSesion)
                 break;
             case 3:
                 cout << "Saliendo..." << endl;
@@ -32,6 +31,7 @@ void MenuPrincipal::mostrarMenu() {
 void MenuPrincipal::iniciarSesion() {
     string email, clave;
     int tipoUsuario;
+
     system("cls");
 
     cout << "INICIAR SESION" << endl;
@@ -46,14 +46,12 @@ void MenuPrincipal::iniciarSesion() {
     cout << "Ingrese clave: ";
     getline(cin, clave);
 
-    UsuarioManager usuarioManager;
-
-    Usuario usuario = usuarioManager.validarLogin(email, clave, tipoUsuario);
+    Usuario usuario = _usuarioManager.validarLogin(email, clave, tipoUsuario);
     if (usuario.getMail() != "") {
         if (tipoUsuario == 1) {
-            menuBibliotecario();
+            _bibliotecario.menuBibliotecario();
         } else {
-            menuCliente();
+            _cliente.menuCliente();
         }
     } else {
         cout << "Credenciales incorrectas. Intente nuevamente." << endl;
@@ -62,55 +60,43 @@ void MenuPrincipal::iniciarSesion() {
     }
 }
 
-void MenuPrincipal::menuBibliotecario() {
-    int opcion;
-    UsuarioManager usuarioManager;
-    LibroManager libroManager;
-    CategoriaManager categoriaManager;
-    AutorManager autorManager;
-    MembresiaManager membresiaManager;
+void MenuPrincipal::registrarse(){
+
+    int permiso,opcion;
+
+    //UsuarioManager _usuarioManager;
 
     system("cls");
-
     do {
-        cout << "MENU BIBLIOTECARIO" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "1. Administrar libros" << endl;
-        cout << "2. Administrar autores" << endl;
-        cout << "3. Administrar categorías" << endl;
-        cout << "4. Administrar usuarios" << endl;
-        cout << "5. Administrar membresías" << endl;
-        cout << "6. Salir" << endl;
-        cout << "Seleccione una opción: ";
+        cout << "1. Registrarme como bibliotecario" << endl;
+        cout << "2. Registrarme como cliente" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Seleccione una opcion: ";
         cin >> opcion;
         cin.ignore();
 
+        permiso = opcion;
+
         switch (opcion) {
             case 1:
-                libroManager.menu();
+                _usuarioManager.crearUsuario(permiso);
+                return;
                 break;
             case 2:
-                autorManager.menu();
+                _usuarioManager.crearUsuario(permiso);
+                return;
                 break;
-            case 3:
-                categoriaManager.menu();
-                break;
-            case 4:
-                usuarioManager.menuAdministrarUsuarios();
-                break;
-            case 5:
-                membresiaManager.menuAdministrarMembresias();
-                break;
-            case 6:
+            case 0:
                 cout << "Saliendo..." << endl;
-                break;
+                return;
             default:
-                cout << "Opción no válida. Intente nuevamente." << endl;
-        }
-    } while (opcion != 6);
+                cout << "Opcion no valida. Intente nuevamente." << endl;
+            }
+    } while (opcion != 0);
 }
 
-void MenuPrincipal::menuCliente() {
+
+/*void MenuPrincipal::menuCliente() {
     int opcion;
     LibroManager libroManager;
     MembresiaManager membresiaManager;
@@ -155,3 +141,4 @@ void MenuPrincipal::menuCliente() {
         }
     } while (opcion != 7);
 }
+*/
