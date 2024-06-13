@@ -5,16 +5,17 @@
 #include "CategoriaManager.h"
 #include "AutorManager.h"
 #include "MembresiaManager.h"
+#include <string>
 
 using namespace std;
 
 
 class Bibliotecario : public Usuario {
 private:
-    LibroManager libroManager;
-    CategoriaManager categoriaManager;
-    AutorManager autorManager;
-    MembresiaManager membresiaManager;
+    //LibroManager libroManager;
+    //CategoriaManager categoriaManager;
+    //AutorManager autorManager;
+    //MembresiaManager membresiaManager;
 
 public:
     Bibliotecario();

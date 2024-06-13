@@ -9,6 +9,9 @@
 #include "Cliente.h"
 #include "MembresiaArchivo.h"
 #include "MembresiaManager.h"
+#include "LibroManager.h"
+#include "AutorManager.h"
+#include "CategoriaManager.h"
 #include "Fecha.h"
 
 
@@ -19,6 +22,9 @@ private:
     UsuarioArchivo _usuarioArchivo;
     //MembresiaArchivo _membresiaArchivo;
     MembresiaManager _membresiaManager;
+    LibroManager _libroManager;
+    AutorManager _autorManager;
+    CategoriaManager _categoriaManager;
 
 public:
     Usuario crearUsuario(int permisos);
@@ -30,12 +36,10 @@ public:
 
     Usuario validarLogin(const string &mail, const string &clave,int permisos);
     //void listarUsuarios();
-
-    void menuClienteMembresia(int idUsuario);
     void menuAdministrarUsuarios();
 
     void listarUsuariosPorNombre();
     void listarUsuariosPorApellido();
-    void listarBibliotecarios();
     void listarClientes();
+    void listarBibliotecarios();
 };

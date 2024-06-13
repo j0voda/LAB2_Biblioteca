@@ -6,7 +6,7 @@ using namespace std;
 class Categoria {
 private:
     int _id;
-    string _nombre;
+    char _nombre[50];
 
 public:
     Categoria();

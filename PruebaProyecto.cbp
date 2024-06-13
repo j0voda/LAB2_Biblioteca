@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -79,7 +81,11 @@
 		<Unit filename="UsuarioArchivo.h" />
 		<Unit filename="UsuarioManager.cpp" />
 		<Unit filename="UsuarioManager.h" />
+		<Unit filename="include/BibliotecarioManager.h" />
+		<Unit filename="include/ClienteManager.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/BibliotecarioManager.cpp" />
+		<Unit filename="src/ClienteManager.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

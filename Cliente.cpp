@@ -1,4 +1,8 @@
 #include "Cliente.h"
+#include<string>
+#include<stdio.h>
+
+using namespace std;
 
 Cliente::Cliente() : Usuario() {
     _membresia = false;
@@ -16,7 +20,7 @@ void Cliente::setMembresia(bool membresia) {
     _membresia = membresia;
 }
 
-void Cliente::asignarMembresia(MembresiaManager &_membresiaManager){
+void Cliente::asignarMembresia(){
     int tipoMembresia;
     cout << "Ingrese su membresía (1 para Básica, 2 para Premium): ";
     cin >> tipoMembresia;
@@ -29,7 +33,7 @@ void Cliente::asignarMembresia(MembresiaManager &_membresiaManager){
     Fecha fechaInicio = Fecha::obtenerFechaActual();
     Fecha fechaFin = fechaInicio.sumarMes(1);
 
-    Membresia membresia(_membresiaManager.getNuevoID(), _usuario.getId(), tipoMembresia, fechaInicio, fechaFin, true);
+    Membresia membresia(_membresiaManager.getNuevoID(), this->getId(), tipoMembresia, fechaInicio, fechaFin, true);
     _membresiaManager.guardarMembresia(membresia);
 
     cout << "Membresía asignada con éxito. Cliente registrado" << endl;

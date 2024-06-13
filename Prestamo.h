@@ -8,15 +8,15 @@ using namespace std;
 class Prestamo {
 private:
     int _idPrestamo;
-    string _fechaPrestamo;
-    string _fechaDevolucion;
-    Libro _libro;
-    Persona _usuario;
+    char _fechaPrestamo[50];
+    char _fechaDevolucion[50];
+    Libro* _libro;
+    Persona* _usuario;
     bool _estado; // true: activo, false: devuelto
 
 public:
     Prestamo();
-    Prestamo(int idPrestamo, const string &fechaPrestamo, const Libro &libro, const Persona &usuario);
+    Prestamo(int idPrestamo, const string &fechaPrestamo, Libro *libro, Persona *usuario);
 
     int getIdPrestamo() const;
     void setIdPrestamo(int idPrestamo);
@@ -27,11 +27,11 @@ public:
     string getFechaDevolucion() const;
     void setFechaDevolucion(const string &fechaDevolucion);
 
-    Libro getLibro() const;
-    void setLibro(const Libro &libro);
+    Libro* getLibro() const;
+    void setLibro(Libro *libro);
 
-    Persona getUsuario() const;
-    void setUsuario(const Persona &usuario);
+    Persona* getUsuario() const;
+    void setUsuario(Persona *usuario);
 
     bool getEstado() const;
     void setEstado(bool estado);

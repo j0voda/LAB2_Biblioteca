@@ -1,6 +1,7 @@
 #include <iostream>
 #include<cstdlib>
 #include<cstring>
+#include<stdio.h>
 
 using namespace std;
 
@@ -8,15 +9,17 @@ using namespace std;
 
 Autor::Autor(): Persona(){
     _id = 0;
-    _nacionalidad = "";
-    _bestSellers = "";
+    strcpy(_nacionalidad, "");
+    strcpy(_bestSellers, "");
 }
 
 Autor::Autor(const string &nombre, const string &apellido,int id, const string &nacionalidad, const string &sellers)
     : Persona(nombre, apellido){
     _id = id;
-    _nacionalidad = nacionalidad;
-    _bestSellers = sellers;
+    strcpy(_nacionalidad, nacionalidad.c_str());
+    strcpy(_bestSellers, sellers.c_str());
+    //_nacionalidad = nacionalidad;
+    //_bestSellers = sellers;
 }
 
 int Autor::getId() const {
@@ -27,15 +30,18 @@ void Autor::setId(int id) {
 }
 
 string Autor::getNacionalidad() const {
-    return _nacionalidad;
+    string str = _nacionalidad;
+    return str;
 }
 void Autor::setNacionalidad(const string &nacionalidad) {
-    _nacionalidad = nacionalidad;
+    strcpy(_nacionalidad, nacionalidad.c_str());
 }
 
 string Autor::getBestSellers() const {
-    return _bestSellers;
+    string str = _bestSellers;
+    return str;
 }
 void Autor::setBestSellers(const string &sellers) {
-    _bestSellers = sellers;
+    strcpy(_bestSellers, sellers.c_str());
+    //_bestSellers = sellers;
 }

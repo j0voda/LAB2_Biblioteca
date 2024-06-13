@@ -13,7 +13,8 @@ class Cliente : public Usuario {
 private:
     bool _membresia;
     MembresiaManager _membresiaManager;
-    Usuario _usuario;
+    UsuarioArchivo _usuarioArchivo;
+    //Usuario _usuario;
 
 public:
     Cliente();
@@ -23,6 +24,7 @@ public:
     bool getMembresia() const;
     void setMembresia(bool membresia);
 
-    void asignarMembresia(MembresiaManager &_membresiaManager);
+    void asignarMembresia();
     void menuCliente();
+    void listarClientes();
 };

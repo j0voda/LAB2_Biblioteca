@@ -2,6 +2,7 @@
 #include<cstdlib>
 #include<cstring>
 #include <vector>
+#include<string>
 
 using namespace std;
 
@@ -9,7 +10,6 @@ using namespace std;
 
 void listarUsuariosPorNombre();
 void listarUsuariosPorApellido(); ///desarrollar
-
 
 Usuario UsuarioManager::crearUsuario(int permisos){ //crear una instancia de Usuario (Cliente o un Bibliotecario)
 
@@ -33,13 +33,12 @@ Usuario UsuarioManager::crearUsuario(int permisos){ //crear una instancia de Usu
 
         Bibliotecario bibliotecario(nombre, apellido, telefono, mail, id, clave, permisos);
 
-        if(bibliotecario.ingresarClave()== false){
+        if(!bibliotecario.ingresarClave()){
             return Usuario(); //clave incorrecta
         }
         if (_usuarioArchivo.guardar(bibliotecario)) {
             cout << "Bibliotecario agregado con éxito." << endl;
             return bibliotecario;
-
         } else {
             cout << "Error al agregar el bibliotecario." << endl;
             return Usuario();
@@ -47,10 +46,10 @@ Usuario UsuarioManager::crearUsuario(int permisos){ //crear una instancia de Usu
 
     } else if (permisos == 2) {
 
-        Cliente cliente(nombre, apellido, telefono, mail, id, clave, permisos, false);
+        Cliente cliente = Cliente(nombre, apellido, telefono, mail, id, clave, permisos, false);
 
         if (_usuarioArchivo.guardar(cliente)) {
-            cliente.asignarMembresia(_membresiaManager);
+            cliente.asignarMembresia();
             return cliente;
         } else {
             cout << "Error al agregar el cliente." << endl;
@@ -115,16 +114,17 @@ void UsuarioManager::eliminarUsuario() {
 }
 
 
-Usuario UsuarioManager::validarLogin(const string &mail, const string &clave, int permisos) {
+Usuario UsuarioManager::validarLogin(const string& mail, const string& clave, int permisos) {
+    cout << "Validando usuario";
     vector<Usuario> usuarios = _usuarioArchivo.leerTodos();
     for (const auto &usuario : usuarios) {
+        cout << usuario.getMail();
         if (usuario.getMail() == mail && usuario.getClave() == clave) {
             return usuario;
         }
     }
     return Usuario(); // Retornar un usuario vacío si no se encuentra
 }
-
 
 
 /*void UsuarioManager::listarUsuarios() {
@@ -145,18 +145,10 @@ void UsuarioManager::agregarUsuario() { //Solicita los permisos antes de llamar 
     Usuario usuario = crearUsuario(permisos);
 }
 
-void UsuarioManager::listarBibliotecarios() {
-    vector<Usuario> bibliotecarios = _usuarioArchivo.leerPorPermisos(1); // 1 permisos de bibliotecario
-    for (const Usuario &bibliotecario : bibliotecarios) {
-        mostrarUsuario(bibliotecario);
-    }
+void UsuarioManager::listarBibliotecarios(){
 }
 
-void UsuarioManager::listarClientes() {
-    vector<Usuario> clientes = _usuarioArchivo.leerPorPermisos(2); // 2 permisos de cliente
-    for (const Usuario &cliente : clientes) {
-        mostrarUsuario(cliente);
-    }
+void UsuarioManager::listarClientes(){
 }
 
 void UsuarioManager::menuAdministrarUsuarios(){
@@ -217,44 +209,6 @@ void UsuarioManager::menuAdministrarUsuarios(){
         }
     } while (opcion != 0);
 }
-
-void UsuarioManager::menuClienteMembresia(int idUsuario) {
-    int opcion;
-    do {
-        system("cls");
-
-        cout << "-----------------------------" << endl;
-        cout << "ADMINISTRAR MI MEMBRESIA" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "1. Ver Estado de Membresía" << endl;
-        cout << "2. Realizar Pago" << endl;
-        cout << "3. Cambiar Tipo de Membresía" << endl;
-        cout << "0. Salir" << endl;
-        cin >> opcion;
-
-        switch (opcion) {
-            case 1:
-                _membresiaManager.verEstadoMembresia(idUsuario);
-                break;
-            case 2:
-                _membresiaManager.realizarPago(idUsuario);
-                break;
-            case 3:
-                int nuevoTipo;
-                cout << "Ingrese nuevo tipo de membresía (1 para Básica, 2 para Premium): ";
-                cin >> nuevoTipo;
-                _membresiaManager.cambiarTipoMembresia(idUsuario, nuevoTipo);
-                break;
-            case 0:
-                cout << "Saliendo..." << endl;
-                break;
-            default:
-                cout << "Opción inválida." << endl;
-        }
-    } while (opcion != 0);
-}
-
-
 
 
 

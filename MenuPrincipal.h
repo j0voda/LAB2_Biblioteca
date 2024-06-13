@@ -6,6 +6,8 @@
 #include "CategoriaManager.h"
 #include "AutorManager.h"
 #include "MembresiaManager.h"
+#include "BibliotecarioManager.h"
+#include "ClienteManager.h"
 //#include "PagoArchivo.h"
 #include "Fecha.h"
 
@@ -18,8 +20,10 @@ private:
     CategoriaManager _categoriaManager;
     AutorManager _autorManager;
     MembresiaManager _membresiaManager;
-    Bibliotecario _bibliotecario;
-    Cliente _cliente;
+    BibliotecarioManager _bibliotecarioManager;
+    ClienteManager _clienteManager;
+    //Bibliotecario _bibliotecario;
+    //Cliente _cliente;
     //PagoArchivo pagoArchivo;
 
 public:

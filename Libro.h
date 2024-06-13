@@ -9,7 +9,7 @@ using namespace std;
 class Libro {
 private:
     int _idLibro;
-    string _titulo;
+    char _titulo[50];
     Autor _idAutor;
     Categoria _idCategoria;
     int _anioPublicacion;
@@ -22,7 +22,7 @@ public:
     Libro();
 
     // Constructor parametrizado
-    Libro(int idLibro, const string &titulo, const Autor &idAutor, const Categoria &idCategoria, int anioPublicacion, int ejemplares, int disponibles, bool estado);
+    Libro(int idLibro, const string &titulo, const Autor &autor, const Categoria &categoria, int anioPublicacion, int ejemplares, int disponibles, bool estado);
 
     // Getters y Setters
     int getIdLibro() const;
@@ -32,10 +32,10 @@ public:
     void setTitulo(const string &titulo);
 
     Autor getIdAutor() const;
-    void setIdAutor(const Autor &idAutor);
+    void setIdAutor(const Autor &autor);
 
     Categoria getIdCategoria() const;
-    void setIdCategoria(const Categoria &idCategoria);
+    void setIdCategoria(const Categoria &categoria);
 
     int getAnioPublicacion() const;
     void setAnioPublicacion(int anioPublicacion);

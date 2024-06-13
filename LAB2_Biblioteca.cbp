@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="LAB2_Biblioteca" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/LAB2_Biblioteca" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/LAB2_Biblioteca" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="include/AppManager.h" />
+		<Unit filename="include/Autor.h" />
+		<Unit filename="include/Basica.h" />
+		<Unit filename="include/Bibliotecario.h" />
+		<Unit filename="include/Cliente.h" />
+		<Unit filename="include/Fecha.h" />
+		<Unit filename="include/Genero.h" />
+		<Unit filename="include/Libro.h" />
+		<Unit filename="include/Membresia.h" />
+		<Unit filename="include/Pago.h" />
+		<Unit filename="include/Persona.h" />
+		<Unit filename="include/Premium.h" />
+		<Unit filename="include/Usuario.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/AppManager.cpp" />
+		<Unit filename="src/Autor.cpp" />
+		<Unit filename="src/Basica.cpp" />
+		<Unit filename="src/Bibliotecario.cpp" />
+		<Unit filename="src/Cliente.cpp" />
+		<Unit filename="src/Fecha.cpp" />
+		<Unit filename="src/Genero.cpp" />
+		<Unit filename="src/Libro.cpp" />
+		<Unit filename="src/Membresia.cpp" />
+		<Unit filename="src/Pago.cpp" />
+		<Unit filename="src/Persona.cpp" />
+		<Unit filename="src/Premium.cpp" />
+		<Unit filename="src/Usuario.cpp" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

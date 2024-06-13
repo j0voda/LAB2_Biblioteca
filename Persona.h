@@ -7,23 +7,23 @@ using namespace std;
 
 class Persona {
 private:
-    string _nombre;
-    string _apellido;
+    char _nombre[50];
+    char _apellido[50];
 
 public:
     // Constructor por defecto
     Persona();
 
     // Constructor parametrizado
-    Persona(const string& nombre, const string& apellido);
+    Persona(const string &nombre, const string &apellido);
 
 
     // Getters y Setters
     string getNombre() const;
-    void setNombre(const string& nombre);
+    void setNombre(const string &nombre);
 
     string getApellido() const;
-    void setApellido(const string& apellido);
+    void setApellido(const string &apellido);
 
 };
 

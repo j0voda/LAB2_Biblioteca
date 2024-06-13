@@ -2,6 +2,7 @@
 #include <iostream>
 #include<cstdlib>
 #include<cstring>
+#include<string>
 
 #include "Persona.h"
 
@@ -10,9 +11,9 @@ using namespace std;
 class Usuario : public Persona {
 private:
     int _id;
-    string _telefono;
-    string _mail;
-    string _clave;
+    char _telefono[50];
+    char _mail[50];
+    char _clave[50];
     int _permisos; // 1: Bibliotecario 2: Cliente
 
 public:
@@ -24,10 +25,10 @@ public:
     void setId(int id);
 
     string getTelefono() const;
-    void setTelefono(const string& telefono);
+    void setTelefono(const string &telefono);
 
     string getMail() const;
-    void setMail(const string& mail);
+    void setMail(const string &mail);
 
     string getClave() const;
     void setClave(const string &clave);
