@@ -1,6 +1,8 @@
 #include <iostream>
 #include<cstdlib>
 #include<cstring>
+#include<string>
+#include<stdio.h>
 
 using namespace std;
 
@@ -8,27 +10,31 @@ using namespace std;
 
 // Constructor por defecto
 Persona::Persona() {
-    _nombre = "";
-    _apellido = "";
+    strcpy(_nombre, "");
+    strcpy(_apellido, "");
 }
 
 // Constructor parametrizado
-Persona::Persona(const string& nombre, const string& apellido) {
-    _nombre = nombre;
-    _apellido = apellido;
+Persona::Persona(const string &nombre, const string &apellido) {
+    strcpy(_nombre, nombre.c_str());
+    strcpy(_apellido, apellido.c_str());
 }
 
 // Getters y Setters
 string Persona::getNombre() const {
-    return _nombre;
+    string str = _nombre;
+    return str;
 }
-void Persona::setNombre(const string& nombre) {
-    _nombre = nombre;
+void Persona::setNombre(const string &nombre) {
+    strcpy(_nombre, nombre.c_str());
+    //_nombre = strcpy(nombre);
 }
 
 string Persona::getApellido() const {
-    return _apellido;
+    string str = _apellido;
+    return str;
 }
-void Persona::setApellido(const string& apellido) {
-    _apellido = apellido;
+void Persona::setApellido(const string &apellido) {
+    strcpy(_apellido, apellido.c_str());
+    //_apellido = strcpy(apellido);
 }

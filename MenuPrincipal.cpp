@@ -1,7 +1,10 @@
-#include "MenuPrincipal.h"
-#include "Fecha.h"
+#include <string>
 
-void MenuPrincipal::mostrarMenu() {
+using namespace std;
+
+#include "MenuPrincipal.h"
+
+void MenuPrincipal::menuInicio() {
     int opcion;
 
     do {
@@ -18,7 +21,7 @@ void MenuPrincipal::mostrarMenu() {
                 iniciarSesion();
                 break;
             case 2:
-                // Lógica para registrarse (puedes implementar esta función similar a iniciarSesion)
+                registrarse();
                 break;
             case 3:
                 cout << "Saliendo..." << endl;
@@ -32,6 +35,7 @@ void MenuPrincipal::mostrarMenu() {
 void MenuPrincipal::iniciarSesion() {
     string email, clave;
     int tipoUsuario;
+
     system("cls");
 
     cout << "INICIAR SESION" << endl;
@@ -40,118 +44,71 @@ void MenuPrincipal::iniciarSesion() {
     cin >> tipoUsuario;
     cin.ignore();
 
+    if (tipoUsuario == 1) {
+        _bibliotecarioManager.listarBibliotecarios();
+    } else if(tipoUsuario == 2) {
+        _clienteManager.listarClientes();
+    }
+
     cout << "Ingrese email: ";
     getline(cin, email);
 
     cout << "Ingrese clave: ";
     getline(cin, clave);
 
-    UsuarioManager usuarioManager;
-
-    Usuario usuario = usuarioManager.validarLogin(email, clave, tipoUsuario);
-    if (usuario.getMail() != "") {
-        if (tipoUsuario == 1) {
-            menuBibliotecario();
+    if (tipoUsuario == 1) {
+        Usuario bibliotecario = _usuarioManager.validarLogin(email, clave, tipoUsuario);
+        if (bibliotecario.getMail() != "") {
+            cout << "Usuario validado"<<endl;
+            _bibliotecarioManager.menuBibliotecario();
         } else {
-            menuCliente();
+            cout << "Credenciales incorrectas. Intente nuevamente." << endl;
+            cin.ignore();
+        }
+    } else if(tipoUsuario == 2) {
+        Usuario cliente = _usuarioManager.validarLogin(email, clave, tipoUsuario);
+        if(cliente.getMail() != ""){
+            cout << "Usuario validado"<<endl;
+            _clienteManager.menuCliente();
+        }else {
+            cout << "Credenciales incorrectas. Intente nuevamente." << endl;
+            cin.ignore();
         }
     } else {
-        cout << "Credenciales incorrectas. Intente nuevamente." << endl;
+        cout << "Ingrese una de las opciones validas.";
         cin.ignore();
-
     }
 }
 
-void MenuPrincipal::menuBibliotecario() {
-    int opcion;
-    UsuarioManager usuarioManager;
-    LibroManager libroManager;
-    CategoriaManager categoriaManager;
-    AutorManager autorManager;
-    MembresiaManager membresiaManager;
+void MenuPrincipal::registrarse(){
+
+    int permiso,opcion;
 
     system("cls");
-
     do {
-        cout << "MENU BIBLIOTECARIO" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "1. Administrar libros" << endl;
-        cout << "2. Administrar autores" << endl;
-        cout << "3. Administrar categorías" << endl;
-        cout << "4. Administrar usuarios" << endl;
-        cout << "5. Administrar membresías" << endl;
-        cout << "6. Salir" << endl;
-        cout << "Seleccione una opción: ";
+        cout << "1. Registrarme como bibliotecario" << endl;
+        cout << "2. Registrarme como cliente" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Seleccione una opcion: ";
         cin >> opcion;
         cin.ignore();
 
-        switch (opcion) {
-            case 1:
-                libroManager.menu();
-                break;
-            case 2:
-                autorManager.menu();
-                break;
-            case 3:
-                categoriaManager.menu();
-                break;
-            case 4:
-                usuarioManager.menuAdministrarUsuarios();
-                break;
-            case 5:
-                membresiaManager.menuAdministrarMembresias();
-                break;
-            case 6:
-                cout << "Saliendo..." << endl;
-                break;
-            default:
-                cout << "Opción no válida. Intente nuevamente." << endl;
-        }
-    } while (opcion != 6);
-}
-
-void MenuPrincipal::menuCliente() {
-    int opcion;
-    LibroManager libroManager;
-    MembresiaManager membresiaManager;
-    PagoArchivo pagoArchivo;
-
-    do {
-        cout << "1. Ver libros" << endl;
-        cout << "2. Pedir libro" << endl;
-        cout << "3. Devolver libro" << endl;
-        cout << "4. Mi membresía" << endl;
-        cout << "5. Administrar pagos" << endl;
-        cout << "6. Ver historial de préstamos" << endl;
-        cout << "7. Salir" << endl;
-        cout << "Seleccione una opción: ";
-        cin >> opcion;
-        cin.ignore();
+        permiso = opcion;
 
         switch (opcion) {
             case 1:
-                cout << "Aca vemos libros";//libroManager.listarLibros();
+                _usuarioManager.crearUsuario(permiso);
+                return;
                 break;
             case 2:
-                cout << "Aca pedimos libros";//libroManager.pedirLibro();
+                _usuarioManager.crearUsuario(permiso);
+                return;
                 break;
-            case 3:
-                cout << "Aca devolvemos libros";//libroManager.devolverLibro();
-                break;
-            case 4:
-                cout << "Aca vemos la membresia";//membresiaManager.verEstadoMembresia();
-                break;
-            case 5:
-                cout << "Aca vemos los pagos";//pagoArchivo.mostrarPagos();
-                break;
-            case 6:
-                cout << "Aca vemos los prestamos";// Función para ver el historial de préstamos
-                break;
-            case 7:
+            case 0:
                 cout << "Saliendo..." << endl;
-                break;
+                return;
             default:
-                cout << "Opción no válida. Intente nuevamente." << endl;
-        }
-    } while (opcion != 7);
+                cout << "Opcion no valida. Intente nuevamente." << endl;
+            }
+    } while (opcion != 0);
 }

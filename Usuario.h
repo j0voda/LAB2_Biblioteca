@@ -1,30 +1,36 @@
 #pragma once
+
+#include <iostream>
+#include<cstdlib>
+#include<cstring>
+#include<string>
+
+using namespace std;
+
 #include "Persona.h"
+
 
 class Usuario : public Persona {
 private:
     int _id;
-    string _telefono;
-    string _mail;
-    string _clave;
+    char _telefono[50];
+    char _mail[50];
+    char _clave[50];
     int _permisos; // 1: Bibliotecario 2: Cliente
 
 public:
-    // Constructor por defecto
     Usuario();
 
-    // Constructor parametrizado
     Usuario(const string &nombre, const string &apellido, const string &telefono, const string &mail, int id, const string &clave, int permisos);
 
-    // Getters y Setters
     int getId() const;
     void setId(int id);
 
     string getTelefono() const;
-    void setTelefono(const string& telefono);
+    void setTelefono(const string &telefono);
 
     string getMail() const;
-    void setMail(const string& mail);
+    void setMail(const string &mail);
 
     string getClave() const;
     void setClave(const string &clave);

@@ -7,12 +7,12 @@ using namespace std;
 class Autor : public Persona {
 private:
     int _id;
-    string _nacionalidad;
-    string _bestSellers;
+    char _nacionalidad[50];
+    char _bestSellers[50];
 
 public:
     Autor();
-    Autor(const string& nombre, const string& apellido, int id, const string &nacionalidad, const string &sellers);
+    Autor(const string &nombre, const string &apellido, int id, const string &nacionalidad, const string &sellers);
 
     int getId() const;
     void setId(int id);

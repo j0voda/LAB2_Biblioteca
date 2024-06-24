@@ -1,22 +1,28 @@
-#include "UsuarioArchivo.h"
-
 #include <fstream>
 #include <iostream>
 #include <cstdio>
 
-
 using namespace std;
+
+#include "UsuarioArchivo.h"
 
 
 bool UsuarioArchivo::guardar(const Usuario &usuario) {
+    cout << "Guardando usuario";
     FILE *pFile;
-    pFile = fopen(_nombreArchivo.c_str(), "ab"); //uso _nombreArchivo para flexibilizar el codigo
+    pFile = fopen(this->_nombreArchivo, "ab"); //uso _nombreArchivo para flexibilizar el codigo
+
+    cout << "Archivo abierto";
 
     if(pFile == nullptr){
+        cout << "Puntero null";
         return false;
     }
 
     bool result = fwrite(&usuario, sizeof(Usuario), 1, pFile)==1;
+    if(result){
+        cout << "Escrito con exito";
+    }
     fclose(pFile);
 
     return result;
@@ -24,7 +30,7 @@ bool UsuarioArchivo::guardar(const Usuario &usuario) {
 
 bool UsuarioArchivo::modificar(int index, const Usuario& usuario) {
     FILE *pFile;
-    pFile = fopen(_nombreArchivo.c_str(), "rb+");
+    pFile = fopen(this->_nombreArchivo, "rb+");
 
     if(pFile == nullptr){
         return false;
@@ -41,7 +47,7 @@ int UsuarioArchivo::buscarById(int id) {
     Usuario usuario;
     int pos = 0;
     FILE *pFile;
-    pFile = fopen(_nombreArchivo.c_str(), "rb");
+    pFile = fopen(this->_nombreArchivo, "rb");
 
     if(pFile == nullptr){
         return -1;
@@ -62,7 +68,7 @@ int UsuarioArchivo::buscarById(int id) {
 Usuario UsuarioArchivo::leer(int index) {
     Usuario usuario;
     FILE *pFile;
-    pFile = fopen(_nombreArchivo.c_str(), "rb");
+    pFile = fopen(this->_nombreArchivo, "rb");
 
     if(pFile == nullptr){
         return usuario;
@@ -78,7 +84,7 @@ Usuario UsuarioArchivo::leer(int index) {
 vector<Usuario> UsuarioArchivo::leerPorPermisos(int permisos) {
     vector<Usuario> usuarios;
     Usuario usuario;
-    FILE *pFile = fopen(_nombreArchivo.c_str(), "rb");
+    FILE *pFile = fopen(this->_nombreArchivo, "rb");
     if (pFile == nullptr) {
         cout << "No se pudo abrir el archivo de usuarios." << endl;
         return usuarios;
@@ -97,7 +103,7 @@ vector<Usuario> UsuarioArchivo::leerPorPermisos(int permisos) {
 vector<Usuario> UsuarioArchivo::leerTodos() {
     vector<Usuario> usuarios;
     Usuario reg;
-    FILE* pFile = fopen(_nombreArchivo.c_str(), "rb");
+    FILE* pFile = fopen(this->_nombreArchivo, "rb");
     if (!pFile) {
         return usuarios;
     }
@@ -112,7 +118,7 @@ int UsuarioArchivo::getCantidadRegistros() {
     FILE *pFile;
     int tam;
 
-    pFile = fopen(_nombreArchivo.c_str(), "rb");
+    pFile = fopen(this->_nombreArchivo, "rb");
 
     if(pFile == nullptr){
         return 0;

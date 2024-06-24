@@ -7,6 +7,8 @@
 #include "Categoria.h"
 #include "CategoriaArchivo.h"
 
+using namespace std;
+
 class CategoriaManager {
 public:
    void menu();

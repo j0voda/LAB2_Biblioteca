@@ -1,14 +1,15 @@
-#include <iostream>
-#include<cstdlib>
-#include<cstring>
-
-using namespace std;
+#include<string>
 
 #include "Bibliotecario.h"
 
-// Constructor por defecto
+using namespace std;
+
 Bibliotecario::Bibliotecario() : Usuario() {}
 
-// Constructor parametrizado
 Bibliotecario::Bibliotecario(const string &nombre, const string &apellido, const string &telefono, const string &mail, int id, const string &clave, int permisos)
-    : Usuario(nombre, apellido, telefono, mail, id, clave, permisos) {}
+    : Usuario(nombre, apellido, telefono, mail, id, clave, permisos) {
+}
+
+
+
+

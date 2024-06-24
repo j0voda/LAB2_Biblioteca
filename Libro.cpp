@@ -1,6 +1,7 @@
 #include <iostream>
 #include<cstdlib>
 #include<cstring>
+#include<stdio.h>
 
 using namespace std;
 
@@ -9,7 +10,8 @@ using namespace std;
 // Constructor por defecto
 Libro::Libro() {
     _idLibro = 0;
-    _titulo = "";
+    strcpy(_titulo, "");
+    //_titulo = "";
     _anioPublicacion = 0;
     _ejemplares = 0;
     _disponibles = 0;
@@ -19,7 +21,7 @@ Libro::Libro() {
 // Constructor parametrizado
 Libro::Libro(int idLibro, const string &titulo, const Autor &idAutor, const Categoria &idCategoria, int anioPublicacion, int ejemplares, int disponibles, bool estado){
     _idLibro = idLibro;
-    _titulo = titulo;
+    strcpy(_titulo, titulo.c_str());
     _idAutor = idAutor;
     _idCategoria = idCategoria;
     _anioPublicacion = anioPublicacion;
@@ -37,10 +39,12 @@ void Libro::setIdLibro(int idLibro) {
 }
 
 string Libro::getTitulo() const {
-    return _titulo;
+    string str = _titulo;
+    return str;
 }
 void Libro::setTitulo(const string &titulo) {
-    _titulo = titulo;
+    strcpy(_titulo, titulo.c_str());
+    //_titulo = titulo;
 }
 
 Autor Libro::getIdAutor() const {

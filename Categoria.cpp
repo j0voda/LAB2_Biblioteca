@@ -8,11 +8,13 @@ using namespace std;
 
 Categoria::Categoria(){
     _id= 0;
-    _nombre = "";
+    strcpy(_nombre, "");
+    //_nombre = "";
 }
 Categoria::Categoria(int id, const string &nombre){
     _id=id;
-    _nombre=nombre;
+    strcpy(_nombre, nombre.c_str());
+    //_nombre=nombre;
 }
 
 int Categoria::getId() const {
@@ -23,8 +25,10 @@ void Categoria::setId(int id) {
 }
 
 string Categoria::getNombre() const {
-    return _nombre;
+    string str = _nombre;
+    return str;
 }
 void Categoria::setNombre(const string &nombre) {
-    _nombre = nombre;
+    strcpy(_nombre, nombre.c_str());
+    //_nombre = nombre;
 }

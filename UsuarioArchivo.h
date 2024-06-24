@@ -1,15 +1,17 @@
 #pragma once
-#include <fstream> //para trabajar con archivos
+#include <fstream>
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 #include "Usuario.h"
 
-using namespace std;
 
 class UsuarioArchivo {
 private:
-    string _nombreArchivo = "usuarios.dat";
+    char _nombreArchivo[50] = "usuarios.dat";
+
 public:
     bool guardar(const Usuario &usuario);
     bool modificar(int index, const Usuario &usuario);

@@ -1,31 +1,27 @@
-#include <iostream>
-#include<cstdlib>
 #include<cstring>
+#include<stdio.h>
 
 using namespace std;
 
 #include "Usuario.h"
 
-// Constructor por defecto
 Usuario::Usuario() : Persona() {
     _id = 0;
-    _telefono = "";
-    _mail = "";
-    _clave = "";
+    strcpy(_telefono, "");
+    strcpy(_mail, "");
+    strcpy(_clave, "");
     _permisos = 0;
 }
 
-// Constructor parametrizado
 Usuario::Usuario(const string &nombre, const string &apellido, const string &telefono, const string &mail, int id, const string &clave, int permisos)
     : Persona(nombre, apellido) {
     _id = id;
-    _telefono = telefono;
-    _mail = mail;
-    _clave = clave;
+    strcpy(_telefono, telefono.c_str());
+    strcpy(_mail, mail.c_str());
+    strcpy(_clave, clave.c_str());
     _permisos = permisos;
 }
 
-// Getters y Setters
 int Usuario::getId() const {
     return _id;
 }
@@ -34,25 +30,30 @@ void Usuario::setId(int id) {
 }
 
 string Usuario::getTelefono() const {
-    return _telefono;
+    string str = _telefono;
+    return str;
 }
-void Usuario::setTelefono(const string& telefono) {
-    _telefono = telefono;
+void Usuario::setTelefono(const string &telefono) {
+    strcpy(_telefono, telefono.c_str());
+    //_telefono = strcpy(telefono);
 }
 
 string Usuario::getMail() const {
-    return _mail;
+    string str = _mail;
+    return str;
 }
-void Usuario::setMail(const string& mail) {
-    _mail = mail;
+void Usuario::setMail(const string &mail) {
+    strcpy(_mail, mail.c_str());
+    //_mail = strcpy(mail);
 }
-
 
 string Usuario::getClave() const {
-    return _clave;
+    string str = _clave;
+    return str;
 }
 void Usuario::setClave(const string &clave) {
-    _clave = clave;
+    strcpy(_clave, clave.c_str());
+    //_clave = strcpy(clave);
 }
 
 int Usuario::getPermisos() const {
