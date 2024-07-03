@@ -7,7 +7,8 @@ using namespace std;
 
 #include "Cliente.h"
 #include "MembresiaManager.h"
-//#include "UsuarioArchivo.h"
+#include "LibroManager.h"
+#include "UsuarioArchivo.h"
 
 
 class ClienteManager
@@ -15,6 +16,8 @@ class ClienteManager
     private:
         MembresiaManager _membresiaManager;
         UsuarioArchivo _usuarioArchivo;
+        LibroManager _libroManager;
+        PrestamoManager _prestamoManager;
 
     public:
         ClienteManager();
@@ -28,6 +31,7 @@ class ClienteManager
         void listarClientesPorNombre();
         void listarClientesPorApellido();
 
+        void verLibros();
 
 
         //Cliente validarLoginCliente(const string &mail, const string &clave,int permisos);

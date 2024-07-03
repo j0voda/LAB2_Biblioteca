@@ -11,12 +11,12 @@ private:
     char _fechaPrestamo[50];
     char _fechaDevolucion[50];
     Libro* _libro;
-    Persona* _usuario;
+    int _idCliente;
     bool _estado; // true: activo, false: devuelto
 
 public:
     Prestamo();
-    Prestamo(int idPrestamo, const string &fechaPrestamo, Libro *libro, Persona *usuario);
+    Prestamo(int idPrestamo, const string &fechaPrestamo, Libro *libro, int idCliente);
 
     int getIdPrestamo() const;
     void setIdPrestamo(int idPrestamo);
@@ -30,8 +30,8 @@ public:
     Libro* getLibro() const;
     void setLibro(Libro *libro);
 
-    Persona* getUsuario() const;
-    void setUsuario(Persona *usuario);
+    int getIdCliente() const;
+    void setIdCliente(int idCliente);
 
     bool getEstado() const;
     void setEstado(bool estado);

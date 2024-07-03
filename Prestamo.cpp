@@ -68,12 +68,12 @@ void Prestamo::setLibro(Libro *libro) {
     _libro = libro;
 }
 
-Persona* Prestamo::getUsuario() const {
-    return _usuario;
+int Prestamo::getIdCliente() const {
+    return _idCliente;
 }
 
-void Prestamo::setUsuario(Persona *usuario) {
-    _usuario = usuario;
+void Prestamo::setIdCliente(int idCliente) {
+    _idCliente = idCliente;
 }
 
 bool Prestamo::getEstado() const {

@@ -26,42 +26,40 @@ void ClienteManager::asignarMembresia(){
 
 }
 
-void ClienteManager::menuCliente() {
+void ClienteManager::menuCliente(int idUsuario) {
     int opcion;
     do {
         cout << "MENU CLIENTE" << endl;
         cout << "-----------------------------" << endl;
-        cout << "1. Ver libros" << endl;
-        cout << "2. Pedir libro" << endl;
-        cout << "3. Devolver libro" << endl;
-        cout << "4. Mi membresía" << endl;
-        cout << "5. Administrar pagos" << endl;
-        cout << "6. Ver historial de préstamos" << endl;
-        cout << "7. Salir" << endl;
+        cout << "1. Ver todos los libros" << endl;
+        cout << "2. Ver libros alquilados" << endl;
+        cout << "3. Mi membresía" << endl;
+        cout << "4. Administrar pagos" << endl;
+        cout << "5. Ver historial de préstamos" << endl;
+        cout << "6. Salir" << endl;
         cout << "Seleccione una opción: ";
         cin >> opcion;
         cin.ignore();
 
         switch (opcion) {
             case 1:
-                cout << "Aca vemos libros";//libroManager.listarLibros();
+                _libroManager.listarLibros();
+                cout << "Aca vemos libros";//
                 break;
             case 2:
-                cout << "Aca pedimos libros";//libroManager.pedirLibro();
+                _prestamoManager.listarPrestamosPorIdCliente(idUsuario);
+                cout << "Aca devolvemos libros";//
                 break;
             case 3:
-                cout << "Aca devolvemos libros";//libroManager.devolverLibro();
-                break;
-            case 4:
                 cout << "Aca vemos la membresia";//membresiaManager.verEstadoMembresia();
                 break;
-            case 5:
+            case 4:
                 cout << "Aca vemos los pagos";//pagoArchivo.mostrarPagos();
                 break;
-            case 6:
+            case 5:
                 cout << "Aca vemos los prestamos";// Función para ver el historial de préstamos
                 break;
-            case 7:
+            case 6:
                 cout << "Saliendo..." << endl;
                 break;
             default:
@@ -160,7 +158,11 @@ void ClienteManager::listarClientesPorApellido() {
     }
 }
 
+void ClienteManager::verLibros() {
+    vector<Libro> libros = _libroArchivo.leerTodos(); //
 
+    cout << "Libros disponibles: " << endl;
+}
 
 
 

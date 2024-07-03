@@ -150,6 +150,7 @@ void LibroManager::mostrarLibro(const Libro &registro) {
 
 void LibroManager::listarLibros() {
     int opcion;
+    cout << "-----------------------------" << endl;
     cout << "Listar libros por: " << endl;
     cout << "1. Nombre" << endl;
     cout << "2. Categoria" << endl;
@@ -157,6 +158,7 @@ void LibroManager::listarLibros() {
     cout << "4. ID" << endl;
     cout << "-----------------------------" << endl;
     cout << "0. Salir" << endl;
+    cout << "-----------------------------" << endl;
     cout << "Seleccione una opcion: ";
     cin >> opcion;
     cin.ignore();
@@ -241,5 +243,9 @@ void LibroManager::eliminarLibro() {
     } else {
         cout << "Libro no encontrado." << endl;
     }
+}
+
+void LibroManager::listarLibrosAlquilados() {
+
 }
 
