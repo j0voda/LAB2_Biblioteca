@@ -1,0 +1,40 @@
+#pragma once
+#include <string>
+
+#include "Fecha.h"
+
+using namespace std;
+
+class Membresia{
+private:
+    int _id;
+    //Cliente _cliente;
+    int _tipo; /// 1- Membresia Basica 2- Membresia Premium
+    Fecha _fechaInicio;
+    Fecha _fechaFin;
+    bool _estado; /// Vencido/Activo
+
+public:
+    Membresia();
+
+    Membresia(int id,/*const Cliente &cliente*/ int tipo, const Fecha &fechaInicio, const Fecha &fechaFin, bool estado);
+
+    int getId() const;
+    void setId(int id);
+/*
+    Cliente getCliente() const;
+    void setCliente(int cliente);
+*/
+    int getTipo() const;
+    void setTipo(int tipo);
+
+    Fecha getFechaInicio() const;
+    void setFechaInicio(const Fecha &fechaInicio);
+
+    Fecha getFechaFin() const;
+    void setFechaFin(const Fecha &fechaFin);
+
+    bool getEstado() const;
+    void setEstado(bool estado);
+
+};
