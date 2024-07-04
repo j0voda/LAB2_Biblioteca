@@ -9,7 +9,7 @@ using namespace std;
 
 class MembresiaArchivo {
 private:
-    const string _nombreArchivo = "membresias.dat";
+    char _nombreArchivo[50] = "membresias.dat";
 
 public:
     bool guardar(const Membresia& membresia);
@@ -20,4 +20,5 @@ public:
     int getCantidadRegistros();
     int getNuevoID();
     int buscarPorIdUsuario(int idUsuario);
+    void actualizar(const vector<Membresia> &membresias);
 };

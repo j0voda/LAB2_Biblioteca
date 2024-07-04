@@ -2,6 +2,8 @@
 #include <algorithm> // sort y transform
 #include <cctype>    // tolower
 #include <string>
+#include <vector>
+#include <regex>
 
 using namespace std;
 
@@ -9,32 +11,31 @@ using namespace std;
 #include "LibroManager.h"
 #include "AutorManager.h"
 #include "CategoriaManager.h"
-//#include "UsuarioManager.h"
 #include "MembresiaManager.h"
+//#include "UsuarioManager.h"
 
-class BibliotecarioManager
-{
-    private:
-        UsuarioArchivo _usuarioArchivo;
-        MembresiaManager _membresiaManager;
-        LibroManager _libroManager;
-        AutorManager _autorManager;
-        CategoriaManager _categoriaManager;
+class BibliotecarioManager{
+private:
+	//UsuarioManager _usuarioManager;
+	UsuarioArchivo _usuarioArchivo;
+	MembresiaManager _membresiaManager;
+	LibroManager _libroManager;
+	AutorManager _autorManager;
+	CategoriaManager _categoriaManager;
 
-    public:
-        BibliotecarioManager();
+public:
+	BibliotecarioManager();
 
-        bool ingresarClave();
-        void menuBibliotecario();
-        void menuAdministrarClientes();
+	void menuBibliotecario();
+	void menuAdministrarClientes();
 
-        void mostrarBibliotecario(const Usuario &registro);
-        void listarBibliotecarios();
-        void listarBibliotecariosPorNombre();
-        void listarBibliotecariosPorApellido();
+	Bibliotecario crearBibliotecario();
+	bool ingresarClaveMaestra();
+	int validarMail(const string &mail);
 
-
-        //Bibliotecario validarLoginBibliotecario(const string &mail, const string &clave,int permisos);
-
+	void mostrarBibliotecario(const Usuario &registro);
+	void listarBibliotecarios();
+	void listarBibliotecariosPorNombre();
+	void listarBibliotecariosPorApellido();
 };
 

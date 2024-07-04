@@ -3,25 +3,20 @@
 #include <iostream>
 #include <algorithm>
 
+using namespace std;
+
 #include "Autor.h"
 #include "AutorArchivo.h"
-
-using namespace std;
 
 class AutorManager {
 public:
    void menu();
-
-private:
    Autor agregarAutor();
    void listarAutores();
    void mostrarAutor(const Autor& autor);
+   void mostrarResumenAutor();
    void eliminarAutor();
-
+private:
    AutorArchivo _autorArchivo;
-
 };
 
-/// Crear
-/// Listar
-/// Eliminar

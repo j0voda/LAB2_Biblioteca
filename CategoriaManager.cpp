@@ -25,7 +25,11 @@ void CategoriaManager::menu(){
         switch(opcion)
         {
             case 1:
-                agregarCategoria();
+            	system("cls");
+				cout << "-----------------------------" << endl;
+				cout << "AGREGAR CATEGORIA" << endl;
+				cout << "-----------------------------" << endl;
+				agregarCategoria();
                 system("pause");
                 break;
 
@@ -56,15 +60,21 @@ Categoria CategoriaManager::agregarCategoria(){
 
     cout << "Ingrese el nombre de la nueva categoria: ";
     getline(cin, nombre);
-    cin.ignore();
 
     int id = _categoriaArchivo.getNuevoID();
     Categoria nuevaCategoria(id, nombre);
 
     if (_categoriaArchivo.guardar(nuevaCategoria)) {
-        cout << "Categoria agregada con exito." << endl;
+		cout<<endl;
+        cout << "Categoria agregada con exito con ID: " << id << endl;
+        system("pause");
+        cout<<endl;
+
     } else {
+    	cout<<endl;
         cout << "Error al agregar la categoria." << endl;
+        system("pause");
+        cout<<endl;
     }
 
     return nuevaCategoria;
@@ -82,12 +92,16 @@ void CategoriaManager::listarCategorias() {
 }
 
 void CategoriaManager::mostrarCategoria(const Categoria& categoria) {
-    cout << "ID: " << categoria.getId();
-    cout << " | Nombre: " << categoria.getNombre() << endl;
+	cout << "-----" << endl;
+    cout << "ID: " << categoria.getId()<< " | Nombre: " << categoria.getNombre() << endl;
 }
 
 void CategoriaManager::eliminarCategoria() {
     int idCategoria;
+    system("cls");
+    cout << "-----------------------------" << endl;
+	cout << "ELIMINAR CATEGORIA" << endl;
+	cout << "-----------------------------" << endl;
     cout << "Ingrese el ID de la categoria a eliminar: ";
     cin >> idCategoria;
     cin.ignore();

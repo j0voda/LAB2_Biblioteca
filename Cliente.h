@@ -1,19 +1,17 @@
 #pragma once
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 #include "Usuario.h"
-//#include "UsuarioManager.h"
 #include "Membresia.h"
-//#include "MembresiaManager.h"
-
 #include "Fecha.h"
 
 
 class Cliente : public Usuario {
 private:
-    bool _membresia;
+    Membresia _membresia;
     //MembresiaManager _membresiaManager;
     //UsuarioArchivo _usuarioArchivo;
     //Usuario _usuario;
@@ -21,8 +19,8 @@ private:
 public:
     Cliente();
 
-    Cliente(const string &nombre, const string &apellido, const string &telefono, const string &mail, int id, const string& clave, int permisos, bool membresia);
+    Cliente(const string &nombre, const string &apellido, const string &telefono, const string &mail, int id, const string& clave, int permisos, const Membresia &membresia);
 
-    bool getMembresia() const;
-    void setMembresia(bool membresia);
+    Membresia getMembresia() const;
+    void setMembresia(const Membresia &membresia);
 };

@@ -8,46 +8,26 @@ using namespace std;
 
 #include "CategoriaArchivo.h"
 
-
-/**
-   ab -- agrega
-   wb -- borra todo y te permite agregar
-   rb -- lee
-
-   rb+ -- lee y modifica (no agrega)
-   ab+ -- agrega y lee
-*/
-
 bool CategoriaArchivo::guardar(const Categoria &categoria){
    FILE *pFile;
-   pFile = fopen(_nombreArchivo.c_str(), "ab");
-
+   pFile = fopen(this->_nombreArchivo, "ab");
    if(pFile == nullptr){
       return false;
    }
-
    bool result = fwrite(&categoria, sizeof (Categoria), 1, pFile) == 1; //result será true solo si se escribió exactamente un elemento
-
    fclose(pFile);
-
    return result;
 }
 
 bool CategoriaArchivo::modificar(int index, const Categoria &categoria){
    FILE *pFile;
-
-   pFile = fopen(_nombreArchivo.c_str(), "rb+");
-
+   pFile = fopen(this->_nombreArchivo, "rb+");
    if(pFile == nullptr){
       return false;
    }
-
    fseek(pFile, sizeof(Categoria) * index, SEEK_SET);
-
    bool result = fwrite(&categoria, sizeof (Categoria), 1, pFile)== 1;
-
    fclose(pFile);
-
    return result;
 }
 
@@ -55,12 +35,10 @@ int CategoriaArchivo::buscarById(int id){
     Categoria categoria;
     int pos = 0;
     FILE * pFile;
-
-    pFile = fopen(_nombreArchivo.c_str(), "rb");
+    pFile = fopen(this->_nombreArchivo, "rb");
     if(pFile == nullptr){
         return -1;
     }
-
     while(fread(&categoria, sizeof(Categoria), 1, pFile)){
         if(categoria.getId() == id){
             fclose(pFile);
@@ -68,7 +46,6 @@ int CategoriaArchivo::buscarById(int id){
         }
         pos++;
     }
-
     fclose(pFile);
     return -1;
 }
@@ -76,26 +53,20 @@ int CategoriaArchivo::buscarById(int id){
 Categoria CategoriaArchivo::leer(int index){
    Categoria categoria;
    FILE *pFile;
-
-   pFile = fopen(_nombreArchivo.c_str(), "rb");
-
+   pFile = fopen(this->_nombreArchivo, "rb");
    if(pFile == nullptr){
       return categoria;
    }
-
    fseek(pFile, index * sizeof (Categoria), SEEK_SET);
-
    fread(&categoria, sizeof(Categoria), 1, pFile);
-
    fclose(pFile);
-
    return categoria;
 }
 
 vector<Categoria> CategoriaArchivo::leerTodos() {
     vector<Categoria> categorias;
     Categoria categoria;
-    FILE* pFile = fopen(_nombreArchivo.c_str(), "rb");
+    FILE* pFile = fopen(this->_nombreArchivo, "rb");
     if (!pFile) {
         return categorias;
     }
@@ -107,7 +78,7 @@ vector<Categoria> CategoriaArchivo::leerTodos() {
 }
 
 int CategoriaArchivo::getCantidadRegistros() {
-    FILE* pFile = fopen(_nombreArchivo.c_str(), "rb");
+    FILE* pFile = fopen(this->_nombreArchivo, "rb");
     if (!pFile) {
         return 0;
     }
@@ -127,14 +98,14 @@ int CategoriaArchivo::getNuevoID() {
 }
 
 void CategoriaArchivo::actualizar(const vector<Categoria> &categorias) {
-    ofstream file(_nombreArchivo, ios::trunc);
-    if (file.is_open()) {
-        for (const auto &categoria : categorias) {
-            file.write(reinterpret_cast<const char*>(&categoria), sizeof(Categoria));
-        }
-        file.close();
-    } else {
+	FILE *pFile = fopen(this->_nombreArchivo, "wb");
+	if (!pFile) {
         cerr << "Error al abrir el archivo para actualizar." << endl;
+        return;
     }
+    for (const auto &categoria : categorias) {
+        fwrite(&categoria, sizeof(Categoria), 1, pFile);
+    }
+    fclose(pFile);
 }
 

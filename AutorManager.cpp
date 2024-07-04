@@ -24,6 +24,10 @@ void AutorManager::menu(){
         switch(opcion)
         {
             case 1:
+            	system("cls");
+				cout << "-----------------------------" << endl;
+				cout << "AGREGAR AUTOR" << endl;
+				cout << "-----------------------------" << endl;
                 agregarAutor();
                 system("pause");
                 break;
@@ -67,11 +71,16 @@ Autor AutorManager::agregarAutor(){
     Autor nuevoAutor(nombre, apellido, id, nacionalidad, sellers);
 
     if (_autorArchivo.guardar(nuevoAutor)) {
-        cout << "Autor agregado con exito." << endl;
+		cout<<endl;
+        cout << "Autor agregado con exito con ID: " << id<< endl;
+        system("pause");
+        cout<<endl;
     } else {
+		cout<<endl;
         cout << "Error al agregar el autor." << endl;
+        system("pause");
+        cout<<endl;
     }
-
     return nuevoAutor;
 }
 
@@ -86,14 +95,32 @@ void AutorManager::listarAutores() {
 }
 
 void AutorManager::mostrarAutor(const Autor& autor) {
+	cout<<endl;
     cout << "ID: " << autor.getId() << endl;
     cout << "Nombre: " << autor.getNombre() << " " << autor.getApellido() << endl;
     cout << "Nacionalidad: " << autor.getNacionalidad() << endl;
     cout << "Best Seller: " << autor.getBestSellers() << endl;
+    cout<<endl;
+    cout << "-----------------------------" << endl;
+}
+
+void AutorManager::mostrarResumenAutor() {
+    vector<Autor> autores = _autorArchivo.leerTodos();
+    sort(autores.begin(), autores.end(), [](const Autor& a, const Autor& b) {
+        return a.getId() < b.getId();
+    });
+    for (const auto&autor : autores) {
+		cout << "-----" << endl;
+        cout << "ID: " << autor.getId() << " | "<< "Nombre: " << autor.getNombre() << " " << autor.getApellido() << endl;
+    }
 }
 
 void AutorManager::eliminarAutor() {
     int idAutor;
+    system("cls");
+    cout << "-----------------------------" << endl;
+	cout << "ELIMINAR AUTOR" << endl;
+	cout << "-----------------------------" << endl;
     cout << "Ingrese el ID del autor a eliminar: ";
     cin >> idAutor;
     cin.ignore();

@@ -3,40 +3,36 @@
 #include <iostream>
 #include <algorithm>
 
+using namespace std;
+
 #include "Libro.h"
 #include "LibroArchivo.h"
+#include "CategoriaManager.h"
 #include "CategoriaArchivo.h"
+#include "AutorManager.h"
 #include "AutorArchivo.h"
-
-using namespace std;
 
 class LibroManager {
 public:
    void menu();
+   void listarLibros();
 
 private:
-   void agregarLibro();
+   Libro crearLibro();
    void modificarLibro();
-   void listarLibros();
+   void mostrarLibro(const Libro &registro);
+
    void listarLibrosPorNombre();
    void listarLibrosPorCategoria();
    void listarLibrosPorAutor();
    void listarLibrosPorID();
    void eliminarLibro();
-   Libro crearLibro();
-   void mostrarLibro(const Libro &registro);
 
 
    LibroArchivo _libroArchivo;
+   CategoriaManager _categoriaManager;
    CategoriaArchivo _categoriaArchivo;
+   AutorManager _autorManager;
    AutorArchivo _autorArchivo;
-
-   ///ver
 };
-
-/// Crear Libro
-/// Listar libros por nombre
-/// Mostrar libro
-/// Modificar libro
-/// Eliminar libro
 

@@ -2,6 +2,8 @@
 #include <algorithm> // sort y transform
 #include <cctype>    // tolower
 #include <string>
+#include <vector>
+#include <regex>
 
 using namespace std;
 
@@ -9,10 +11,10 @@ using namespace std;
 #include "MembresiaManager.h"
 #include "LibroManager.h"
 #include "UsuarioArchivo.h"
+#include "PrestamoManager.h"
 
 
-class ClienteManager
-{
+class ClienteManager{
     private:
         MembresiaManager _membresiaManager;
         UsuarioArchivo _usuarioArchivo;
@@ -22,9 +24,9 @@ class ClienteManager
     public:
         ClienteManager();
 
+		Cliente crearCliente();
 		void asignarMembresia();
-        void menuCliente();
-        void menuMiMembresia(int idUsuario);
+		int validarMail(const string &mail);
 
         void mostrarCliente(const Usuario &registro);
         void listarClientes();
@@ -32,8 +34,4 @@ class ClienteManager
         void listarClientesPorApellido();
 
         void verLibros();
-
-
-        //Cliente validarLoginCliente(const string &mail, const string &clave,int permisos);
-
 };

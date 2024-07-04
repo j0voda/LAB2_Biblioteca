@@ -1,43 +1,21 @@
 #include "MembresiaManager.h"
 
 
-void MembresiaManager::menuAdministrarMembresias() {
-        int opcion;
-        do {
-            cout << "-----------------------------" << endl;
-            cout << "ADMINISTRAR MEMBRESÍAS" << endl;
-            cout << "-----------------------------" << endl;
-            cout << "1. Ver tipos de membresía" << endl;
-            cout << "2. Agregar tipo de membresía" << endl;
-            cout << "3. Eliminar tipo de membresía" << endl;
-            cout << "-----------------------------" << endl;
-            cout << "0. Salir" << endl;
-            cout << "Seleccione una opción: ";
-            cin >> opcion;
-            cin.ignore();
 
-            switch (opcion) {
-                case 1:
-                    verTiposMembresia();
-                    break;
-                case 2:
-                    agregarTipoMembresia();
-                    break;
-                case 3:
-                    eliminarTipoMembresia();
-                    break;
-                case 0:
-                    cout << "Saliendo del menú de administración de membresías." << endl;
-                    break;
-                default:
-                    cout << "Opción inválida. Intente de nuevo." << endl;
-            }
-        } while (opcion != 0);
-    }
 
 void MembresiaManager::agregarTipoMembresia() {
-    // permitir al usuario (bibliotecario) agregar un nuevo tipo de membresía
-    cout << "Funcionalidad de agregar tipo de membresía no implementada." << endl;
+    int id, tipo;
+    Fecha fechaInicio,fechaFin;
+    bool estado;
+
+    system("cls");
+    cout << "-----------------------------" << endl;
+	cout << "AGREGAR MEMBRESIA" << endl;
+	cout << "-----------------------------" << endl;
+
+    cout << "Ingrese el tipo de membresia: ";
+    cin>> tipo;
+    cout<<endl;
 }
 
 void MembresiaManager::guardarMembresia(const Membresia &membresia) {

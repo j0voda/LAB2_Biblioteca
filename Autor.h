@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
-#include "Persona.h"
 
 using namespace std;
+
+#include "Persona.h"
 
 class Autor : public Persona {
 private:

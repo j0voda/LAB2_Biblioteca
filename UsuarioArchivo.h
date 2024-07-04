@@ -20,6 +20,7 @@ public:
     vector<Usuario> leerTodos();
     vector<Usuario> leerPorPermisos(int permisos);
     int getCantidadRegistros();
+    int getCantidadRegistrosPorPermiso(int permisos);
     int getNuevoID();
     void actualizar(const vector<Usuario> &usuarios);
 };

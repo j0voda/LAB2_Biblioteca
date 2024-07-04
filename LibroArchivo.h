@@ -3,14 +3,13 @@
 #include <vector>
 #include <fstream>
 
-#include "Libro.h"
-
 using namespace std;
 
+#include "Libro.h"
 
 class LibroArchivo {
 private:
-    const string _nombreArchivo = "libros.dat";
+    char _nombreArchivo[50] = "libros.dat";
 
 public:
     bool guardar(const Libro &libro);

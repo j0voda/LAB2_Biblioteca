@@ -1,18 +1,17 @@
 #include "Membresia.h"
 
-
 Membresia::Membresia(){
     _id = 0;
-    _idUsuario = 0;
+    //_cliente = 0;
     _tipo = 0;
     _fechaInicio = Fecha();
     _fechaFin = Fecha();
     _estado = false;
 }
 
-Membresia::Membresia(int id, int idUsuario, int tipo, const Fecha& fechaInicio, const Fecha& fechaFin, bool estado){
+Membresia::Membresia(int id,/*const Cliente &cliente*/ int tipo, const Fecha &fechaInicio, const Fecha &fechaFin, bool estado){
     _id = id;
-    _idUsuario = idUsuario;
+    //_cliente = cliente;
     _tipo = tipo;
     _fechaInicio = fechaInicio;
     _fechaFin = fechaFin;
@@ -25,14 +24,14 @@ int Membresia::getId() const{
 void Membresia::setId(int id){
     _id = id;
 }
-
-int Membresia::getIdUsuario() const {
-    return _idUsuario;
+/*
+Cliente Membresia::getCliente() const {
+    return _cliente;
 }
-void Membresia::setIdUsuario(int idUsuario){
-    _idUsuario = idUsuario;
+void Membresia::setIdUsuario(const Cliente &cliente){
+    _cliente = cliente;
 }
-
+*/
 int Membresia::getTipo() const{
     return _tipo;
 }

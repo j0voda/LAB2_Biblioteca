@@ -4,7 +4,50 @@ BibliotecarioManager::BibliotecarioManager(){
     //ctor
 }
 
-bool BibliotecarioManager::ingresarClave() {
+Bibliotecario BibliotecarioManager::crearBibliotecario() {
+	string nombre, apellido, telefono, mail, clave;
+	system("cls");
+
+	cout << "-----------------------------" << endl;
+	cout << "REGISTRO BIBLIOTECARIO" << endl;
+	cout << "-----------------------------" << endl;
+
+	cout << "Ingrese el nombre del nuevo usuario: ";
+    getline(cin, nombre);
+    cout << "Ingrese apellido: ";
+    getline(cin, apellido);
+    cout << "Ingrese telefono: ";
+    getline(cin, telefono);
+    cout << "Ingrese mail: ";
+    getline(cin, mail);
+    while(validarMail(mail)<1){
+		cout << "-- Reingrese el mail: ";
+		cout<<endl;
+		getline(cin, mail);
+    }
+    cout << "Ingrese la clave: ";
+    getline(cin, clave);
+
+    int id = _usuarioArchivo.getNuevoID();
+
+    Bibliotecario bibliotecario(nombre, apellido, telefono, mail, id, clave, 1);
+
+	if(!ingresarClaveMaestra()){
+		return Bibliotecario(); //clave incorrecta
+	}
+	if (_usuarioArchivo.guardar(bibliotecario)) {
+		cout << "Bibliotecario agregado con exito con ID "<<id << endl;
+		return bibliotecario;
+		cin.ignore();
+	} else {
+		cout << "Error al agregar el bibliotecario." << endl;
+		return Bibliotecario();
+		cin.ignore();
+	}
+
+}
+
+bool BibliotecarioManager::ingresarClaveMaestra() {
     string claveMaestra;
     cout << "Ingrese la clave maestra para registrar un bibliotecario: ";
     getline(cin, claveMaestra);
@@ -22,53 +65,29 @@ bool BibliotecarioManager::ingresarClave() {
     return true;
 }
 
-void BibliotecarioManager::menuBibliotecario() {
-    int opcion;
-    system("cls");
-
-    do {
-        cout << "MENU BIBLIOTECARIO" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "1. Administrar libros" << endl;
-        cout << "2. Administrar autores" << endl;
-        cout << "3. Administrar categorías" << endl;
-        cout << "4. Administrar usuarios" << endl;
-        cout << "5. Administrar membresías" << endl;
-        cout << "6. Salir" << endl;
-        cout << "Seleccione una opcion: ";
-        cin >> opcion;
-        cin.ignore();
-
-        switch (opcion) {
-            case 1:
-                _libroManager.menu();
-                break;
-            case 2:
-                _autorManager.menu();
-                break;
-            case 3:
-                _categoriaManager.menu();
-                break;
-            case 4:
-                menuAdministrarClientes();
-                break;
-            case 5:
-                _membresiaManager.menuAdministrarMembresias();
-                break;
-            case 6:
-                cout << "Saliendo..." << endl;
-                break;
-            default:
-                cout << "Opción no válida. Intente nuevamente." << endl;
+int BibliotecarioManager::validarMail(const string &mail){
+	vector<Usuario> usuarios = _usuarioArchivo.leerTodos();
+	regex pattern(R"(([^@]+)@([\w-]+\.(com|org|net|ar|com\.ar)))");
+	if(!regex_match(mail,pattern)){
+		cout << "Formato de correo invalido." <<endl;
+        return -1;
+	}
+	for (const auto &usuario : usuarios) {
+        if (usuario.getMail() == mail) {
+            cout << "El correo ya esta registrado." <<endl;
+            return 0;
         }
-    } while (opcion != 6);
+    }
+    return 1;
 }
 
 void BibliotecarioManager::mostrarBibliotecario(const Usuario &registro) {
+	cout<<endl;
     cout << "ID: " << registro.getId() << endl;
     cout << "Nombre: " << registro.getNombre() << endl;
     cout << "Apellido: " << registro.getApellido() << endl;
     cout << "Email: " << registro.getMail() << endl;
+    cout<<endl;
     cout << "-----" << endl;
 }
 
@@ -85,11 +104,10 @@ void BibliotecarioManager::listarBibliotecarios() {
 }
 
 void BibliotecarioManager::listarBibliotecariosPorNombre() {
-    vector<Usuario> bibliotecarios = _usuarioArchivo.leerPorPermisos(1); // 1 permisos de bibliotecario
+    vector<Usuario> bibliotecarios = _usuarioArchivo.leerPorPermisos(1);
     sort(bibliotecarios.begin(), bibliotecarios.end(), [](const Usuario &a, const Usuario &b) {
         string nombreA = a.getNombre();
         string nombreB = b.getNombre();
-        //convierto en minusc para poder hacer la comparacion
         transform(nombreA.begin(),nombreA.end(),nombreA.begin(),::tolower);
         transform(nombreB.begin(),nombreB.end(),nombreB.begin(),::tolower);
         return  nombreA < nombreB;
@@ -102,11 +120,10 @@ void BibliotecarioManager::listarBibliotecariosPorNombre() {
 }
 
 void BibliotecarioManager::listarBibliotecariosPorApellido() {
-    vector<Usuario> bibliotecarios = _usuarioArchivo.leerPorPermisos(1); // 1 permisos de bibliotecario
+    vector<Usuario> bibliotecarios = _usuarioArchivo.leerPorPermisos(1);
     sort(bibliotecarios.begin(), bibliotecarios.end(), [](const Usuario &a, const Usuario &b) {
         string apA = a.getApellido();
         string apB = b.getApellido();
-        //convierto en minusc para poder hacer la comparacion
         transform(apA.begin(),apA.end(),apA.begin(),::tolower);
         transform(apB.begin(),apB.end(),apB.begin(),::tolower);
         return  apA < apB;

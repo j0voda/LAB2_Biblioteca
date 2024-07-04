@@ -1,58 +1,25 @@
-#include <iostream>
-#include<cstdlib>
-#include<cstring>
-#include <cstdio>
-
-
-using namespace std;
-
 #include "AutorArchivo.h"
 
-
-/**
-   ab -- agrega
-   wb -- borra todo y te permite agregar
-   rb -- lee
-
-   rb+ -- lee y modifica (no agrega)
-   ab+ -- agrega y lee
-*/
-
 bool AutorArchivo::guardar(const Autor &autor){
-   bool result;
    FILE *pFile;
-
-   pFile = fopen(_nombreArchivo.c_str(), "ab");
-
+   pFile = fopen(this->_nombreArchivo, "ab");
    if(pFile == nullptr){
-
       return false;
    }
-
-   result = fwrite(&autor, sizeof (Autor), 1, pFile);
-
+   bool result = fwrite(&autor, sizeof (Autor), 1, pFile)== 1;
    fclose(pFile);
-
    return result;
 }
 
 bool AutorArchivo::modificar(int index, const Autor &autor){
-   bool result;
    FILE *pFile;
-
-   pFile = fopen(_nombreArchivo.c_str(), "rb+");
-
+   pFile = fopen(this->_nombreArchivo, "rb+");
    if(pFile == nullptr){
-
       return false;
    }
-
    fseek(pFile, sizeof(Autor) * index, SEEK_SET);
-
-   result = fwrite(&autor, sizeof (Autor), 1, pFile);
-
+   bool result = fwrite(&autor, sizeof (Autor), 1, pFile) == 1;
    fclose(pFile);
-
    return result;
 }
 
@@ -60,12 +27,10 @@ int AutorArchivo::buscarById(int id){
     Autor autor;
     int pos = 0;
     FILE * pFile;
-
-    pFile = fopen(_nombreArchivo.c_str(), "rb");
+    pFile = fopen(this->_nombreArchivo, "rb");
     if(pFile == nullptr){
         return -1;
     }
-
     while(fread(&autor, sizeof(Autor), 1, pFile)){
         if(autor.getId() == id){
             fclose(pFile);
@@ -73,35 +38,27 @@ int AutorArchivo::buscarById(int id){
         }
         pos++;
     }
-
     fclose(pFile);
     return -1;
 }
 
 Autor AutorArchivo::leer(int index){
-   bool result;
-   Autor autor;
-   FILE *pFile;
-
-   pFile = fopen(_nombreArchivo.c_str(), "rb");
-
-   if(pFile == nullptr){
-      return autor;
-   }
-
-   fseek(pFile, index * sizeof (Autor), SEEK_SET);
-
-   fread(&autor, sizeof(Autor), 1, pFile);
-
-   fclose(pFile);
-
-   return autor;
+	Autor autor;
+	FILE *pFile;
+	pFile = fopen(this->_nombreArchivo, "rb");
+	if(pFile == nullptr){
+	  return autor;
+	}
+	fseek(pFile, index * sizeof (Autor), SEEK_SET);
+	fread(&autor, sizeof(Autor), 1, pFile);
+	fclose(pFile);
+	return autor;
 }
 
 vector<Autor> AutorArchivo::leerTodos() {
     vector<Autor> autores;
     Autor autor;
-    FILE* pFile = fopen(_nombreArchivo.c_str(), "rb");
+    FILE* pFile = fopen(this->_nombreArchivo, "rb");
     if (!pFile) {
         return autores;
     }
@@ -113,7 +70,7 @@ vector<Autor> AutorArchivo::leerTodos() {
 }
 
 int AutorArchivo::getCantidadRegistros() {
-    FILE* pFile = fopen(_nombreArchivo.c_str(), "rb");
+    FILE* pFile = fopen(this->_nombreArchivo, "rb");
     if (!pFile) {
         return 0;
     }
@@ -132,17 +89,14 @@ int AutorArchivo::getNuevoID() {
     }
 }
 
-bool AutorArchivo::actualizar(const vector<Autor>& autores) {
-    FILE* pFile = fopen(_nombreArchivo.c_str(), "wb");
+void AutorArchivo::actualizar(const vector<Autor>& autores) {
+    FILE* pFile = fopen(this->_nombreArchivo, "wb");
     if (!pFile) {
-        return false;
+        cerr << "Error al abrir el archivo para actualizar." << endl;
+        return;
     }
     for (const auto& autor : autores) {
-        if (fwrite(&autor, sizeof(Autor), 1, pFile) != 1) {
-            fclose(pFile);
-            return false;
-        }
+        fwrite(&autor, sizeof(Autor), 1, pFile);
     }
     fclose(pFile);
-    return true;
 }

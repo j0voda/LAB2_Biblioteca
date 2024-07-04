@@ -4,24 +4,20 @@
 #include <iostream>
 #include <algorithm>
 
+using namespace std;
+
 #include "Categoria.h"
 #include "CategoriaArchivo.h"
 
-using namespace std;
-
 class CategoriaManager {
+private:
+	CategoriaArchivo _categoriaArchivo;
+
 public:
    void menu();
-
-private:
    Categoria agregarCategoria();
    void listarCategorias();
    void mostrarCategoria(const Categoria& categoria);
    void eliminarCategoria();
-
-   CategoriaArchivo _categoriaArchivo;
 };
 
-/// Crear
-/// Listar
-/// Eliminar

@@ -1,8 +1,4 @@
-#include<string>
-
 #include "Bibliotecario.h"
-
-using namespace std;
 
 Bibliotecario::Bibliotecario() : Usuario() {}
 

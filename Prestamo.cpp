@@ -1,85 +1,59 @@
-#include <iostream>
-#include<cstdlib>
-#include<cstring>
-#include "Libro.h"
-#include "Usuario.h"
-
 #include "Prestamo.h"
 
-using namespace std;
-
 Prestamo::Prestamo() {
-    //: _idPrestamo(0), _fechaPrestamo(""), _fechaDevolucion(""), _libro(), _usuario(), _estado(false)
     _idPrestamo = 0;
-    strcpy(_fechaDevolucion, "");
-    strcpy(_fechaPrestamo, "");
-    //_fechaPrestamo = "";
-    //_fechaDevolucion = "";
-    _libro = new Libro();
-    _usuario = new Usuario();
-    _estado = false;
+    _devuelto = false;
 }
 
-Prestamo::Prestamo(int idPrestamo, const string &fechaPrestamo, Libro *libro, Persona *usuario) {
+Prestamo::Prestamo(int idPrestamo, const Fecha &fechaPrestamo, const Fecha &fechaDevolucion, const Libro &libro, const Cliente &cliente, bool devuelto) {
     _idPrestamo = idPrestamo;
-    strcpy(_fechaPrestamo, fechaPrestamo.c_str());
+    _fechaPrestamo = fechaPrestamo;
+    _fechaDevolucion = fechaDevolucion;
     _libro = libro;
-    _usuario = usuario;
-    _estado = true;
+    _cliente = cliente;
+    _devuelto = devuelto;
     // Por defecto la fecha de devolución es 7 días después de la fecha de préstamo
-    // Aquí deberías implementar la lógica para calcular la fecha de devolución
-    // Por simplicidad, usaremos una fecha fija para este ejemplo
-    strcpy(_fechaDevolucion, "2024-06-03"); // Ejemplo de fecha fija
+    // lógica para calcular la fecha de devolución
 }
 
 int Prestamo::getIdPrestamo() const {
     return _idPrestamo;
 }
-
 void Prestamo::setIdPrestamo(int idPrestamo) {
     _idPrestamo = idPrestamo;
 }
 
-string Prestamo::getFechaPrestamo() const {
-    string str = _fechaPrestamo;
-    return str;
+Fecha Prestamo::getFechaPrestamo() const {
+    return _fechaPrestamo;
+}
+void Prestamo::setFechaPrestamo(const Fecha &fechaPrestamo) {
+    _fechaPrestamo = fechaPrestamo;
 }
 
-void Prestamo::setFechaPrestamo(const string &fechaPrestamo) {
-    strcpy(_fechaPrestamo, fechaPrestamo.c_str());
-    //_fechaPrestamo = fechaPrestamo;
+Fecha Prestamo::getFechaDevolucion() const {
+    return _fechaDevolucion;
+}
+void Prestamo::setFechaDevolucion(const Fecha &fechaDevolucion) {
+    _fechaDevolucion = fechaDevolucion;
 }
 
-string Prestamo::getFechaDevolucion() const {
-    string str = _fechaDevolucion;
-    return str;
-}
-
-void Prestamo::setFechaDevolucion(const string &fechaDevolucion) {
-    strcpy(_fechaDevolucion, fechaDevolucion.c_str());
-    //_fechaDevolucion = fechaDevolucion;
-}
-
-Libro* Prestamo::getLibro() const {
+Libro Prestamo::getLibro() const {
     return _libro;
 }
-
-void Prestamo::setLibro(Libro *libro) {
+void Prestamo::setLibro(const Libro &libro) {
     _libro = libro;
 }
 
-int Prestamo::getIdCliente() const {
-    return _idCliente;
+Cliente Prestamo::getCliente() const {
+    return _cliente;
+}
+void Prestamo::setCliente(const Cliente &cliente) {
+    _cliente = cliente;
 }
 
-void Prestamo::setIdCliente(int idCliente) {
-    _idCliente = idCliente;
+bool Prestamo::getDevuelto() const {
+    return _devuelto;
 }
-
-bool Prestamo::getEstado() const {
-    return _estado;
-}
-
-void Prestamo::setEstado(bool estado) {
-    _estado = estado;
+void Prestamo::setDevuelto(bool devuelto) {
+    _devuelto = devuelto;
 }

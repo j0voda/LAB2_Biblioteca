@@ -3,14 +3,14 @@
 #include <vector>
 #include <fstream>
 
+using namespace std;
+
 #include "Categoria.h"
 #include "AutorArchivo.h"
 
-using namespace std;
-
 class CategoriaArchivo {
 private:
-    const string _nombreArchivo = "categorias.dat";
+    char _nombreArchivo[50] = "categorias.dat";
 
 public:
     bool guardar(const Categoria &categoria);

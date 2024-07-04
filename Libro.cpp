@@ -7,30 +7,26 @@ using namespace std;
 
 #include "Libro.h"
 
-// Constructor por defecto
 Libro::Libro() {
     _idLibro = 0;
     strcpy(_titulo, "");
-    //_titulo = "";
     _anioPublicacion = 0;
     _ejemplares = 0;
     _disponibles = 0;
     _estado = false;
 }
 
-// Constructor parametrizado
-Libro::Libro(int idLibro, const string &titulo, const Autor &idAutor, const Categoria &idCategoria, int anioPublicacion, int ejemplares, int disponibles, bool estado){
+Libro::Libro(int idLibro, const string &titulo, const Autor &autor, const Categoria &categoria, int anioPublicacion, int ejemplares, int disponibles, bool estado){
     _idLibro = idLibro;
     strcpy(_titulo, titulo.c_str());
-    _idAutor = idAutor;
-    _idCategoria = idCategoria;
+    _autor = autor;
+    _categoria = categoria;
     _anioPublicacion = anioPublicacion;
     _ejemplares = ejemplares;
     _disponibles = disponibles;
     _estado = estado;
 }
 
-// Getters y Setters
 int Libro::getIdLibro() const {
     return _idLibro;
 }
@@ -44,21 +40,20 @@ string Libro::getTitulo() const {
 }
 void Libro::setTitulo(const string &titulo) {
     strcpy(_titulo, titulo.c_str());
-    //_titulo = titulo;
 }
 
-Autor Libro::getIdAutor() const {
-    return _idAutor;
+Autor Libro::getAutor() const {
+    return _autor;
 }
-void Libro::setIdAutor(const Autor &idAutor) {
-    _idAutor = idAutor;
+void Libro::setAutor(const Autor &autor) {
+    _autor = autor;
 }
 
-Categoria Libro::getIdCategoria() const {
-    return _idCategoria;
+Categoria Libro::getCategoria() const {
+    return _categoria;
 }
-void Libro::setIdCategoria(const Categoria &idCategoria) {
-    _idCategoria = idCategoria;
+void Libro::setCategoria(const Categoria &categoria) {
+    _categoria = categoria;
 }
 
 int Libro::getAnioPublicacion() const {

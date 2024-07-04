@@ -2,21 +2,16 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <regex>
 
 using namespace std;
 
 #include "Usuario.h"
 #include "UsuarioArchivo.h"
 #include "Bibliotecario.h"
-#include "BibliotecarioManager.h"
 #include "Cliente.h"
-#include "ClienteManager.h"
-
-/*#include "MembresiaArchivo.h"
-#include "MembresiaManager.h"
-#include "LibroManager.h"
-#include "AutorManager.h"
-#include "CategoriaManager.h"*/
+//#include "BibliotecarioManager.h"
+//#include "ClienteManager.h"
 #include "Fecha.h"
 
 
@@ -24,17 +19,14 @@ using namespace std;
 class UsuarioManager {
 private:
     UsuarioArchivo _usuarioArchivo;
-    BibliotecarioManager _bibliotecarioManager;
-    ClienteManager _clienteManager;
-    //MembresiaArchivo _membresiaArchivo;
-    //MembresiaManager _membresiaManager;
-    //LibroManager _libroManager;
-    //AutorManager _autorManager;
-    //CategoriaManager _categoriaManager;
+    //ClienteManager _clienteManager;
+    //BibliotecarioManager _bibliotecarioManager;
 
 public:
     Usuario crearUsuario(int permisos);
     Usuario validarLogin(const string &mail, const string &clave,int permisos);
+    int validarMail(const string& mail);
+    bool ingresarClaveMaestra();
 
 	void menuAdministrarUsuarios();
 

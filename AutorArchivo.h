@@ -3,13 +3,13 @@
 #include <vector>
 #include <fstream>
 
-#include "Autor.h"
-
 using namespace std;
+
+#include "Autor.h"
 
 class AutorArchivo {
 private:
-    const string _nombreArchivo = "autores.dat";
+    char _nombreArchivo[50] = "autores.dat";
 
 public:
     bool guardar(const Autor &autor);
@@ -19,6 +19,6 @@ public:
     vector<Autor> leerTodos();
     int getCantidadRegistros();
     int getNuevoID();
-    bool actualizar(const vector<Autor>& autores);
+    void actualizar(const vector<Autor>& autores);
 
 };

@@ -54,6 +54,8 @@
 		<Unit filename="ClienteManager.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="Interfaz.cpp" />
+		<Unit filename="Interfaz.h" />
 		<Unit filename="Libro.cpp" />
 		<Unit filename="Libro.h" />
 		<Unit filename="LibroArchivo.cpp" />
@@ -66,8 +68,6 @@
 		<Unit filename="MembresiaArchivo.h" />
 		<Unit filename="MembresiaManager.cpp" />
 		<Unit filename="MembresiaManager.h" />
-		<Unit filename="MenuPrincipal.cpp" />
-		<Unit filename="MenuPrincipal.h" />
 		<Unit filename="Pago.cpp" />
 		<Unit filename="Pago.h" />
 		<Unit filename="PagoArchivo.cpp" />
@@ -76,6 +76,10 @@
 		<Unit filename="Persona.h" />
 		<Unit filename="Prestamo.cpp" />
 		<Unit filename="Prestamo.h" />
+		<Unit filename="PrestamoArchivo.cpp" />
+		<Unit filename="PrestamoArchivo.h" />
+		<Unit filename="PrestamoManager.cpp" />
+		<Unit filename="PrestamoManager.h" />
 		<Unit filename="Usuario.cpp" />
 		<Unit filename="Usuario.h" />
 		<Unit filename="UsuarioArchivo.cpp" />
