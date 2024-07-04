@@ -25,7 +25,7 @@ class ClienteManager{
         ClienteManager();
 
 		Cliente crearCliente();
-		void asignarMembresia();
+		void asignarMembresia(int idCliente);
 		int validarMail(const string &mail);
 
         void mostrarCliente(const Usuario &registro);

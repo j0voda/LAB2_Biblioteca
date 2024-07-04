@@ -34,7 +34,7 @@ Cliente ClienteManager::crearCliente(){
     Cliente cliente = Cliente(nombre, apellido, telefono, mail, id, clave, 2, membresia);
 
 	if (_usuarioArchivo.guardar(cliente)) {
-		asignarMembresia();
+		asignarMembresia(cliente.getId());
 		cout << "Cliente agregado con exito con ID "<<id << endl;
 		cin.ignore();
 		return cliente;
@@ -61,12 +61,11 @@ int ClienteManager::validarMail(const string &mail){
     return 1;
 }
 
-void ClienteManager::asignarMembresia(){
+void ClienteManager::asignarMembresia(int idCliente){
     int tipoMembresia;
     cout << "Ingrese su membresía (1 para Básica, 2 para Premium): ";
     cin >> tipoMembresia;
 
-    /*
     if (tipoMembresia < 1 || tipoMembresia > 2){
         cout << "Membresia incorrecta. No se puede registrar como cliente." << endl;
         return;
@@ -75,9 +74,8 @@ void ClienteManager::asignarMembresia(){
     Fecha fechaInicio = Fecha::obtenerFechaActual();
     Fecha fechaFin = fechaInicio.sumarMes(1);
 
-    Membresia membresia(_membresiaManager.getNuevoID(), _cliente.getId(), tipoMembresia, fechaInicio, fechaFin, true);
+    Membresia membresia(_membresiaManager.getNuevoID(), idCliente, tipoMembresia, fechaInicio, fechaFin, true);
     _membresiaManager.guardarMembresia(membresia);
-    */
 
     cout << "Membresía asignada con éxito. Cliente registrado" << endl;
 

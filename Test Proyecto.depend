@@ -849,3 +849,309 @@
 	"MembresiaManager.h"
 	"PagoArchivo.h"
 
+1719873776 source:c:\users\vodaj\source\repos\lab2_biblioteca\autor.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Autor.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\autor.h
+	<string>
+	"Persona.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\persona.h
+	<iostream>
+	<string>
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\autorarchivo.cpp
+	"AutorArchivo.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\autorarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Autor.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\autormanager.cpp
+	"AutorManager.h"
+	<algorithm>
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\autormanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Autor.h"
+	"AutorArchivo.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\bibliotecario.cpp
+	"Bibliotecario.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\bibliotecario.h
+	<iostream>
+	<string>
+	"Usuario.h"
+
+1719873776 c:\users\vodaj\source\repos\lab2_biblioteca\usuario.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	"Persona.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\bibliotecariomanager.cpp
+	"BibliotecarioManager.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\bibliotecariomanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Bibliotecario.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"MembresiaManager.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\libromanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Libro.h"
+	"LibroArchivo.h"
+	"CategoriaManager.h"
+	"CategoriaArchivo.h"
+	"AutorManager.h"
+	"AutorArchivo.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\libro.h
+	<iostream>
+	"AutorArchivo.h"
+	"CategoriaArchivo.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\categoriaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Categoria.h"
+	"AutorArchivo.h"
+
+1719873776 c:\users\vodaj\source\repos\lab2_biblioteca\categoria.h
+	<string>
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\libroarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Libro.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\categoriamanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Categoria.h"
+	"CategoriaArchivo.h"
+
+1719873776 c:\users\vodaj\source\repos\lab2_biblioteca\membresiamanager.h
+	<iostream>
+	<vector>
+	"Fecha.h"
+	"MembresiaArchivo.h"
+	"PagoArchivo.h"
+	"UsuarioArchivo.h"
+
+1719873776 c:\users\vodaj\source\repos\lab2_biblioteca\fecha.h
+	<iostream>
+	<sstream>
+	<iomanip>
+	<ctime>
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\membresiaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Membresia.h"
+
+1720131877 c:\users\vodaj\source\repos\lab2_biblioteca\membresia.h
+	<string>
+	"Fecha.h"
+
+1719873776 c:\users\vodaj\source\repos\lab2_biblioteca\pagoarchivo.h
+	<iostream>
+	<vector>
+	<string>
+	<cstdio>
+	"Pago.h"
+
+1719873776 c:\users\vodaj\source\repos\lab2_biblioteca\pago.h
+	<string>
+	"Fecha.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\usuarioarchivo.h
+	<fstream>
+	<iostream>
+	<vector>
+	"Usuario.h"
+
+1719873776 source:c:\users\vodaj\source\repos\lab2_biblioteca\categoria.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Categoria.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\categoriaarchivo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<cstdio>
+	"CategoriaArchivo.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\categoriamanager.cpp
+	"CategoriaManager.h"
+	<algorithm>
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\cliente.cpp
+	"Cliente.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\cliente.h
+	<iostream>
+	<string>
+	"Usuario.h"
+	"Membresia.h"
+	"Fecha.h"
+
+1720131756 source:c:\users\vodaj\source\repos\lab2_biblioteca\clientemanager.cpp
+	"ClienteManager.h"
+
+1720131765 c:\users\vodaj\source\repos\lab2_biblioteca\clientemanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Cliente.h"
+	"MembresiaManager.h"
+	"LibroManager.h"
+	"UsuarioArchivo.h"
+	"PrestamoManager.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\prestamomanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Prestamo.h"
+	"PrestamoArchivo.h"
+	"LibroArchivo.h"
+	"UsuarioArchivo.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\prestamo.h
+	<string>
+	"Libro.h"
+	"Fecha.h"
+	"Cliente.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\prestamoarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Prestamo.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\fecha.cpp
+	"Fecha.h"
+
+1720132180 source:c:\users\vodaj\source\repos\lab2_biblioteca\interfaz.cpp
+	<string>
+	"Interfaz.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\interfaz.h
+	<iostream>
+	"Bibliotecario.h"
+	"Cliente.h"
+	"UsuarioManager.h"
+	"UsuarioArchivo.h"
+	"BibliotecarioManager.h"
+	"ClienteManager.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"MembresiaManager.h"
+	"PagoArchivo.h"
+
+1720130786 c:\users\vodaj\source\repos\lab2_biblioteca\usuariomanager.h
+	<iostream>
+	<string>
+	<vector>
+	<regex>
+	"Usuario.h"
+	"UsuarioArchivo.h"
+	"Bibliotecario.h"
+	"Cliente.h"
+	"Fecha.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\libro.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Libro.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\libroarchivo.cpp
+	"LibroArchivo.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\libromanager.cpp
+	"LibroManager.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\main.cpp
+	<iostream>
+	"Interfaz.h"
+
+1720131932 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresia.cpp
+	"Membresia.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresiaarchivo.cpp
+	<vector>
+	"MembresiaArchivo.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresiamanager.cpp
+	"MembresiaManager.h"
+
+1719873776 source:c:\users\vodaj\source\repos\lab2_biblioteca\pago.cpp
+	"Pago.h"
+
+1719873776 source:c:\users\vodaj\source\repos\lab2_biblioteca\pagoarchivo.cpp
+	"PagoArchivo.h"
+
+1719873776 source:c:\users\vodaj\source\repos\lab2_biblioteca\persona.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	<stdio.h>
+	"Persona.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\prestamo.cpp
+	"Prestamo.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\prestamoarchivo.cpp
+	"PrestamoArchivo.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\prestamomanager.cpp
+	"PrestamoManager.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\usuario.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Usuario.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\usuarioarchivo.cpp
+	<fstream>
+	<iostream>
+	<cstdio>
+	"UsuarioArchivo.h"
+
+1720130786 source:c:\users\vodaj\source\repos\lab2_biblioteca\usuariomanager.cpp
+	"UsuarioManager.h"
+

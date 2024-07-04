@@ -8,7 +8,7 @@ using namespace std;
 class Membresia{
 private:
     int _id;
-    //Cliente _cliente;
+    int _idCliente;
     int _tipo; /// 1- Membresia Basica 2- Membresia Premium
     Fecha _fechaInicio;
     Fecha _fechaFin;
@@ -17,14 +17,14 @@ private:
 public:
     Membresia();
 
-    Membresia(int id,/*const Cliente &cliente*/ int tipo, const Fecha &fechaInicio, const Fecha &fechaFin, bool estado);
+    Membresia(int id, int idCliente, int tipo, const Fecha &fechaInicio, const Fecha &fechaFin, bool estado);
 
     int getId() const;
     void setId(int id);
-/*
-    Cliente getCliente() const;
-    void setCliente(int cliente);
-*/
+
+    int getIdCliente();
+    void setIdCliente(int idCliente);
+
     int getTipo() const;
     void setTipo(int tipo);
 

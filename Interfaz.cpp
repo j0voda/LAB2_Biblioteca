@@ -360,7 +360,8 @@ void Interfaz::menuCliente() {
                 cout << "Aca devolvemos libros";//
                 break;
             case 3:
-                cout << "Aca vemos la membresia";//membresiaManager.verEstadoMembresia();
+                _membresiaManager.verEstadoMembresia(cliente.getId());
+                cout << "Aca vemos la membresia";
                 break;
             case 4:
                 cout << "Aca vemos los pagos";//pagoArchivo.mostrarPagos();
