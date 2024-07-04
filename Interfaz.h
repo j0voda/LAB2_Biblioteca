@@ -42,7 +42,7 @@ public:
     void menuAdministrarMembresias();
 
     ///Cliente
-    void menuCliente();
+    void menuCliente(int idCliente);
 	void menuMiMembresia(int idUsuario);
 
 

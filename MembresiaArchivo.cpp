@@ -90,7 +90,6 @@ int MembresiaArchivo::getNuevoID() {
 }
 
 int MembresiaArchivo::buscarPorIdUsuario(int idUsuario) {
-	/*
     Membresia membresia;
     FILE* pFile = fopen(this->_nombreArchivo, "rb");
     if (!pFile) {
@@ -98,7 +97,7 @@ int MembresiaArchivo::buscarPorIdUsuario(int idUsuario) {
     }
     int index = 0;
     while (fread(&membresia, sizeof(Membresia), 1, pFile)) {
-        if (membresia.getIdUsuario() == idUsuario) {
+        if (membresia.getIdCliente() == idUsuario) {
             fclose(pFile);
             return index; // Si encuentra la membresía con el ID de usuario, devuelve el índice
         }
@@ -106,7 +105,6 @@ int MembresiaArchivo::buscarPorIdUsuario(int idUsuario) {
     }
     fclose(pFile);
     return -1; // Si no se encuentra la membresía con el ID de usuario, devuelve -1
-    */
 }
 
 void MembresiaArchivo::actualizar(const vector<Membresia> &membresias) {

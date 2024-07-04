@@ -2,16 +2,16 @@
 
 Membresia::Membresia(){
     _id = 0;
-    //_cliente = 0;
+    _idCliente = 0;
     _tipo = 0;
     _fechaInicio = Fecha();
     _fechaFin = Fecha();
     _estado = false;
 }
 
-Membresia::Membresia(int id,/*const Cliente &cliente*/ int tipo, const Fecha &fechaInicio, const Fecha &fechaFin, bool estado){
+Membresia::Membresia(int id, int idCliente,int tipo, const Fecha &fechaInicio, const Fecha &fechaFin, bool estado){
     _id = id;
-    //_cliente = cliente;
+    _idCliente = idCliente;
     _tipo = tipo;
     _fechaInicio = fechaInicio;
     _fechaFin = fechaFin;
@@ -24,14 +24,14 @@ int Membresia::getId() const{
 void Membresia::setId(int id){
     _id = id;
 }
-/*
-Cliente Membresia::getCliente() const {
-    return _cliente;
+
+int Membresia::getIdCliente() const{
+    return _idCliente;
 }
-void Membresia::setIdUsuario(const Cliente &cliente){
-    _cliente = cliente;
+void Membresia::setIdCliente(int idCliente){
+    _idCliente = idCliente;
 }
-*/
+
 int Membresia::getTipo() const{
     return _tipo;
 }

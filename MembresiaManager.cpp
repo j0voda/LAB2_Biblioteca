@@ -46,6 +46,7 @@ void MembresiaManager::verEstadoMembresia(int idUsuario) {
     cout << "Fecha de inicio: " << membresia.getFechaInicio().toString() << endl;
     cout << "Fecha de fin: " << membresia.getFechaFin().toString() << endl;
     cout << "Estado: " << (membresia.getEstado() ? "Activa" : "Vencida") << endl;
+    system("pause");
 }
 
 void MembresiaManager::realizarPago(int idUsuario) {

@@ -111,7 +111,7 @@ void Interfaz::iniciarSesion() {
 					Usuario cliente = _usuarioManager.validarLogin(email, clave,2);
 					if(cliente.getMail() != ""){
 						cout << "Usuario validado"<<endl;
-						menuCliente();
+						menuCliente(cliente.getId());
 					}else {
 						cout <<"Credenciales incorrectas."<<endl;
 						cout <<"Ingrese 1 para intentar de nuevo | 0 para registrarse: ";
@@ -329,10 +329,7 @@ void Interfaz::menuAdministrarMembresias() {
 }
 
 
-
-
-void Interfaz::menuCliente() {
-	Cliente cliente;
+void Interfaz::menuCliente(int idCliente) {
     int opcion;
     do {
 		system("cls");
@@ -344,6 +341,7 @@ void Interfaz::menuCliente() {
         cout << "3. Solicitar prestamo" << endl;
         cout << "4. Realizar devolucion" << endl;
         cout << "5. Ver historial de prestamos" << endl;
+        cout << "6. Mi membresia" << endl;
         cout << "-----------------------------" << endl;
         cout << "0. Salir" << endl;
         cout<<endl;
@@ -369,6 +367,9 @@ void Interfaz::menuCliente() {
                 break;
             case 5:
                 cout << "Aca vemos los prestamos";// Función para ver el historial de préstamos
+                break;
+            case 6:
+                menuMiMembresia(idCliente);
                 break;
             case 0:
                 cout << "Saliendo..." << endl;
