@@ -36,6 +36,22 @@ vector<Pago> PagoArchivo::leerTodos() {
     return pagos;
 }
 
+vector<Pago> PagoArchivo::leerPorIdUsuario(int idUsuario) {
+    vector<Pago> pagos;
+    Pago pago;
+    FILE* pFile = fopen(_nombreArchivo.c_str(), "rb");
+    if (!pFile) {
+        return pagos;
+    }
+    while (fread(&pago, sizeof(Pago), 1, pFile)) {
+        if(pago.getIdUsuario() == idUsuario) {
+            pagos.push_back(pago);
+        }
+    }
+    fclose(pFile);
+    return pagos;
+}
+
 int PagoArchivo::getCantidadRegistros() {
     FILE* pFile = fopen(_nombreArchivo.c_str(), "rb");
     if (!pFile) {

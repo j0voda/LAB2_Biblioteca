@@ -13,6 +13,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="Headers" />
+					<Add directory="./" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +24,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="Headers" />
+					<Add directory="./" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -95,6 +99,8 @@
 		<Unit filename="UsuarioManager.cpp" />
 		<Unit filename="UsuarioManager.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="pagomanager.cpp" />
+		<Unit filename="pagomanager.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

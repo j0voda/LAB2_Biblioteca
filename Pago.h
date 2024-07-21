@@ -9,16 +9,18 @@ class Pago {
 private:
     int _idPago;
     int _idUsuario;
+    int _idMembresia;
     float _monto;
     Fecha _fecha;
     int _metodoPago;
+    int _metodoPagoClave;
 
 public:
     // Constructor por defecto
     Pago();
 
     // Constructor parametrizado
-    Pago(int idPago, int idUsuario, float monto, const Fecha &fecha, int metodoPago);
+    Pago(int idPago, int idUsuario, int idMembresia, float monto, const Fecha &fecha, int metodoPago, int metodoPagoClave);
 
     // Getters y Setters
     int getIdPago() const;
@@ -26,6 +28,9 @@ public:
 
     int getIdUsuario() const;
     void setIdUsuario(int idUsuario);
+
+    int getIdMembresia() const;
+    void setIdMembresia(int idMembresia);
 
     float getMonto() const;
     void setMonto(float monto);
@@ -35,4 +40,7 @@ public:
 
     int getMetodoPago() const;
     void setMetodoPago(int metodoPago);
+
+    int getMetodoPagoClave() const;
+    void setMetodoPagoClave(int metodoPagoClave);
 };

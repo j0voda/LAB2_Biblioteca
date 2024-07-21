@@ -6,6 +6,7 @@ using namespace std;
 
 #include "Fecha.h"
 #include "TipoMembresiaManager.h"
+#include "pagomanager.h"
 #include "TipoMembresiaArchivo.h"
 #include "MembresiaArchivo.h"
 #include "PagoArchivo.h"
@@ -17,8 +18,9 @@ class MembresiaManager {
 private:
 	TipoMembresiaManager _tipoMembresiaManager;
 	TipoMembresiaArchivo _tipoMembresiaArchivo;
-    MembresiaArchivo _membresiaArchivo;
+	PagoManager _pagoManager;
     PagoArchivo _pagoArchivo;
+    MembresiaArchivo _membresiaArchivo;
     UsuarioArchivo _usuarioArchivo;
     UsuarioManager _usuarioManager;
 
@@ -28,6 +30,7 @@ public:
     Membresia asignarMembresia();
 	void verEstadoMembresia();
 	void cambiarTipoMembresia();
+	void actualizarEstadoMembresia(int idMembresia);
 
     void realizarPago();
 

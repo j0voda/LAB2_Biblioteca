@@ -31,7 +31,7 @@ void MembresiaManager::menuAdministrarMiMembresia(){
                 break;
 
             case 2:
-                //modificarTipoMembresia();
+                realizarPago();
                 system("pause");
                 break;
 
@@ -82,23 +82,22 @@ Membresia MembresiaManager::asignarMembresia() {
     Usuario clienteActual = _usuarioManager.clienteActivo();
     Fecha fechaInicio = fechaInicio.obtenerFechaActual();
     Fecha fechaFin = fechaFin.sumarMes(1);
-    //Pago pago
-    estado = true; //se pondria en true luego de hacer el pago ok
-
     id = _membresiaArchivo.getNuevoID();
 
-    Membresia membresiaActual(id,clienteActual,tipoMembresiaActual,fechaInicio,fechaFin,estado);
-
-    if (_membresiaArchivo.guardar(membresiaActual)) {
-        cout << endl;
-        cout << "Membresia asignada con exito." << endl;
-        return membresiaActual;
+    // Se registra el pago
+    if(_pagoManager.registrarPago(id, tipoMembresiaActual.getPrecio())){
+        estado = true; //se pondria en true luego de hacer el pago ok
+        Membresia membresiaActual(id,clienteActual,tipoMembresiaActual,fechaInicio,fechaFin,estado);
+        if (_membresiaArchivo.guardar(membresiaActual)) {
+            cout << endl;
+            cout << "Membresia asignada con exito." << endl;
+            return membresiaActual;
+        }
     } else {
         cout << endl;
         cout << "Error al asignar membresia." << endl;
         return Membresia();
     }
-
 }
 
 void MembresiaManager::verEstadoMembresia() {
@@ -111,6 +110,7 @@ void MembresiaManager::verEstadoMembresia() {
         return;
     }
 
+    actualizarEstadoMembresia(pos);
     Membresia membresia = _membresiaArchivo.leer(pos);
     system("cls");
     cout << "-----------------------------" << endl;
@@ -201,16 +201,31 @@ void MembresiaManager::realizarPago() {
         return;
     }
 
-    // Realizar pago
     Fecha fechaActual = Fecha::obtenerFechaActual();
-    Pago pago(_pagoArchivo.getNuevoID(), idUsuario,0.0f, fechaActual, 1);
-    _pagoArchivo.guardar(pago);
+    // Realizar pago
+    if(_pagoManager.registrarPago(membresia.getId(), membresia.getTipoMembresia().getPrecio())) {
+        // Actualizar membresía
+        membresia.setEstado(true);
+        membresia.setFechaFin(fechaActual.sumarMes(1));
+        _membresiaArchivo.modificar(index, membresia);
+        cout << "Pago realizado con exito. Membresia actualizada." << endl;
+    } else {
+        cout << "Error al realizar el pago. La membresia no ha sido actualizada." << endl;
+    }
+}
 
-    // Actualizar membresía
-    membresia.setEstado(true);
-    membresia.setFechaFin(fechaActual.sumarMes(1));
-    _membresiaArchivo.modificar(index, membresia);
+void MembresiaManager::actualizarEstadoMembresia(int idMembresia) {
+    Membresia membresia = _membresiaArchivo.leer(idMembresia);
+    Fecha fechaActual = Fecha::obtenerFechaActual();
 
-    cout << "Pago realizado con exito. Membresia actualizada." << endl;
+    // Si la fecha actual es mayor que la fecha de fin de la membresia, quiere decir que venció la membresia
+    if(membresia.getFechaFin() < fechaActual) {
+        membresia.setEstado(false);
+    } else {
+        membresia.setEstado(true);
+    }
+
+    //Guardamos
+    _membresiaArchivo.modificar(idMembresia, membresia);
 }
 

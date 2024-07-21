@@ -61,3 +61,8 @@ void UsuarioLogueado::mostrarUsuarioLogueado() {
     cout<<endl;
     cout << "---------------" << endl;
 }
+
+int UsuarioLogueado::leerIdLogueado() {
+    Usuario registro = this->leer();
+    return registro.getId();
+}

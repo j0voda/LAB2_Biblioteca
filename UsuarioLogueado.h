@@ -17,6 +17,7 @@ class UsuarioLogueado
         void actualizar(const Usuario &usuario);
         void mostrarUsuarioLogueado();
         void limpiar();
+        int leerIdLogueado();
 };
 
 #endif // USUARIOLOGUEADO_H

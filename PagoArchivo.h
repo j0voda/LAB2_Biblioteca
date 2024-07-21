@@ -16,6 +16,7 @@ public:
     bool guardar(const Pago &pago);
     Pago leer(int index);
     vector<Pago> leerTodos();
+    vector<Pago> leerPorIdUsuario(int idUsuario);
     int getCantidadRegistros();
     int getNuevoID();
 };
