@@ -18,6 +18,8 @@ class PagoManager
         void listarPagosPorUsuario();
         void mostrarPago(const Pago &pago);
         bool registrarPago(int idMembresia, float montoMembresia);
+        bool validarNumeroTarjeta(const string &numeroTarjeta);
+        bool validarClaveTarjeta(const string &claveTarjeta);
 
 };
 

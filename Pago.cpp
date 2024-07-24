@@ -8,18 +8,18 @@ Pago::Pago(){
     _idMembresia = 0;
     _monto = 0.0f;
     _fecha = Fecha();
-    _metodoPago = 0;
-    _metodoPagoClave = 0;
+    strcpy(_metodoPago, "");
+    strcpy(_metodoPagoClave, "");
 }
 
-Pago::Pago(int idPago, int idUsuario, int idMembresia, float monto, const Fecha &fecha, int metodoPago, int metodoPagoClave){
+Pago::Pago(int idPago, int idUsuario, int idMembresia, float monto, const Fecha &fecha, const string &metodoPago, const string &metodoPagoClave){
     _idPago = idPago;
     _idUsuario = idUsuario;
     _idMembresia = idMembresia;
     _monto = monto;
     _fecha = fecha;
-    _metodoPago = metodoPago;
-    _metodoPagoClave = metodoPagoClave;
+    strcpy(_metodoPago, metodoPago.c_str());
+    strcpy(_metodoPagoClave, metodoPagoClave.c_str());
 }
 
 //Getters y Setters
@@ -59,16 +59,18 @@ void Pago::setFecha(const Fecha &fecha){
     _fecha = fecha;
 }
 
-int Pago::getMetodoPago() const{
-    return _metodoPago;
+string Pago::getMetodoPago() const{
+    string str = _metodoPago;
+    return str;
 }
-void Pago::setMetodoPago(int metodoPago){
-    _metodoPago = metodoPago;
+void Pago::setMetodoPago(const string &metodoPago){
+    strcpy(_metodoPago, metodoPago.c_str());
 }
 
-int Pago::getMetodoPagoClave() const{
-    return _metodoPagoClave;
+string Pago::getMetodoPagoClave() const{
+    string str = _metodoPagoClave;
+    return str;
 }
-void Pago::setMetodoPagoClave(int metodoPagoClave){
-    _metodoPagoClave = metodoPagoClave;
+void Pago::setMetodoPagoClave(const string &metodoPagoClave){
+    strcpy(_metodoPagoClave, metodoPagoClave.c_str());
 }

@@ -77,17 +77,23 @@ Membresia MembresiaManager::asignarMembresia() {
 		cin >> idTipo;
 		cin.ignore();
 	}
-    TipoMembresia tipoMembresiaActual = _tipoMembresiaArchivo.leer(_tipoMembresiaArchivo.buscarById(id));
+    TipoMembresia tipoMembresiaActual = _tipoMembresiaArchivo.leer(_tipoMembresiaArchivo.buscarById(idTipo));
 
     Usuario clienteActual = _usuarioManager.clienteActivo();
-    Fecha fechaInicio = fechaInicio.obtenerFechaActual();
-    Fecha fechaFin = fechaFin.sumarMes(1);
+    Fecha fechaActual = Fecha();
+    Fecha fechaInicio = fechaActual.obtenerFechaActual();
+    Fecha fechaFin = fechaInicio.sumarMes(1);
     id = _membresiaArchivo.getNuevoID();
+
+    cout << fechaInicio.toString() << endl;
+    cout << fechaFin.toString() << endl;
+    cout << id << endl;
+    cin.ignore();
 
     // Se registra el pago
     if(_pagoManager.registrarPago(id, tipoMembresiaActual.getPrecio())){
         estado = true; //se pondria en true luego de hacer el pago ok
-        Membresia membresiaActual(id,clienteActual,tipoMembresiaActual,fechaInicio,fechaFin,estado);
+        Membresia membresiaActual(id,clienteActual.getId(),tipoMembresiaActual,fechaInicio,fechaFin,estado);
         if (_membresiaArchivo.guardar(membresiaActual)) {
             cout << endl;
             cout << "Membresia asignada con exito." << endl;
@@ -101,16 +107,16 @@ Membresia MembresiaManager::asignarMembresia() {
 }
 
 void MembresiaManager::verEstadoMembresia() {
-	int idUsuario;
 	Usuario clienteActivo = _usuarioManager.clienteActivo();
-	idUsuario = clienteActivo.getId();
+	int idUsuario = clienteActivo.getId();
     int pos = _membresiaArchivo.buscarPorIdUsuario(idUsuario);
     if (pos == -1) {
         cout << "Membresia no encontrada." << endl;
+        cin.ignore();
         return;
     }
 
-    actualizarEstadoMembresia(pos);
+    //actualizarEstadoMembresia(pos);
     Membresia membresia = _membresiaArchivo.leer(pos);
     system("cls");
     cout << "-----------------------------" << endl;
@@ -182,7 +188,6 @@ void MembresiaManager::cambiarTipoMembresia() {
         return;
     }
 }
-
 
 void MembresiaManager::realizarPago() {
 	int idUsuario;

@@ -1,4 +1,10 @@
 #include "pagomanager.h"
+#include <string.h>  // strlen ()
+#include <ctype.h>   // isdigit()
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
 
 PagoManager::PagoManager(){}
 
@@ -10,8 +16,8 @@ void PagoManager::listarPagosPorUsuario(){
 }
 
 void PagoManager::mostrarPago(const Pago &pago) {
+    system("cls");
     cout << "-----------------------------" << endl;
-	cout<<endl;
     cout << "ID: " << pago.getIdPago() << endl;
     cout << "Nro Membresia: " << pago.getIdMembresia()<< endl;
     cout << "Monto: " << pago.getMonto()<< endl;
@@ -19,11 +25,13 @@ void PagoManager::mostrarPago(const Pago &pago) {
     cout << "Fecha: " << pago.getFecha().toString() << endl;
 	cout<<endl;
     cout << "-----------------------------" << endl;
+    cin.ignore();
 }
 
 bool PagoManager::registrarPago(int idMembresia, float montoMembresia){
     float monto = 0;
-    int metodoPago, metodoPagoClave = 0;
+    string metodoPago;
+    string metodoPagoClave;
     Fecha fechaActual = Fecha::obtenerFechaActual();
     int idNuevo = _pagoArchivo.getCantidadRegistros() + 1;
 
@@ -32,50 +40,93 @@ bool PagoManager::registrarPago(int idMembresia, float montoMembresia){
 	cout << "GENERAR PAGO" << endl;
 	cout << "-----------------------------" << endl;
 
-    cout << "Ingrese los 16 digitos de su tarjeta: ";
-    cin >> metodoPago;
-    cout<<endl;
-
-    // Valido que el numero ingresado tenga 16 digitos
+    bool valid = false;
     int digits = 0;
-    if (metodoPago <= 0) digits = 1;
-    while (metodoPago) {
-        metodoPago /= 10;
-        digits++;
-    }
-    while(digits != 16){
-        cout << "-- Ingrese un numero valido: ";
-        cin >> metodoPago;
+    do
+    {
+        cout << "Ingrese los 16 digitos de su tarjeta: ";
+        getline(cin, metodoPago);
         cout<<endl;
-    }
+        // Valido que el numero ingresado tenga 16 digitos
+        if (!validarNumeroTarjeta(metodoPago))
+        {
+            cin.clear();
+            cin.ignore();
+            cout << "- Numero no valido - " << endl;
+        }
+        else
+        {
+            //El numero ingresado esta ok
+            valid = true;
+        }
+    } while (!valid);
 
-	cout<<endl;
-    cout << "Ingrese los 3 digitos del codigo de seguridad: ";
-    cin >> metodoPagoClave;
-    cin.ignore();
-
-    // Valido que el numero ingresado tenga 3 digitos
+    bool valid2= false;
     int digits2 = 0;
-    if (metodoPagoClave <= 0) digits2 = 1;
-    while (metodoPagoClave) {
-        metodoPagoClave /= 10;
-        digits2++;
-    }
-    while (metodoPagoClave != 3) {
-		cout << "-- Ingrese un numero valido: ";
-		cin >> metodoPagoClave;
-		cin.ignore();
-	}
+    do
+    {
+        cout<<endl;
+        cout << "Ingrese los 3 digitos del codigo de seguridad: ";
+        getline(cin, metodoPagoClave);
+        // Valido que el numero ingresado tenga 16 digitos
+        if (!validarClaveTarjeta(metodoPagoClave))
+        {
+            cin.clear();
+            cout << "- Ingrese un numero valido: " << endl;
+        }
+        else
+        {
+            //El numero ingresado esta ok
+            valid2 = true;
+        }
+    } while (!valid2);
 
-    Pago nuevoPago(idNuevo, _usuarioManager.clienteActivo().getId(), idMembresia, montoMembresia, fechaActual, metodoPago, metodoPagoClave);
-
+    Usuario logueado = _usuarioManager.clienteActivo();
+    Pago nuevoPago(idNuevo, logueado.getId(), idMembresia, montoMembresia, fechaActual, metodoPago, metodoPagoClave);
     if (_pagoArchivo.guardar(nuevoPago)) {
         cout << endl;
         cout << "Pago agregado con exito." << endl;
+        cin.ignore();
         return true;
     } else {
         cout << endl;
         cout << "Error al agregar el pago." << endl;
+        cin.ignore();
         return false;
     }
+}
+
+bool PagoManager::validarNumeroTarjeta(const string &numeroTarjeta) {
+    cout << numeroTarjeta << endl;
+    cin.ignore();
+    // 16 digitos
+    int len = strlen(numeroTarjeta.c_str());
+    cout << len << endl;
+    if (len > 16 || len < 16)
+        return false;
+
+    // number to validate
+    int number[16];
+    for(int i = 0; i < len; i++) {
+        if(!isdigit(numeroTarjeta[i]))
+          return false;
+        number[i] = numeroTarjeta[i] - '0';
+    }
+    return true;
+}
+
+bool PagoManager::validarClaveTarjeta(const string &claveTarjeta) {
+    // 16 digitos
+    int len = strlen(claveTarjeta.c_str());
+    if (len > 3 || len < 3)
+        return false;
+
+    // number to validate
+    int number[3];
+    for(int i = 0; i < len; i++) {
+        if(!isdigit(claveTarjeta[i]))
+          return false;
+        number[i] = claveTarjeta[i] - '0';
+    }
+    return true;
 }

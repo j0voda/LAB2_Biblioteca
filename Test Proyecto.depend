@@ -1283,13 +1283,13 @@
 	<iomanip>
 	<ctime>
 
-1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\membresiaarchivo.h
+1721864507 c:\users\vodaj\source\repos\lab2_biblioteca\membresiaarchivo.h
 	<iostream>
 	<vector>
 	<fstream>
 	"Membresia.h"
 
-1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\membresia.h
+1721690795 c:\users\vodaj\source\repos\lab2_biblioteca\membresia.h
 	<iostream>
 	<cstdlib>
 	<cstring>
@@ -1305,9 +1305,12 @@
 	<cstdio>
 	"Pago.h"
 
-1721575584 c:\users\vodaj\source\repos\lab2_biblioteca\pago.h
+1721787611 c:\users\vodaj\source\repos\lab2_biblioteca\pago.h
 	<string>
 	"Fecha.h"
+	<cstdlib>
+	<cstring>
+	<stdio.h>
 
 1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\usuarioarchivo.h
 	<fstream>
@@ -1428,17 +1431,17 @@
 1721183749 c:\users\vodaj\source\repos\lab2_biblioteca\usuariologueado.h
 	"Usuario.h"
 
-1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresia.cpp
+1721690951 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresia.cpp
 	"Membresia.h"
 
-1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresiaarchivo.cpp
+1721864500 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresiaarchivo.cpp
 	<vector>
 	"MembresiaArchivo.h"
 
-1721575760 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresiamanager.cpp
+1721864165 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresiamanager.cpp
 	"MembresiaManager.h"
 
-1721575608 source:c:\users\vodaj\source\repos\lab2_biblioteca\pago.cpp
+1721787734 source:c:\users\vodaj\source\repos\lab2_biblioteca\pago.cpp
 	"Pago.h"
 
 1721342722 source:c:\users\vodaj\source\repos\lab2_biblioteca\pagoarchivo.cpp
@@ -1483,7 +1486,7 @@
 	<cstdio>
 	"UsuarioLogueado.h"
 
-1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\interfaz.cpp
+1721686416 source:c:\users\vodaj\source\repos\lab2_biblioteca\interfaz.cpp
 	<string>
 	"Interfaz.h"
 
@@ -1864,7 +1867,7 @@
 	<fstream>
 	"TipoMembresia.h"
 
-1721573806 c:\users\vodaj\source\repos\lab2_biblioteca\pagomanager.h
+1721787745 c:\users\vodaj\source\repos\lab2_biblioteca\pagomanager.h
 	"PagoArchivo.h"
 	"UsuarioLogueado.h"
 	"UsuarioManager.h"
@@ -1877,4 +1880,11 @@
 
 1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\tipomembresiamanager.cpp
 	"TipoMembresiaManager.h"
+
+1721859238 source:c:\users\vodaj\source\repos\lab2_biblioteca\pagomanager.cpp
+	"pagomanager.h"
+	<string.h>
+	<ctype.h>
+	<iostream>
+	<stdlib.h>
 

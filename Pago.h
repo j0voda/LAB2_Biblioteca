@@ -1,7 +1,9 @@
 #pragma once
 #include <string>
-
 #include "Fecha.h"
+#include<cstdlib>
+#include<cstring>
+#include<stdio.h>
 
 using namespace std;
 
@@ -12,15 +14,15 @@ private:
     int _idMembresia;
     float _monto;
     Fecha _fecha;
-    int _metodoPago;
-    int _metodoPagoClave;
+    char _metodoPago[17];
+    char _metodoPagoClave[4];
 
 public:
     // Constructor por defecto
     Pago();
 
     // Constructor parametrizado
-    Pago(int idPago, int idUsuario, int idMembresia, float monto, const Fecha &fecha, int metodoPago, int metodoPagoClave);
+    Pago(int idPago, int idUsuario, int idMembresia, float monto, const Fecha &fecha, const string &metodoPago, const string &metodoPagoClave);
 
     // Getters y Setters
     int getIdPago() const;
@@ -38,9 +40,9 @@ public:
     Fecha getFecha() const;
     void setFecha(const Fecha &fecha);
 
-    int getMetodoPago() const;
-    void setMetodoPago(int metodoPago);
+    string getMetodoPago() const;
+    void setMetodoPago(const string &metodoPago);
 
-    int getMetodoPagoClave() const;
-    void setMetodoPagoClave(int metodoPagoClave);
+    string getMetodoPagoClave() const;
+    void setMetodoPagoClave(const string &metodoPagoClave);
 };

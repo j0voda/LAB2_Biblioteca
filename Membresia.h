@@ -13,18 +13,18 @@ using namespace std;
 
 class Membresia{
 private:
-    int id;
-    Usuario cliente;
-    TipoMembresia tipoMembresia; /// 1- Membresia Basica 2- Membresia Premium  ...
-    Fecha fechaInicio;
-    Fecha fechaFin;
+    int _id;
+    int _idCliente;
+    TipoMembresia _tipoMembresia; /// 1- Membresia Basica 2- Membresia Premium  ...
+    Fecha _fechaInicio;
+    Fecha _fechaFin;
     //Pago pago;
-    bool estado; /// Vencido/Activo
+    bool _estado; /// Vencido/Activo
 
 public:
     Membresia();
 
-    Membresia(int id, const Usuario &cliente, const TipoMembresia &tipoMembresia, const Fecha &fechaInicio, const Fecha &fechaFin, /*const Pago &pago,*/ bool estado);
+    Membresia(int id, int idCliente, const TipoMembresia &tipoMembresia, const Fecha &fechaInicio, const Fecha &fechaFin, /*const Pago &pago,*/ bool estado);
 
     int getId() const;
     void setId(int id);
@@ -32,8 +32,8 @@ public:
     TipoMembresia getTipoMembresia() const;
     void setTipoMembresia(const TipoMembresia &tipoMembresia);
 
-    Usuario getCliente() const;
-    void setCliente(const Usuario &cliente);
+    int getIdCliente() const;
+    void setIdCliente(int idUsuario);
 
     Fecha getFechaInicio() const;
     void setFechaInicio(const Fecha &fechaInicio);

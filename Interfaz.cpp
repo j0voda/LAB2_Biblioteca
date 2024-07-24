@@ -366,7 +366,8 @@ void Interfaz::menuCliente() {
         cout << "2. Ver libros disponibles" << endl;
         cout << "3. Solicitar prestamo" << endl;
         cout << "4. Realizar devolucion" << endl;
-        cout << "5. Ver historial de prestamos" << endl;
+        cout << "5. Mi membresia" << endl;
+        cout << "6. Ver historial de prestamos" << endl;
         cout << "-----------------------------" << endl;
         cout << "0. Salir" << endl;
         cout<<endl;
@@ -394,6 +395,10 @@ void Interfaz::menuCliente() {
                 system("pause");
                 break;
             case 5:
+                menuMiMembresia();
+                system("pause");
+                break;
+            case 6:
                 _prestamoManager.listarPrestamosCliente();
                 system("pause");
                 break;
