@@ -46,6 +46,7 @@ void Interfaz::iniciarSesion() {
 		cout << "-----------------------------------------------" << endl;
 		cout << "1. Iniciar Sesion como Bibliotecario" << endl;
 		cout << "2. Iniciar Sesion como Cliente" << endl;
+		cout << "3. Iniciar Sesion como Admin " << endl;
 		cout << "-----------------------------------------------" << endl;
         cout << "0. Salir" << endl;
         cout << "Seleccione una opcion: ";
@@ -143,9 +144,59 @@ void Interfaz::iniciarSesion() {
 				}
                 system("pause");
                 break;
+
+            case 3:
+                if (_usuarioArchivo.getCantidadRegistrosPorPermiso(3) > 0) {
+					cout << "Ingrese email: ";
+					getline(cin, email);
+
+					cout << "Ingrese clave: ";
+					getline(cin, clave);
+
+					Usuario admin = _usuarioManager.validarLogin(email, clave, 3);
+					if(cliente.getMail() != ""){
+						cout << "Usuario validado"<<endl;
+						_usuarioLogueado.guardar(admin);
+						menuAdmin();
+					}else {
+						cout <<"Credenciales incorrectas."<<endl;
+						cout <<"Ingrese 1 para intentar de nuevo | 0 para salir";
+						int respuesta;
+						cin >> respuesta;
+						cin.ignore();
+						bool valid = false;
+						do
+                        {
+                            if(respuesta != 0 && respuesta != 1){
+                                cout << "Ingrese un numero válido." << endl;
+                                cin >> respuesta;
+                                cin.ignore();
+                            } else {
+                                valid = true;
+                            }
+
+						}while(valid == false)
+
+						if(respuesta == 1) {
+                            return iniciarSesion();
+						}
+
+                        cout << "Volviendo al menu principal." << endl;
+						return menuInicio();
+					}
+				} else {
+					cout << "No hay usuarios admin. Presione una tecla para volver al menu. ";
+                    cin.ignore();
+                    cout << "Volviendo al menu principal." << endl;
+                    return menuInicio();
+				}
+                system("pause");
+                break;
+
 			case 0:
 				cout << "Saliendo..." << endl;
 				return;
+
 			default:
 				cout << "Opcion invalida. Intente de nuevo." << endl;
 				cin.ignore();

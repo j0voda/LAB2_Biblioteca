@@ -1,4 +1,6 @@
 #include "MembresiaManager.h"
+#include <iostream>
+#include <limits>
 
 void MembresiaManager::menuAdministrarMiMembresia(){
     int opcion;
@@ -57,7 +59,7 @@ void MembresiaManager::menuAdministrarMiMembresia(){
 }
 
 Membresia MembresiaManager::asignarMembresia() {
-    int id, idTipo, tipo;
+    int id, tipo;
     bool estado;
 
     system("cls");
@@ -67,16 +69,34 @@ Membresia MembresiaManager::asignarMembresia() {
 
 	_tipoMembresiaManager.listarMembresiasActivas();
 
-    cout << "Seleccione el tipo de membresia (ID): ";
-    cin>> idTipo;
+	int idTipo = -1;
+    bool valid = false;
+    do
+    {
+        cout << "Seleccione el tipo de membresia (ID): ";
+        cin >> idTipo;
+        if (cin.good())
+        {
+            // Es un número
+            if(_tipoMembresiaArchivo.buscarById(idTipo) == -1){
+                cin.clear();
+                //and empty it
+                cin.ignore(numeric_limits<streamsize>::max(),'\n');
+                cout << "-Input invalido, porfavor reingrese ID: " << endl;
+            }
+            valid = true;
+        }
+        else
+        {
+            //something went wrong, we reset the buffer's state to good
+            cin.clear();
+            //and empty it
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout << "-El numero ingresado no corresponde a un ID, reingrese ID: " << endl;
+        }
+    } while (!valid);
     cin.ignore();
-    cout<<endl;
-	while (_tipoMembresiaArchivo.buscarById(idTipo) == -1) {
-		cout << "-- Reingrese ID: ";
-		cout<<endl;
-		cin >> idTipo;
-		cin.ignore();
-	}
+
     TipoMembresia tipoMembresiaActual = _tipoMembresiaArchivo.leer(_tipoMembresiaArchivo.buscarById(idTipo));
 
     Usuario clienteActual = _usuarioManager.clienteActivo();
@@ -84,11 +104,6 @@ Membresia MembresiaManager::asignarMembresia() {
     Fecha fechaInicio = fechaActual.obtenerFechaActual();
     Fecha fechaFin = fechaInicio.sumarMes(1);
     id = _membresiaArchivo.getNuevoID();
-
-    cout << fechaInicio.toString() << endl;
-    cout << fechaFin.toString() << endl;
-    cout << id << endl;
-    cin.ignore();
 
     // Se registra el pago
     if(_pagoManager.registrarPago(id, tipoMembresiaActual.getPrecio())){

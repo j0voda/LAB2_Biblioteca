@@ -37,6 +37,5 @@ public:
 	void mostrarBibliotecario(const Usuario &registro);
 	void listarBibliotecarios();
 	void listarBibliotecariosPorNombre();
-	void listarBibliotecariosPorApellido();
 };
 

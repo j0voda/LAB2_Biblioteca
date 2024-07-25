@@ -1,4 +1,6 @@
 #include "BibliotecarioManager.h"
+#include <iostream>
+#include <limits>
 
 BibliotecarioManager::BibliotecarioManager(){
     //ctor
@@ -151,11 +153,6 @@ void BibliotecarioManager::listarBibliotecariosPorApellido() {
         this->mostrarBibliotecario(ub);
     }
 }
-
-void BibliotecarioManager::menuAdministrarClientes(){
-}
-
-
 /*Bibliotecario BibliotecarioManager::validarLoginBibliotecario(const string& mail, const string& clave, int permisos) {
     cout << "Validando usuario";
     vector<Usuario> usuarios = _usuarioArchivo.leerTodos();
