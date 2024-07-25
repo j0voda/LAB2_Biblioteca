@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="TestProyecto" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/PruebaProyecto" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="Headers" />
+					<Add directory="./" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/PruebaProyecto" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="Headers" />
+					<Add directory="./" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="Autor.cpp" />
+		<Unit filename="Autor.h" />
+		<Unit filename="AutorArchivo.cpp" />
+		<Unit filename="AutorArchivo.h" />
+		<Unit filename="AutorManager.cpp" />
+		<Unit filename="AutorManager.h" />
+		<Unit filename="Bibliotecario.cpp" />
+		<Unit filename="Bibliotecario.h" />
+		<Unit filename="BibliotecarioManager.cpp" />
+		<Unit filename="BibliotecarioManager.h" />
+		<Unit filename="Categoria.cpp" />
+		<Unit filename="Categoria.h" />
+		<Unit filename="CategoriaArchivo.cpp" />
+		<Unit filename="CategoriaArchivo.h" />
+		<Unit filename="CategoriaManager.cpp" />
+		<Unit filename="CategoriaManager.h" />
+		<Unit filename="Cliente.cpp" />
+		<Unit filename="Cliente.h" />
+		<Unit filename="ClienteManager.cpp" />
+		<Unit filename="ClienteManager.h" />
+		<Unit filename="Fecha.cpp" />
+		<Unit filename="Fecha.h" />
+		<Unit filename="Interfaz.cpp" />
+		<Unit filename="Interfaz.h" />
+		<Unit filename="Libro.cpp" />
+		<Unit filename="Libro.h" />
+		<Unit filename="LibroArchivo.cpp" />
+		<Unit filename="LibroArchivo.h" />
+		<Unit filename="LibroManager.cpp" />
+		<Unit filename="LibroManager.h" />
+		<Unit filename="Membresia.cpp" />
+		<Unit filename="Membresia.h" />
+		<Unit filename="MembresiaArchivo.cpp" />
+		<Unit filename="MembresiaArchivo.h" />
+		<Unit filename="MembresiaManager.cpp" />
+		<Unit filename="MembresiaManager.h" />
+		<Unit filename="Pago.cpp" />
+		<Unit filename="Pago.h" />
+		<Unit filename="PagoArchivo.cpp" />
+		<Unit filename="PagoArchivo.h" />
+		<Unit filename="Persona.cpp" />
+		<Unit filename="Persona.h" />
+		<Unit filename="Prestamo.cpp" />
+		<Unit filename="Prestamo.h" />
+		<Unit filename="PrestamoArchivo.cpp" />
+		<Unit filename="PrestamoArchivo.h" />
+		<Unit filename="PrestamoManager.cpp" />
+		<Unit filename="PrestamoManager.h" />
+		<Unit filename="TipoMembresia.cpp" />
+		<Unit filename="TipoMembresia.h" />
+		<Unit filename="TipoMembresiaArchivo.cpp" />
+		<Unit filename="TipoMembresiaArchivo.h" />
+		<Unit filename="TipoMembresiaManager.cpp" />
+		<Unit filename="TipoMembresiaManager.h" />
+		<Unit filename="Usuario.cpp" />
+		<Unit filename="Usuario.h" />
+		<Unit filename="UsuarioArchivo.cpp" />
+		<Unit filename="UsuarioArchivo.h" />
+		<Unit filename="UsuarioLogueado.cpp" />
+		<Unit filename="UsuarioLogueado.h" />
+		<Unit filename="UsuarioManager.cpp" />
+		<Unit filename="UsuarioManager.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="pagomanager.cpp" />
+		<Unit filename="pagomanager.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

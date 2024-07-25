@@ -1,0 +1,2264 @@
+# depslib dependency file v1.0
+1717553286 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\autor.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Autor.h"
+
+1717553286 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\autor.h
+	<string>
+	"Persona.h"
+
+1717274723 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\persona.h
+	<iostream>
+	<string>
+
+1717599681 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\autorarchivo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<cstdio>
+	"AutorArchivo.h"
+
+1717599681 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\autorarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Autor.h"
+
+1717599286 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\autormanager.cpp
+	"AutorManager.h"
+	<algorithm>
+
+1717596458 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\autormanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Autor.h"
+	"AutorArchivo.h"
+
+1717283262 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\categoria.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Categoria.h"
+
+1717283264 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\categoria.h
+	<string>
+
+1717603984 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\categoriaarchivo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<cstdio>
+	"CategoriaArchivo.h"
+
+1717603984 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\categoriaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Categoria.h"
+	"AutorArchivo.h"
+
+1717603520 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\categoriamanager.cpp
+	"CategoriaManager.h"
+	<algorithm>
+
+1717680245 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\categoriamanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Categoria.h"
+	"CategoriaArchivo.h"
+
+1717689713 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\cliente.cpp
+	"Cliente.h"
+
+1717688920 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\cliente.h
+	<iostream>
+	"Usuario.h"
+	"UsuarioManager.h"
+	"Membresia.h"
+	"MembresiaManager.h"
+	"Fecha.h"
+
+1717644806 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\usuario.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Persona.h"
+
+1717605963 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\membresia.h
+	<string>
+	"Fecha.h"
+
+1717273313 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\fecha.h
+	<iostream>
+	<sstream>
+	<iomanip>
+	<ctime>
+
+1717606458 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\fecha.cpp
+	"Fecha.h"
+
+1717602011 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\libro.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Libro.h"
+
+1717602011 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\libro.h
+	<iostream>
+	"AutorArchivo.h"
+	"CategoriaArchivo.h"
+
+1717603984 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\libroarchivo.cpp
+	"LibroArchivo.h"
+
+1717603984 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\libroarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Libro.h"
+
+1717604228 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\libromanager.cpp
+	"LibroManager.h"
+
+1717599081 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\libromanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Libro.h"
+	"LibroArchivo.h"
+	"CategoriaArchivo.h"
+	"AutorArchivo.h"
+
+1717688459 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\main.cpp
+	<iostream>
+	"MenuPrincipal.h"
+
+1717688920 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\menuprincipal.h
+	<iostream>
+	"UsuarioManager.h"
+	"LibroManager.h"
+	"CategoriaManager.h"
+	"AutorManager.h"
+	"MembresiaManager.h"
+	"Fecha.h"
+
+1717689141 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\usuariomanager.h
+	<iostream>
+	<string>
+	<vector>
+	"Usuario.h"
+	"UsuarioArchivo.h"
+	"Bibliotecario.h"
+	"Cliente.h"
+	"MembresiaArchivo.h"
+	"MembresiaManager.h"
+	"Fecha.h"
+
+1717716496 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\usuarioarchivo.h
+	<fstream>
+	<iostream>
+	<vector>
+	"Usuario.h"
+
+1717688423 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\bibliotecario.h
+	"Usuario.h"
+	"UsuarioManager.h"
+	"LibroManager.h"
+	"CategoriaManager.h"
+	"AutorManager.h"
+	"MembresiaManager.h"
+
+1717610607 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\membresiamanager.h
+	<iostream>
+	<vector>
+	"Fecha.h"
+	"MembresiaArchivo.h"
+	"PagoArchivo.h"
+	"UsuarioArchivo.h"
+
+1717603672 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\membresiaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Membresia.h"
+
+1717199892 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\pagoarchivo.h
+	<iostream>
+	<vector>
+	<string>
+	<cstdio>
+	"Pago.h"
+
+1717604958 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\pago.h
+	<string>
+	"Fecha.h"
+
+1717605939 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\membresia.cpp
+	"Membresia.h"
+
+1717600715 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\membresiaarchivo.cpp
+	"MembresiaArchivo.h"
+	<vector>
+
+1717611210 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\membresiamanager.cpp
+	"MembresiaManager.h"
+
+1717604956 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\pago.cpp
+	"Pago.h"
+
+1717199906 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\pagoarchivo.cpp
+	"PagoArchivo.h"
+
+1717266969 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\persona.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Persona.h"
+
+1716825260 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\prestamo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Prestamo.h"
+
+1717680253 c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\prestamo.h
+	"Libro.h"
+	"Persona.h"
+	<string>
+
+1717711085 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\usuarioarchivo.cpp
+	"UsuarioArchivo.h"
+	<fstream>
+	<iostream>
+	<cstdio>
+
+1717713786 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\usuariomanager.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<vector>
+	"UsuarioManager.h"
+
+1717713594 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\bibliotecario.cpp
+	"Bibliotecario.h"
+
+1717644805 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\usuario.cpp
+	"Usuario.h"
+
+1717713594 source:c:\users\sofii\documents\facu\2do cuat\lab ii\test proyecto\menuprincipal.cpp
+	"MenuPrincipal.h"
+
+1719886451 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\autor.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Autor.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\autor.h
+	<string>
+	"Persona.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\persona.h
+	<iostream>
+	<string>
+
+1720020433 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\autorarchivo.cpp
+	"AutorArchivo.h"
+
+1720020464 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\autorarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Autor.h"
+
+1720019791 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\autormanager.cpp
+	"AutorManager.h"
+	<algorithm>
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\autormanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Autor.h"
+	"AutorArchivo.h"
+
+1719195171 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\bibliotecario.cpp
+	<string>
+	"Bibliotecario.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\bibliotecario.h
+	<string>
+	"Usuario.h"
+
+1719190082 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\usuario.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	"Persona.h"
+
+1720031593 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\usuariomanager.h
+	<iostream>
+	<string>
+	<vector>
+	<regex>
+	"Usuario.h"
+	"UsuarioArchivo.h"
+	"Bibliotecario.h"
+	"Cliente.h"
+	"ClienteManager.h"
+	"Fecha.h"
+
+1720021911 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\usuarioarchivo.h
+	<fstream>
+	<iostream>
+	<vector>
+	"Usuario.h"
+
+1719196022 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\cliente.h
+	<iostream>
+	"Usuario.h"
+	"Membresia.h"
+	"Fecha.h"
+
+1717605963 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\membresia.h
+	<string>
+	"Fecha.h"
+
+1717273313 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\fecha.h
+	<iostream>
+	<sstream>
+	<iomanip>
+	<ctime>
+
+1717610607 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\membresiamanager.h
+	<iostream>
+	<vector>
+	"Fecha.h"
+	"MembresiaArchivo.h"
+	"PagoArchivo.h"
+	"UsuarioArchivo.h"
+
+1717603672 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\membresiaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Membresia.h"
+
+1718315098 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\pagoarchivo.h
+	<iostream>
+	<vector>
+	<string>
+	<cstdio>
+	"Pago.h"
+
+1717604958 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\pago.h
+	<string>
+	"Fecha.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\libromanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Libro.h"
+	"LibroArchivo.h"
+	"CategoriaManager.h"
+	"CategoriaArchivo.h"
+	"AutorManager.h"
+	"AutorArchivo.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\libro.h
+	<iostream>
+	"AutorArchivo.h"
+	"CategoriaArchivo.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\categoriaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Categoria.h"
+	"AutorArchivo.h"
+
+1718315098 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\categoria.h
+	<string>
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\libroarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Libro.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\categoriamanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Categoria.h"
+	"CategoriaArchivo.h"
+
+1718315098 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\categoria.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Categoria.h"
+
+1720020506 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\categoriaarchivo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<cstdio>
+	"CategoriaArchivo.h"
+
+1720019791 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\categoriamanager.cpp
+	"CategoriaManager.h"
+	<algorithm>
+
+1719195700 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\cliente.cpp
+	<string>
+	<stdio.h>
+	"Cliente.h"
+
+1717606458 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\fecha.cpp
+	"Fecha.h"
+
+1719891632 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\libro.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Libro.h"
+
+1719979087 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\libroarchivo.cpp
+	"LibroArchivo.h"
+
+1720025146 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\libromanager.cpp
+	"LibroManager.h"
+
+1717688459 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\main.cpp
+	<iostream>
+	"MenuPrincipal.h"
+
+1720021042 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\menuprincipal.h
+	<iostream>
+	"Persona.h"
+	"UsuarioManager.h"
+	"UsuarioArchivo.h"
+	"BibliotecarioManager.h"
+	"ClienteManager.h"
+
+1717605939 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\membresia.cpp
+	"Membresia.h"
+
+1717600715 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\membresiaarchivo.cpp
+	"MembresiaArchivo.h"
+	<vector>
+
+1717611210 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\membresiamanager.cpp
+	"MembresiaManager.h"
+
+1720036264 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\menuprincipal.cpp
+	<string>
+	"MenuPrincipal.h"
+
+1717604956 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\pago.cpp
+	"Pago.h"
+
+1717199906 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\pagoarchivo.cpp
+	"PagoArchivo.h"
+
+1719183202 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\persona.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	<stdio.h>
+	"Persona.h"
+
+1718315098 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\prestamo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Libro.h"
+	"Usuario.h"
+	"Prestamo.h"
+
+1718315098 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\prestamo.h
+	"Libro.h"
+	"Persona.h"
+	<string>
+
+1720025145 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\usuario.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Usuario.h"
+
+1720025146 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\usuarioarchivo.cpp
+	<fstream>
+	<iostream>
+	<cstdio>
+	"UsuarioArchivo.h"
+
+1720031593 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\usuariomanager.cpp
+	"UsuarioManager.h"
+
+1720031593 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\bibliotecariomanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	"Bibliotecario.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"MembresiaManager.h"
+	"UsuarioManager.h"
+
+1719264077 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\clientemanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	"Cliente.h"
+	"MembresiaManager.h"
+
+1720031593 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\bibliotecariomanager.cpp
+	"BibliotecarioManager.h"
+
+1719264077 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto\clientemanager.cpp
+	"ClienteManager.h"
+
+1719886451 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\autor.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Autor.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\autor.h
+	<string>
+	"Persona.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\persona.h
+	<iostream>
+	<string>
+
+1720020433 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\autorarchivo.cpp
+	"AutorArchivo.h"
+
+1720020464 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\autorarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Autor.h"
+
+1720019791 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\autormanager.cpp
+	"AutorManager.h"
+	<algorithm>
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\autormanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Autor.h"
+	"AutorArchivo.h"
+
+1720065776 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\bibliotecariomanager.cpp
+	"BibliotecarioManager.h"
+
+1720065776 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\bibliotecariomanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Bibliotecario.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"MembresiaManager.h"
+
+1720041104 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\bibliotecario.h
+	<iostream>
+	<string>
+	"Usuario.h"
+
+1719190082 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\usuario.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	"Persona.h"
+
+1720042504 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\libromanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Libro.h"
+	"LibroArchivo.h"
+	"CategoriaManager.h"
+	"CategoriaArchivo.h"
+	"AutorManager.h"
+	"AutorArchivo.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\libro.h
+	<iostream>
+	"AutorArchivo.h"
+	"CategoriaArchivo.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\categoriaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Categoria.h"
+	"AutorArchivo.h"
+
+1718315098 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\categoria.h
+	<string>
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\libroarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Libro.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\categoriamanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Categoria.h"
+	"CategoriaArchivo.h"
+
+1717610607 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\membresiamanager.h
+	<iostream>
+	<vector>
+	"Fecha.h"
+	"MembresiaArchivo.h"
+	"PagoArchivo.h"
+	"UsuarioArchivo.h"
+
+1717273313 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\fecha.h
+	<iostream>
+	<sstream>
+	<iomanip>
+	<ctime>
+
+1720047379 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\membresiaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Membresia.h"
+
+1720047395 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\membresia.h
+	<string>
+	"Fecha.h"
+
+1718315098 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\pagoarchivo.h
+	<iostream>
+	<vector>
+	<string>
+	<cstdio>
+	"Pago.h"
+
+1717604958 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\pago.h
+	<string>
+	"Fecha.h"
+
+1720021911 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\usuarioarchivo.h
+	<fstream>
+	<iostream>
+	<vector>
+	"Usuario.h"
+
+1720064335 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\usuariomanager.h
+	<iostream>
+	<string>
+	<vector>
+	<regex>
+	"Usuario.h"
+	"UsuarioArchivo.h"
+	"Bibliotecario.h"
+	"Cliente.h"
+	"Fecha.h"
+
+1720041104 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\cliente.h
+	<iostream>
+	<string>
+	"Usuario.h"
+	"Membresia.h"
+	"Fecha.h"
+
+1720068817 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\clientemanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Cliente.h"
+	"MembresiaManager.h"
+	"LibroManager.h"
+	"UsuarioArchivo.h"
+	"PrestamoManager.h"
+
+1718315098 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\categoria.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Categoria.h"
+
+1720020506 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\categoriaarchivo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<cstdio>
+	"CategoriaArchivo.h"
+
+1720019791 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\categoriamanager.cpp
+	"CategoriaManager.h"
+	<algorithm>
+
+1720071501 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\fecha.cpp
+	"Fecha.h"
+
+1720046590 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\libro.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Libro.h"
+
+1720043449 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\libroarchivo.cpp
+	"LibroArchivo.h"
+
+1720025146 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\libromanager.cpp
+	"LibroManager.h"
+
+1720066308 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\main.cpp
+	<iostream>
+	"Interfaz.h"
+
+1720021042 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\menuprincipal.h
+	<iostream>
+	"Persona.h"
+	"UsuarioManager.h"
+	"UsuarioArchivo.h"
+	"BibliotecarioManager.h"
+	"ClienteManager.h"
+
+1720047395 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\membresia.cpp
+	"Membresia.h"
+
+1720052509 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\membresiaarchivo.cpp
+	<vector>
+	"MembresiaArchivo.h"
+
+1720068858 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\membresiamanager.cpp
+	"MembresiaManager.h"
+
+1720036734 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\menuprincipal.cpp
+	<string>
+	"MenuPrincipal.h"
+
+1717604956 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\pago.cpp
+	"Pago.h"
+
+1717199906 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\pagoarchivo.cpp
+	"PagoArchivo.h"
+
+1719183202 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\persona.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	<stdio.h>
+	"Persona.h"
+
+1720025145 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\usuario.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Usuario.h"
+
+1720025146 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\usuarioarchivo.cpp
+	<fstream>
+	<iostream>
+	<cstdio>
+	"UsuarioArchivo.h"
+
+1720067671 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\usuariomanager.cpp
+	"UsuarioManager.h"
+
+1720041104 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\bibliotecario.cpp
+	"Bibliotecario.h"
+
+1720041513 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\cliente.cpp
+	"Cliente.h"
+
+1720090736 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\prestamomanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Prestamo.h"
+	"PrestamoArchivo.h"
+	"LibroArchivo.h"
+	"UsuarioArchivo.h"
+
+1720089777 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\prestamo.h
+	<string>
+	"Libro.h"
+	"Fecha.h"
+	"Cliente.h"
+
+1720052685 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\prestamoarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Prestamo.h"
+
+1720071720 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\prestamo.cpp
+	"Prestamo.h"
+
+1720056069 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\prestamoarchivo.cpp
+	"PrestamoArchivo.h"
+
+1720068817 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\clientemanager.cpp
+	"ClienteManager.h"
+
+1720090919 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\prestamomanager.cpp
+	"PrestamoManager.h"
+
+1720071501 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\interfaz.cpp
+	<string>
+	"Interfaz.h"
+
+1720068817 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion\interfaz.h
+	<iostream>
+	"Bibliotecario.h"
+	"Cliente.h"
+	"UsuarioManager.h"
+	"UsuarioArchivo.h"
+	"BibliotecarioManager.h"
+	"ClienteManager.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"MembresiaManager.h"
+	"PagoArchivo.h"
+
+1719886451 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\autor.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Autor.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\autor.h
+	<string>
+	"Persona.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\persona.h
+	<iostream>
+	<string>
+
+1720020433 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\autorarchivo.cpp
+	"AutorArchivo.h"
+
+1720020464 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\autorarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Autor.h"
+
+1720019791 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\autormanager.cpp
+	"AutorManager.h"
+	<algorithm>
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\autormanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Autor.h"
+	"AutorArchivo.h"
+
+1720041104 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\bibliotecario.cpp
+	"Bibliotecario.h"
+
+1720041104 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\bibliotecario.h
+	<iostream>
+	<string>
+	"Usuario.h"
+
+1719190082 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\usuario.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	"Persona.h"
+
+1720065776 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\bibliotecariomanager.cpp
+	"BibliotecarioManager.h"
+
+1720065776 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\bibliotecariomanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Bibliotecario.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"MembresiaManager.h"
+
+1720130386 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\libromanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Libro.h"
+	"LibroArchivo.h"
+	"CategoriaManager.h"
+	"CategoriaArchivo.h"
+	"AutorManager.h"
+	"AutorArchivo.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\libro.h
+	<iostream>
+	"AutorArchivo.h"
+	"CategoriaArchivo.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\categoriaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Categoria.h"
+	"AutorArchivo.h"
+
+1718315098 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\categoria.h
+	<string>
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\libroarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Libro.h"
+
+1720020375 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\categoriamanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Categoria.h"
+	"CategoriaArchivo.h"
+
+1717610607 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\membresiamanager.h
+	<iostream>
+	<vector>
+	"Fecha.h"
+	"MembresiaArchivo.h"
+	"PagoArchivo.h"
+	"UsuarioArchivo.h"
+
+1720131006 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\fecha.h
+	<iostream>
+	<sstream>
+	<iomanip>
+	<ctime>
+
+1720047379 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\membresiaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Membresia.h"
+
+1720047395 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\membresia.h
+	<string>
+	"Fecha.h"
+
+1718315098 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\pagoarchivo.h
+	<iostream>
+	<vector>
+	<string>
+	<cstdio>
+	"Pago.h"
+
+1717604958 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\pago.h
+	<string>
+	"Fecha.h"
+
+1720021911 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\usuarioarchivo.h
+	<fstream>
+	<iostream>
+	<vector>
+	"Usuario.h"
+
+1718315098 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\categoria.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Categoria.h"
+
+1720020506 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\categoriaarchivo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<cstdio>
+	"CategoriaArchivo.h"
+
+1720019791 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\categoriamanager.cpp
+	"CategoriaManager.h"
+	<algorithm>
+
+1720041513 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\cliente.cpp
+	"Cliente.h"
+
+1720041104 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\cliente.h
+	<iostream>
+	<string>
+	"Usuario.h"
+	"Membresia.h"
+	"Fecha.h"
+
+1720131006 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\fecha.cpp
+	"Fecha.h"
+
+1720132347 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\interfaz.cpp
+	<string>
+	"Interfaz.h"
+
+1720131418 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\interfaz.h
+	<iostream>
+	"Bibliotecario.h"
+	"Cliente.h"
+	"UsuarioManager.h"
+	"UsuarioArchivo.h"
+	"BibliotecarioManager.h"
+	"ClienteManager.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"MembresiaManager.h"
+	"PagoArchivo.h"
+	"PrestamoManager.h"
+
+1720064335 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\usuariomanager.h
+	<iostream>
+	<string>
+	<vector>
+	<regex>
+	"Usuario.h"
+	"UsuarioArchivo.h"
+	"Bibliotecario.h"
+	"Cliente.h"
+	"Fecha.h"
+
+1720068817 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\clientemanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Cliente.h"
+	"MembresiaManager.h"
+	"LibroManager.h"
+	"UsuarioArchivo.h"
+	"PrestamoManager.h"
+
+1720132347 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\prestamomanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Prestamo.h"
+	"PrestamoArchivo.h"
+	"LibroArchivo.h"
+	"UsuarioArchivo.h"
+	"LibroManager.h"
+	"UsuarioManager.h"
+
+1720130916 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\prestamo.h
+	<string>
+	"Libro.h"
+	"Fecha.h"
+	"Usuario.h"
+
+1720052685 c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\prestamoarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Prestamo.h"
+
+1720046590 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\libro.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Libro.h"
+
+1720043449 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\libroarchivo.cpp
+	"LibroArchivo.h"
+
+1720133175 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\libromanager.cpp
+	"LibroManager.h"
+
+1720066308 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\main.cpp
+	<iostream>
+	"Interfaz.h"
+
+1720047395 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\membresia.cpp
+	"Membresia.h"
+
+1720052509 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\membresiaarchivo.cpp
+	<vector>
+	"MembresiaArchivo.h"
+
+1720131329 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\membresiamanager.cpp
+	"MembresiaManager.h"
+
+1717604956 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\pago.cpp
+	"Pago.h"
+
+1717199906 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\pagoarchivo.cpp
+	"PagoArchivo.h"
+
+1719183202 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\persona.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	<stdio.h>
+	"Persona.h"
+
+1720130931 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\prestamo.cpp
+	"Prestamo.h"
+
+1720056069 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\prestamoarchivo.cpp
+	"PrestamoArchivo.h"
+
+1720130830 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\prestamomanager.cpp
+	"PrestamoManager.h"
+
+1720025145 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\usuario.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Usuario.h"
+
+1720025146 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\usuarioarchivo.cpp
+	<fstream>
+	<iostream>
+	<cstdio>
+	"UsuarioArchivo.h"
+
+1720067671 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\usuariomanager.cpp
+	"UsuarioManager.h"
+
+1720092345 source:c:\users\sofii\documents\facu\2do cuat\lab ii\biblioteca todos\test proyecto - unificacion - copia\clientemanager.cpp
+	"ClienteManager.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\autor.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Autor.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\autor.h
+	<string>
+	"Persona.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\persona.h
+	<iostream>
+	<string>
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\autorarchivo.cpp
+	"AutorArchivo.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\autorarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Autor.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\autormanager.cpp
+	"AutorManager.h"
+	<algorithm>
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\autormanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Autor.h"
+	"AutorArchivo.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\bibliotecario.cpp
+	"Bibliotecario.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\bibliotecario.h
+	<iostream>
+	<string>
+	"Usuario.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\usuario.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	"Persona.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\bibliotecariomanager.cpp
+	"BibliotecarioManager.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\bibliotecariomanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Bibliotecario.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"MembresiaManager.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\libromanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Libro.h"
+	"LibroArchivo.h"
+	"CategoriaManager.h"
+	"CategoriaArchivo.h"
+	"AutorManager.h"
+	"AutorArchivo.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\libro.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"AutorArchivo.h"
+	"CategoriaArchivo.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\categoriaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Categoria.h"
+	"AutorArchivo.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\categoria.h
+	<string>
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\libroarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Libro.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\categoriamanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Categoria.h"
+	"CategoriaArchivo.h"
+
+1721575705 c:\users\vodaj\source\repos\lab2_biblioteca\membresiamanager.h
+	<iostream>
+	<vector>
+	"Fecha.h"
+	"TipoMembresiaManager.h"
+	"pagomanager.h"
+	"TipoMembresiaArchivo.h"
+	"MembresiaArchivo.h"
+	"PagoArchivo.h"
+	"UsuarioArchivo.h"
+	"UsuarioManager.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\fecha.h
+	<iostream>
+	<sstream>
+	<iomanip>
+	<ctime>
+
+1721864507 c:\users\vodaj\source\repos\lab2_biblioteca\membresiaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Membresia.h"
+
+1721690795 c:\users\vodaj\source\repos\lab2_biblioteca\membresia.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Fecha.h"
+	"UsuarioArchivo.h"
+	"TipoMembresiaArchivo.h"
+
+1721183895 c:\users\vodaj\source\repos\lab2_biblioteca\pagoarchivo.h
+	<iostream>
+	<vector>
+	<string>
+	<cstdio>
+	"Pago.h"
+
+1721787611 c:\users\vodaj\source\repos\lab2_biblioteca\pago.h
+	<string>
+	"Fecha.h"
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\usuarioarchivo.h
+	<fstream>
+	<iostream>
+	<vector>
+	"Usuario.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\categoria.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Categoria.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\categoriaarchivo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<cstdio>
+	"CategoriaArchivo.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\categoriamanager.cpp
+	"CategoriaManager.h"
+	<algorithm>
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\cliente.cpp
+	"Cliente.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\cliente.h
+	<iostream>
+	<string>
+	"Usuario.h"
+	"Membresia.h"
+	"Fecha.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\clientemanager.cpp
+	"ClienteManager.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\clientemanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Cliente.h"
+	"MembresiaManager.h"
+	"LibroManager.h"
+	"UsuarioArchivo.h"
+	"PrestamoManager.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\prestamomanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Prestamo.h"
+	"PrestamoArchivo.h"
+	"LibroArchivo.h"
+	"UsuarioArchivo.h"
+	"LibroManager.h"
+	"UsuarioManager.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\prestamo.h
+	<string>
+	"Libro.h"
+	"Fecha.h"
+	"Usuario.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\prestamoarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Prestamo.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\usuariomanager.h
+	<iostream>
+	<string>
+	<vector>
+	<regex>
+	"Usuario.h"
+	"UsuarioArchivo.h"
+	"Bibliotecario.h"
+	"Cliente.h"
+	"Fecha.h"
+	"UsuarioLogueado.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\fecha.cpp
+	"Fecha.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\libro.cpp
+	"Libro.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\libroarchivo.cpp
+	"LibroArchivo.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\libromanager.cpp
+	"LibroManager.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\main.cpp
+	<iostream>
+	"Interfaz.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\interfaz.h
+	<iostream>
+	"Bibliotecario.h"
+	"Cliente.h"
+	"UsuarioManager.h"
+	"UsuarioArchivo.h"
+	"BibliotecarioManager.h"
+	"ClienteManager.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"TipoMembresiaManager.h"
+	"MembresiaManager.h"
+	"PagoArchivo.h"
+	"PrestamoManager.h"
+	"UsuarioLogueado.h"
+
+1721183749 c:\users\vodaj\source\repos\lab2_biblioteca\usuariologueado.h
+	"Usuario.h"
+
+1721690951 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresia.cpp
+	"Membresia.h"
+
+1721864500 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresiaarchivo.cpp
+	<vector>
+	"MembresiaArchivo.h"
+
+1721865526 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresiamanager.cpp
+	"MembresiaManager.h"
+
+1721787734 source:c:\users\vodaj\source\repos\lab2_biblioteca\pago.cpp
+	"Pago.h"
+
+1721342722 source:c:\users\vodaj\source\repos\lab2_biblioteca\pagoarchivo.cpp
+	"PagoArchivo.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\persona.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	<stdio.h>
+	"Persona.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\prestamo.cpp
+	"Prestamo.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\prestamoarchivo.cpp
+	"PrestamoArchivo.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\prestamomanager.cpp
+	"PrestamoManager.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\usuario.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Usuario.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\usuarioarchivo.cpp
+	<fstream>
+	<iostream>
+	<cstdio>
+	"UsuarioArchivo.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\usuariomanager.cpp
+	"UsuarioManager.h"
+
+1721183737 source:c:\users\vodaj\source\repos\lab2_biblioteca\usuariologueado.cpp
+	<fstream>
+	<iostream>
+	<cstdio>
+	"UsuarioLogueado.h"
+
+1721686416 source:c:\users\vodaj\source\repos\lab2_biblioteca\interfaz.cpp
+	<string>
+	"Interfaz.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\autor.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Autor.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\autor.h
+	<string>
+	"Persona.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\persona.h
+	<iostream>
+	<string>
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\autorarchivo.cpp
+	"AutorArchivo.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\autorarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Autor.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\autormanager.cpp
+	"AutorManager.h"
+	<algorithm>
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\autormanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Autor.h"
+	"AutorArchivo.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\bibliotecario.cpp
+	"Bibliotecario.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\bibliotecario.h
+	<iostream>
+	<string>
+	"Usuario.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\usuario.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	"Persona.h"
+
+1720911771 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\bibliotecariomanager.cpp
+	"BibliotecarioManager.h"
+
+1720911568 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\bibliotecariomanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Bibliotecario.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"MembresiaManager.h"
+
+1720555673 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\libromanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Libro.h"
+	"LibroArchivo.h"
+	"CategoriaManager.h"
+	"CategoriaArchivo.h"
+	"AutorManager.h"
+	"AutorArchivo.h"
+
+1721006877 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\libro.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"AutorArchivo.h"
+	"CategoriaArchivo.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\categoriaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Categoria.h"
+	"AutorArchivo.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\categoria.h
+	<string>
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\libroarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Libro.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\categoriamanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Categoria.h"
+	"CategoriaArchivo.h"
+
+1721006298 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\membresiamanager.h
+	<iostream>
+	<vector>
+	"Fecha.h"
+	"TipoMembresiaManager.h"
+	"TipoMembresiaArchivo.h"
+	"MembresiaArchivo.h"
+	"PagoArchivo.h"
+	"UsuarioArchivo.h"
+	"UsuarioManager.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\fecha.h
+	<iostream>
+	<sstream>
+	<iomanip>
+	<ctime>
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\membresiaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Membresia.h"
+
+1721006877 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\membresia.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Fecha.h"
+	"UsuarioArchivo.h"
+	"TipoMembresiaArchivo.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\pagoarchivo.h
+	<iostream>
+	<vector>
+	<string>
+	<cstdio>
+	"Pago.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\pago.h
+	<string>
+	"Fecha.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\usuarioarchivo.h
+	<fstream>
+	<iostream>
+	<vector>
+	"Usuario.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\categoria.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Categoria.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\categoriaarchivo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<cstdio>
+	"CategoriaArchivo.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\categoriamanager.cpp
+	"CategoriaManager.h"
+	<algorithm>
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\cliente.cpp
+	"Cliente.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\cliente.h
+	<iostream>
+	<string>
+	"Usuario.h"
+	"Membresia.h"
+	"Fecha.h"
+
+1721003570 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\clientemanager.cpp
+	"ClienteManager.h"
+
+1720995931 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\clientemanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Cliente.h"
+	"MembresiaManager.h"
+	"LibroManager.h"
+	"UsuarioArchivo.h"
+	"PrestamoManager.h"
+
+1720905877 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\prestamomanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Prestamo.h"
+	"PrestamoArchivo.h"
+	"LibroArchivo.h"
+	"UsuarioArchivo.h"
+	"LibroManager.h"
+	"UsuarioManager.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\prestamo.h
+	<string>
+	"Libro.h"
+	"Fecha.h"
+	"Usuario.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\prestamoarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Prestamo.h"
+
+1720911500 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\usuariomanager.h
+	<iostream>
+	<string>
+	<vector>
+	<regex>
+	"Usuario.h"
+	"UsuarioArchivo.h"
+	"Bibliotecario.h"
+	"Cliente.h"
+	"Fecha.h"
+	"UsuarioLogueado.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\fecha.cpp
+	"Fecha.h"
+
+1721006298 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\interfaz.cpp
+	<string>
+	"Interfaz.h"
+
+1721006325 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\interfaz.h
+	<iostream>
+	"Bibliotecario.h"
+	"Cliente.h"
+	"UsuarioManager.h"
+	"UsuarioArchivo.h"
+	"BibliotecarioManager.h"
+	"ClienteManager.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"TipoMembresiaManager.h"
+	"MembresiaManager.h"
+	"PagoArchivo.h"
+	"PrestamoManager.h"
+	"UsuarioLogueado.h"
+
+1720301062 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\usuariologueado.h
+	"Usuario.h"
+
+1721006877 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\libro.cpp
+	"Libro.h"
+
+1720906826 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\libroarchivo.cpp
+	"LibroArchivo.h"
+
+1720925563 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\libromanager.cpp
+	"LibroManager.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\main.cpp
+	<iostream>
+	"Interfaz.h"
+
+1721006740 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\membresia.cpp
+	"Membresia.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\membresiaarchivo.cpp
+	<vector>
+	"MembresiaArchivo.h"
+
+1721010635 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\membresiamanager.cpp
+	"MembresiaManager.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\pago.cpp
+	"Pago.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\pagoarchivo.cpp
+	"PagoArchivo.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\persona.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	<stdio.h>
+	"Persona.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\prestamo.cpp
+	"Prestamo.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\prestamoarchivo.cpp
+	"PrestamoArchivo.h"
+
+1720907295 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\prestamomanager.cpp
+	"PrestamoManager.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\usuario.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Usuario.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\usuarioarchivo.cpp
+	<fstream>
+	<iostream>
+	<cstdio>
+	"UsuarioArchivo.h"
+
+1720911831 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\usuariomanager.cpp
+	"UsuarioManager.h"
+
+1720301062 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\usuariologueado.cpp
+	<fstream>
+	<iostream>
+	<cstdio>
+	"UsuarioLogueado.h"
+
+1721007199 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\tipomembresiamanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"TipoMembresia.h"
+	"TipoMembresiaArchivo.h"
+
+1721010417 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\tipomembresia.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Fecha.h"
+
+1721006644 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\tipomembresiaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"TipoMembresia.h"
+
+1721010417 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\tipomembresia.cpp
+	"TipoMembresia.h"
+
+1721007151 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\tipomembresiaarchivo.cpp
+	"TipoMembresiaArchivo.h"
+
+1721011093 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master\tipomembresiamanager.cpp
+	"TipoMembresiaManager.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\tipomembresiamanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"TipoMembresia.h"
+	"TipoMembresiaArchivo.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\tipomembresia.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Fecha.h"
+
+1721180210 c:\users\vodaj\source\repos\lab2_biblioteca\tipomembresiaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"TipoMembresia.h"
+
+1721787745 c:\users\vodaj\source\repos\lab2_biblioteca\pagomanager.h
+	"PagoArchivo.h"
+	"UsuarioLogueado.h"
+	"UsuarioManager.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\tipomembresia.cpp
+	"TipoMembresia.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\tipomembresiaarchivo.cpp
+	"TipoMembresiaArchivo.h"
+
+1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\tipomembresiamanager.cpp
+	"TipoMembresiaManager.h"
+
+1721864891 source:c:\users\vodaj\source\repos\lab2_biblioteca\pagomanager.cpp
+	"pagomanager.h"
+	<string.h>
+	<ctype.h>
+	<iostream>
+	<stdlib.h>
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\autor.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Autor.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\autor.h
+	<string>
+	"Persona.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\persona.h
+	<iostream>
+	<string>
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\autorarchivo.cpp
+	"AutorArchivo.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\autorarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Autor.h"
+
+1721867211 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\autormanager.cpp
+	"AutorManager.h"
+	<algorithm>
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\autormanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Autor.h"
+	"AutorArchivo.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\bibliotecario.cpp
+	"Bibliotecario.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\bibliotecario.h
+	<iostream>
+	<string>
+	"Usuario.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\usuario.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	"Persona.h"
+
+1721867211 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\bibliotecariomanager.cpp
+	"BibliotecarioManager.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\bibliotecariomanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Bibliotecario.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"MembresiaManager.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\libromanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Libro.h"
+	"LibroArchivo.h"
+	"CategoriaManager.h"
+	"CategoriaArchivo.h"
+	"AutorManager.h"
+	"AutorArchivo.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\libro.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"AutorArchivo.h"
+	"CategoriaArchivo.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\categoriaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Categoria.h"
+	"AutorArchivo.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\categoria.h
+	<string>
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\libroarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Libro.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\categoriamanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Categoria.h"
+	"CategoriaArchivo.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\membresiamanager.h
+	<iostream>
+	<vector>
+	"Fecha.h"
+	"TipoMembresiaManager.h"
+	"pagomanager.h"
+	"TipoMembresiaArchivo.h"
+	"MembresiaArchivo.h"
+	"PagoArchivo.h"
+	"UsuarioArchivo.h"
+	"UsuarioManager.h"
+
+1721874843 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\fecha.h
+	<iostream>
+	<sstream>
+	<iomanip>
+	<ctime>
+
+1721870886 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\tipomembresiamanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"TipoMembresia.h"
+	"TipoMembresiaArchivo.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\tipomembresia.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Fecha.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\tipomembresiaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"TipoMembresia.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\pagomanager.h
+	"PagoArchivo.h"
+	"UsuarioLogueado.h"
+	"UsuarioManager.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\pagoarchivo.h
+	<iostream>
+	<vector>
+	<string>
+	<cstdio>
+	"Pago.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\pago.h
+	<string>
+	"Fecha.h"
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\usuariologueado.h
+	"Usuario.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\usuariomanager.h
+	<iostream>
+	<string>
+	<vector>
+	<regex>
+	"Usuario.h"
+	"UsuarioArchivo.h"
+	"Bibliotecario.h"
+	"Cliente.h"
+	"Fecha.h"
+	"UsuarioLogueado.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\usuarioarchivo.h
+	<fstream>
+	<iostream>
+	<vector>
+	"Usuario.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\cliente.h
+	<iostream>
+	<string>
+	"Usuario.h"
+	"Membresia.h"
+	"Fecha.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\membresia.h
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Fecha.h"
+	"UsuarioArchivo.h"
+	"TipoMembresiaArchivo.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\membresiaarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Membresia.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\categoria.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Categoria.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\categoriaarchivo.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<cstdio>
+	"CategoriaArchivo.h"
+
+1721867662 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\categoriamanager.cpp
+	"CategoriaManager.h"
+	<algorithm>
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\cliente.cpp
+	"Cliente.h"
+
+1721867662 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\clientemanager.cpp
+	"ClienteManager.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\clientemanager.h
+	<algorithm>
+	<cctype>
+	<string>
+	<vector>
+	<regex>
+	"Cliente.h"
+	"MembresiaManager.h"
+	"LibroManager.h"
+	"UsuarioArchivo.h"
+	"PrestamoManager.h"
+
+1721876003 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\prestamomanager.h
+	<vector>
+	<iostream>
+	<algorithm>
+	"Prestamo.h"
+	"PrestamoArchivo.h"
+	"MembresiaArchivo.h"
+	"LibroArchivo.h"
+	"UsuarioArchivo.h"
+	"LibroManager.h"
+	"UsuarioManager.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\prestamo.h
+	<string>
+	"Libro.h"
+	"Fecha.h"
+	"Usuario.h"
+
+1721874625 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\prestamoarchivo.h
+	<iostream>
+	<vector>
+	<fstream>
+	"Prestamo.h"
+
+1721874800 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\fecha.cpp
+	"Fecha.h"
+
+1721876367 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\interfaz.cpp
+	<string>
+	"Interfaz.h"
+
+1721865856 c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\interfaz.h
+	<iostream>
+	"Bibliotecario.h"
+	"Cliente.h"
+	"UsuarioManager.h"
+	"UsuarioArchivo.h"
+	"BibliotecarioManager.h"
+	"ClienteManager.h"
+	"LibroManager.h"
+	"AutorManager.h"
+	"CategoriaManager.h"
+	"TipoMembresiaManager.h"
+	"MembresiaManager.h"
+	"PagoArchivo.h"
+	"PrestamoManager.h"
+	"UsuarioLogueado.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\libro.cpp
+	"Libro.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\libroarchivo.cpp
+	"LibroArchivo.h"
+
+1721869741 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\libromanager.cpp
+	"LibroManager.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\main.cpp
+	<iostream>
+	"Interfaz.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\membresia.cpp
+	"Membresia.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\membresiaarchivo.cpp
+	<vector>
+	"MembresiaArchivo.h"
+
+1721877665 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\membresiamanager.cpp
+	"MembresiaManager.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\pago.cpp
+	"Pago.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\pagoarchivo.cpp
+	"PagoArchivo.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\pagomanager.cpp
+	"pagomanager.h"
+	<string.h>
+	<ctype.h>
+	<iostream>
+	<stdlib.h>
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\persona.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<string>
+	<stdio.h>
+	"Persona.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\prestamo.cpp
+	"Prestamo.h"
+
+1721874694 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\prestamoarchivo.cpp
+	"PrestamoArchivo.h"
+
+1721877665 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\prestamomanager.cpp
+	"PrestamoManager.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\tipomembresia.cpp
+	"TipoMembresia.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\tipomembresiaarchivo.cpp
+	"TipoMembresiaArchivo.h"
+
+1721874625 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\tipomembresiamanager.cpp
+	"TipoMembresiaManager.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\usuario.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	<stdio.h>
+	"Usuario.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\usuarioarchivo.cpp
+	<fstream>
+	<iostream>
+	<cstdio>
+	"UsuarioArchivo.h"
+
+1721865856 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\usuariologueado.cpp
+	<fstream>
+	<iostream>
+	<cstdio>
+	"UsuarioLogueado.h"
+
+1721870885 source:c:\users\sofii\documents\facu\laboratorio\lab2_biblioteca-master ultimo\lab2_biblioteca-master\usuariomanager.cpp
+	"UsuarioManager.h"
+
