@@ -1438,7 +1438,7 @@
 	<vector>
 	"MembresiaArchivo.h"
 
-1721864165 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresiamanager.cpp
+1721865526 source:c:\users\vodaj\source\repos\lab2_biblioteca\membresiamanager.cpp
 	"MembresiaManager.h"
 
 1721787734 source:c:\users\vodaj\source\repos\lab2_biblioteca\pago.cpp
@@ -1881,7 +1881,7 @@
 1721180210 source:c:\users\vodaj\source\repos\lab2_biblioteca\tipomembresiamanager.cpp
 	"TipoMembresiaManager.h"
 
-1721859238 source:c:\users\vodaj\source\repos\lab2_biblioteca\pagomanager.cpp
+1721864891 source:c:\users\vodaj\source\repos\lab2_biblioteca\pagomanager.cpp
 	"pagomanager.h"
 	<string.h>
 	<ctype.h>

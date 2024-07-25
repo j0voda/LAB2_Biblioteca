@@ -118,6 +118,10 @@ void MembresiaManager::verEstadoMembresia() {
 
     //actualizarEstadoMembresia(pos);
     Membresia membresia = _membresiaArchivo.leer(pos);
+    if(membresia.getTipoMembresia().getTipoMembresia() <= 1 && !membresia.getTipoMembresia().getEstado()){
+		cout << "No posee una membresia activa." << endl;
+        return;
+    }
     system("cls");
     cout << "-----------------------------" << endl;
 	cout << "MI MEMBRESIA" << endl;
@@ -127,6 +131,7 @@ void MembresiaManager::verEstadoMembresia() {
     cout << "Fecha de fin: " << membresia.getFechaFin().toString() << endl;
     cout << "Estado: " << (membresia.getEstado() ? "Activa" : "Vencida") << endl;
     cout << endl;
+    cin.ignore();
 }
 
 void MembresiaManager::cambiarTipoMembresia() {

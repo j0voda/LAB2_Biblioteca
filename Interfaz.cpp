@@ -425,23 +425,28 @@ void Interfaz::menuMiMembresia() {
         cout << "2. Realizar Pago" << endl;
         cout << "3. Cambiar Tipo de Membresía" << endl;
         cout << "0. Salir" << endl;
+        cout << "-----------------------------" << endl;
         cin >> opcion;
 
         switch (opcion) {
             case 1:
                 _membresiaManager.verEstadoMembresia();
+                system("pause");
                 break;
             case 2:
                 _membresiaManager.realizarPago();
+                system("pause");
                 break;
             case 3:
                 _membresiaManager.cambiarTipoMembresia();
+                system("pause");
                 break;
             case 0:
                 cout << "Saliendo..." << endl;
                 break;
             default:
                 cout << "Opción invalida." << endl;
+                system("pause");
                 break;
         }
     } while (opcion != 0);
