@@ -32,6 +32,7 @@ public:
     bool ingresarClaveMaestra();
 
 	void menuAdministrarUsuarios();
+	void menuAdministrarClientes();
 
     void agregarUsuario();
     void modificarUsuario();
@@ -47,4 +48,7 @@ public:
     void listarUsuariosPorNombre();
     void listarUsuariosPorApellido();
     void listarBibliotecarios();
+
+    void eliminarCliente();
+    void modificarCliente();
 };

@@ -10,10 +10,10 @@ Bibliotecario BibliotecarioManager::crearBibliotecario() {
 	string nombre, apellido, telefono, mail, clave;
 	system("cls");
 
-	cout << "-----------------------------" << endl;
-	cout << "REGISTRO BIBLIOTECARIO" << endl;
-	cout << "-----------------------------" << endl;
-
+	cout << "-----------------------------------------------" << endl;
+	cout << "------------REGISTRO BIBLIOTECARIO-------------" << endl;
+	cout << "-----------------------------------------------" << endl;
+    cout << endl;
 	cout << "Ingrese el nombre del nuevo usuario: ";
     getline(cin, nombre);
     cout << "Ingrese apellido: ";
@@ -102,12 +102,13 @@ int BibliotecarioManager::validarMail(const string &mail){
 
 void BibliotecarioManager::mostrarBibliotecario(const Usuario &registro) {
 	cout<<endl;
-    cout << "ID: " << registro.getId() << endl;
-    cout << "Nombre: " << registro.getNombre() << endl;
-    cout << "Apellido: " << registro.getApellido() << endl;
-    cout << "Email: " << registro.getMail() << endl;
+	cout << "-----------------------------------------------" << endl;
+    cout << "  ID: " << registro.getId() << endl;
+    cout << "  Nombre: " << registro.getNombre() << endl;
+    cout << "  Apellido: " << registro.getApellido() << endl;
+    cout << "  Email: " << registro.getMail() << endl;
     cout<<endl;
-    cout << "-----" << endl;
+    cout << "-----------------------------------------------" << endl;
 }
 
 void BibliotecarioManager::listarBibliotecarios() {

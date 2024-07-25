@@ -16,6 +16,7 @@ public:
     bool guardar(const Usuario &usuario);
     bool modificar(int index, const Usuario &usuario);
     int buscarById(int id);
+    int buscarByIdYPermisos(int id, int permisos);
     Usuario leer(int index);
     vector<Usuario> leerTodos();
     vector<Usuario> leerPorPermisos(int permisos);

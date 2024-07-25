@@ -49,6 +49,25 @@ int UsuarioArchivo::buscarById(int id) {
     return -1;
 }
 
+int UsuarioArchivo::buscarByIdYPermisos(int id, int permisos) {
+    Usuario usuario;
+    int pos = 0;
+    FILE *pFile;
+    pFile = fopen(this->_nombreArchivo, "rb");
+    if(pFile == nullptr){
+        return -1;
+    }
+    while(fread(&usuario, sizeof(Usuario), 1, pFile)) {
+        if(usuario.getId() == id && usuario.getPermisos() == permisos) {
+            fclose(pFile);
+            return pos;
+        }
+        pos++;
+    }
+    fclose(pFile);
+    return -1;
+}
+
 Usuario UsuarioArchivo::leer(int index) {
     Usuario usuario;
     FILE *pFile;

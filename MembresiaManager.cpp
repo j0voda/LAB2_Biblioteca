@@ -10,17 +10,18 @@ void MembresiaManager::menuAdministrarMiMembresia(){
 
         clienteActivo = _usuarioManager.clienteActivo();
 
-        cout << "------------------------------------------" << endl;
-        cout << "ADMINISTRAR MI MEMBRESIA" << endl;
-        cout << "------------------------------------------" << endl;
-        cout << "1. Ver el Estado de mi Membresia" << endl;
-        cout << "2. Realizar Pago" << endl;
-        cout << "3. Ver el Historial de Pagos" << endl;
-        cout << "4. Modificar Membresia" << endl;
-        cout << "------------------------------------------" << endl;
-        cout << "0. Salir" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "-----------ADMINISTRAR MI MEMBRESIA------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Ver el Estado de mi Membresia           |" << endl;
+        cout << "|  2. Realizar Pago                           |" << endl;
+        cout << "|  3. Ver el Historial de Pagos               |" << endl;
+        cout << "|  4. Modificar Membresia                     |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout<<endl;
-        cout << "Seleccione una opcion: ";
         cin >> opcion;
         cin.ignore();
 
@@ -38,7 +39,7 @@ void MembresiaManager::menuAdministrarMiMembresia(){
                 break;
 
             case 3:
-                //listarTiposMembresia();
+                _pagoManager.listarPagosPorUsuario();
                 system("pause");
                 break;
 
@@ -63,9 +64,9 @@ Membresia MembresiaManager::asignarMembresia() {
     bool estado;
 
     system("cls");
-    cout << "-----------------------------" << endl;
-	cout << "SELECCIONAR MEMBRESIA" << endl;
-	cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
+	cout << "-------------SELECCIONAR MEMBRESIA-------------" << endl;
+	cout << "-----------------------------------------------" << endl;
 
 	_tipoMembresiaManager.listarMembresiasActivas();
 
@@ -80,11 +81,11 @@ Membresia MembresiaManager::asignarMembresia() {
             // Es un número
             if(_tipoMembresiaArchivo.buscarById(idTipo) == -1){
                 cin.clear();
-                //and empty it
                 cin.ignore(numeric_limits<streamsize>::max(),'\n');
                 cout << "-Input invalido, porfavor reingrese ID: " << endl;
+            } else {
+                valid = true;
             }
-            valid = true;
         }
         else
         {
@@ -138,9 +139,9 @@ void MembresiaManager::verEstadoMembresia() {
         return;
     }
     system("cls");
-    cout << "-----------------------------" << endl;
-	cout << "MI MEMBRESIA" << endl;
-	cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
+	cout << "-----------------MI MEMBRESIA------------------" << endl;
+	cout << "-----------------------------------------------" << endl;
     cout << "Tipo: " << membresia.getTipoMembresia().getTipoMembresia() << " - " << membresia.getTipoMembresia().getNombre() << endl;
     cout << "Fecha de inicio: " << membresia.getFechaInicio().toString() << endl;
     cout << "Fecha de fin: " << membresia.getFechaFin().toString() << endl;
@@ -163,9 +164,10 @@ void MembresiaManager::cambiarTipoMembresia() {
     int membresiaAnterior = membresiaActual.getTipoMembresia().getTipoMembresia();
 
     cout << endl;
-    cout << "-----------------------------" << endl;
-	cout << "MEMBRESIAS DISPONIBLES" << endl;
-	cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
+	cout << "--------------MEMBRESIAS DISPONIBLES-----------" << endl;
+	cout << "-----------------------------------------------" << endl;
+	cout << endl;
     _tipoMembresiaManager.listarOtrasMembresias(membresiaAnterior);
 
     cout << endl;

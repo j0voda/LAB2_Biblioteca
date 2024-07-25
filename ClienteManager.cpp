@@ -9,9 +9,10 @@ Cliente ClienteManager::crearCliente(){
 	Membresia membresia;
     system("cls");
 
-    cout << "-----------------------------" << endl;
-	cout << "REGISTRO CLIENTE" << endl;
-	cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
+	cout << "---------------REGISTRO CLIENTE----------------" << endl;
+	cout << "-----------------------------------------------" << endl;
+	cout << endl;
 
     cout << "Ingrese el nombre del nuevo usuario: ";
     getline(cin, nombre);
@@ -111,12 +112,13 @@ void ClienteManager::asignarMembresia(){
 
 void ClienteManager::mostrarCliente(const Usuario &registro) {
 	cout<<endl;
-    cout << "ID: " << registro.getId() << endl;
-    cout << "Nombre: " << registro.getNombre() << endl;
-    cout << "Apellido: " << registro.getApellido() << endl;
-    cout << "Email: " << registro.getMail() << endl;
+	cout << "-----------------------------------------------" << endl;
+    cout << "  ID: " << registro.getId() << endl;
+    cout << "  Nombre: " << registro.getNombre() << endl;
+    cout << "  Apellido: " << registro.getApellido() << endl;
+    cout << "  Email: " << registro.getMail() << endl;
+    cout << "-----------------------------------------------" << endl;
     cout<<endl;
-    cout << "-----" << endl;
 }
 
 void ClienteManager::listarClientes() {

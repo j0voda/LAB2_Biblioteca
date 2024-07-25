@@ -1,12 +1,19 @@
 #ifndef ADMIN_H
 #define ADMIN_H
 
+#pragma once
+#include <iostream>
+#include <string>
 
-class Admin
+using namespace std;
+
+#include "Usuario.h"
+
+class Admin : public Usuario
 {
-    public:
-
     private:
+
+    public:
         Admin();
         Admin(const string &nombre, const string &apellido, const string &telefono, const string &mail, int id, const string &clave, int permisos);
 };

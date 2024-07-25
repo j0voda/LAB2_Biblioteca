@@ -8,9 +8,10 @@ TipoMembresia TipoMembresiaManager::crearTipoMembresia() {
     bool estado;
 
     system("cls");
-    cout << "-----------------------------" << endl;
-	cout << "AGREGAR TIPO DE MEMBRESIA" << endl;
-	cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
+	cout << "-----------AGREGAR TIPO DE MEMBRESIA-----------" << endl;
+	cout << "-----------------------------------------------" << endl;
+	cout << endl;
 
 	tipo = _tipoMembresiaArchivo.getNuevoID();
     cout << "Membresia: "<<tipo<<endl;
@@ -61,15 +62,16 @@ void TipoMembresiaManager::mostrarTipoMembresia(const TipoMembresia &registro) {
     cout << "Valor mensual: " << registro.getPrecio() << endl;
     cout << "Estado: " << (registro.getEstado() ? "Activa" : "Inactiva") << endl;
 	cout<<endl;
-    cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
 }
 
 void TipoMembresiaManager::modificarTipoMembresia() {
 	system("cls");
 	cout<<endl;
-	cout << "MODIFICAR TIPO DE MEMBRESIA" << endl;
-	cout << "-----------------------------" << endl;
-
+	cout << "-----------------------------------------------" << endl;
+	cout << "----------MODIFICAR TIPO DE MEMBRESIA----------" << endl;
+	cout << "-----------------------------------------------" << endl;
+    cout << endl;
     int idTipoMembresia;
 
 	listarTiposMembresia();
@@ -98,17 +100,18 @@ void TipoMembresiaManager::modificarTipoMembresia() {
     char opcion;
     do {
 		system("cls");
-		cout << "-----------------------------" << endl;
-		cout << "MODIFICAR MEMBRESIA" << endl;
-		cout << "-----------------------------" << endl;
-        cout << "1. Modificar Nombre" << endl;
-        cout << "2. Modificar Libros en Simultaneo" << endl;
-        cout << "3. Modificar Libros por Mes" << endl;
-        cout << "4. Modificar Precio" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "0. Finalizar Modificaciones" << endl;
+		cout << "-----------------------------------------------" << endl;
+		cout << "-------------MODIFICAR MEMBRESIA---------------" << endl;
+		cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Modificar Nombre                        |" << endl;
+        cout << "|  2. Modificar Libros en Simultaneo          |" << endl;
+        cout << "|  3. Modificar Libros por Mes                |" << endl;
+        cout << "|  4. Modificar Precio                        |" << endl;
+        cout << "|  0. Finalizar Modificaciones                |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout<<endl;
-        cout << "Seleccione una opcion: ";
         cin >> opcion;
         cin.ignore();
 		switch (opcion) {
@@ -193,30 +196,32 @@ void TipoMembresiaManager::desactivarTipoMembresia() {
     char opcion;
     do {
 		system("cls");
-		cout << "-----------------------------" << endl;
-		cout << "ALTA / BAJA MEMBRESIA" << endl;
-		cout << "-----------------------------" << endl;
-        cout << "1. ACTIVAR un Tipo de Membresia" << endl;
-        cout << "2. DESACTIVAR un Tipo de Membresia" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "0. Salir" << endl;
+		cout << "-----------------------------------------------" << endl;
+		cout << "--------------ALTA / BAJA MEMBRESIA------------"     << endl;
+		cout << "-----------------------------------------------" << endl;
+        cout << "|  1. ACTIVAR un Tipo de Membresia            |" << endl;
+        cout << "|  2. DESACTIVAR un Tipo de Membresia         |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout<<endl;
-        cout << "Seleccione una opcion: ";
         cin >> opcion;
         cin.ignore();
 		switch (opcion) {
             case '1': {
             	system("cls");
                 int idMembresia;
-                cout << "ACTIVAR MEMBRESIAS INACTIVAS"<<endl;
-                cout << "-----------------------------" << endl;
+                cout << "-----------------------------------------------" << endl;
+                cout << "----------ACTIVAR MEMBRESIAS INACTIVAS---------"<<endl;
+                cout << "-----------------------------------------------" << endl;
                 cout << endl;
                 listarMembresiasInactivas();
                 cout << "Seleccione el ID del tipo que desea ACTIVAR: ";
                 cin >> idMembresia;
                 int pos = _tipoMembresiaArchivo.buscarById(idMembresia);
                 TipoMembresia membresiaActual = _tipoMembresiaArchivo.leer(pos);
-                while (pos == -1 || idMembresia != 0 || membresiaActual.getEstado()==false) {
+                while (pos == -1 || idMembresia < 0) {
                     cout << "-- Reingrese ID: ";
                     cin >> idMembresia;
                     cin.ignore();
@@ -238,15 +243,16 @@ void TipoMembresiaManager::desactivarTipoMembresia() {
             case '2': {
                 system("cls");
                 int idMembresia;
-                cout << "DESACTIVAR MEMBRESIAS ACTIVAS"<<endl;
-                cout << "-----------------------------" << endl;
+                cout << "-----------------------------------------------" << endl;
+                cout << "--------DESACTIVAR MEMBRESIAS ACTIVAS----------"<<endl;
+                cout << "-----------------------------------------------" << endl;
                 cout << endl;
                 listarMembresiasActivas();
                 cout << "Seleccione el ID del tipo que desea DESACTIVAR: ";
                 cin >> idMembresia;
                 int pos = _tipoMembresiaArchivo.buscarById(idMembresia);
                 TipoMembresia membresiaActual = _tipoMembresiaArchivo.leer(pos);
-                while (pos == -1 && idMembresia != 0 && membresiaActual.getEstado()==true) {
+                while (pos == -1 || idMembresia < 0 ) {
                     cout << "-- Reingrese ID: ";
                     cin >> idMembresia;
                     cin.ignore();
@@ -291,10 +297,11 @@ void TipoMembresiaManager::listarTiposMembresia() {
 void TipoMembresiaManager::eliminarTipoMembresia() {
     int idMembresia;
     system("cls");
-    cout << "-----------------------------" << endl;
-	cout << "ELIMINAR TIPO DE MEMBRESIA" << endl;
-	cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
+	cout << "----------ELIMINAR TIPO DE MEMBRESIA-----------" << endl;
+	cout << "-----------------------------------------------" << endl;
 	listarTiposMembresia();
+	cout << endl;
     cout << "Ingrese el ID del tipo a eliminar: "<<endl;
     cin >> idMembresia;
     cin.ignore();

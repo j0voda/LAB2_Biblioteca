@@ -9,15 +9,16 @@ void AutorManager::menu(){
     {
         system("cls");
 
-        cout << "-----------------------------" << endl;
-        cout << "ADMINISTRAR AUTORES" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "1. Agregar Autor" << endl;
-        cout << "2. Listar Autores" << endl;
-        cout << "3. Eliminar Autor" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "0. Salir" << endl;
-        cout << "Seleccione una opcion: ";
+        cout << "-----------------------------------------------" << endl;
+        cout << "-------------ADMINISTRAR AUTORES---------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Agregar Autor                           |" << endl;
+        cout << "|  2. Listar Autores                          |" << endl;
+        cout << "|  3. Eliminar Autor                          |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cin >> opcion;
         cin.ignore();
 
@@ -25,9 +26,10 @@ void AutorManager::menu(){
         {
             case 1:
             	system("cls");
-				cout << "-----------------------------" << endl;
-				cout << "AGREGAR AUTOR" << endl;
-				cout << "-----------------------------" << endl;
+				cout << "-----------------------------------------------" << endl;
+				cout << "-----------------AGREGAR AUTOR-----------------" << endl;
+				cout << "-----------------------------------------------" << endl;
+				cout << endl;
                 agregarAutor();
                 system("pause");
                 break;
@@ -96,12 +98,12 @@ void AutorManager::listarAutores() {
 
 void AutorManager::mostrarAutor(const Autor& autor) {
 	cout<<endl;
-    cout << "ID: " << autor.getId() << endl;
-    cout << "Nombre: " << autor.getNombre() << " " << autor.getApellido() << endl;
-    cout << "Nacionalidad: " << autor.getNacionalidad() << endl;
-    cout << "Best Seller: " << autor.getBestSellers() << endl;
+    cout << "  ID: " << autor.getId() << endl;
+    cout << "  Nombre: " << autor.getNombre() << " " << autor.getApellido() << endl;
+    cout << "  Nacionalidad: " << autor.getNacionalidad() << endl;
+    cout << "  Best Seller: " << autor.getBestSellers() << endl;
     cout<<endl;
-    cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
 }
 
 void AutorManager::mostrarResumenAutor() {
@@ -117,12 +119,30 @@ void AutorManager::mostrarResumenAutor() {
 
 void AutorManager::eliminarAutor() {
     int idAutor;
+    bool valid = false;
     system("cls");
-    cout << "-----------------------------" << endl;
-	cout << "ELIMINAR AUTOR" << endl;
-	cout << "-----------------------------" << endl;
-    cout << "Ingrese el ID del autor a eliminar: ";
-    cin >> idAutor;
+    cout << "-----------------------------------------------" << endl;
+	cout << "-----------------ELIMINAR AUTOR----------------" << endl;
+	cout << "-----------------------------------------------" << endl;
+    cout << endl;
+    cin.ignore();
+    do
+    {
+        cout << "Ingrese un id de autor: ";
+        cin >> idAutor;
+        if (cin.good())
+        {
+            valid = true;
+        }
+        else
+        {
+            //something went wrong, we reset the buffer's state to good
+            cin.clear();
+            //and empty it
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout << "-El numero ingresado no corresponde a un ID, reingrese ID: " << endl;
+        }
+    } while (!valid);
     cin.ignore();
 
     vector<Autor> autores = _autorArchivo.leerTodos();

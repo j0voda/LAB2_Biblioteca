@@ -22,7 +22,11 @@ private:
 	CategoriaManager _categoriaManager;
 
 public:
-	AdminManagerManager();
+	AdminManager();
 
 	void menuAdmin();
+	Admin crearAdmin();
+	int validarMail(const string &mail);
+	int validarTel(const string &tel);
+	bool ingresarClaveMaestra();
 };

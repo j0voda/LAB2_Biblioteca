@@ -18,11 +18,12 @@ void PrestamoManager::solicitarPrestamo() {
 
 	system("cls");
 
-    cout << "-----------------------------" << endl;
-	cout << "SOLICITAR PRESTAMO" << endl;
-	cout << "-----------------------------" << endl;
-    cout << "Ingrese el ID del libro a solicitar | ";
-    cout << "Ingrese 0 si desea listar los libros disponibles"<<endl;
+    cout << "-----------------------------------------------" << endl;
+	cout << "----------------SOLICITAR PRESTAMO-------------" << endl;
+	cout << "-----------------------------------------------" << endl;
+	cout << endl;
+    cout << "   Ingrese el ID del libro a solicitar | ";
+    cout << "   Ingrese 0 si desea listar los libros disponibles"<<endl;
     cin >> idLibro;
 
     while(idLibro == 0){
@@ -53,15 +54,21 @@ void PrestamoManager::solicitarPrestamo() {
 
 		if(_usuarioManager.dobleValidacion(clave)){
 			clienteActivo = _usuarioManager.clienteActivo();
+			if(validarPrestamo(clienteActivo) == 1){
+                int nuevoId = _prestamoArchivo.getNuevoID();
+                Prestamo prestamo = crearPrestamo(nuevoId, libro, clienteActivo,false);
 
-			int nuevoId = _prestamoArchivo.getNuevoID();
-			Prestamo prestamo = crearPrestamo(nuevoId, libro, clienteActivo,false);
+                _prestamoArchivo.guardar(prestamo);
+                libro.setDisponibles(libro.getDisponibles() - 1);
+                _libroArchivo.modificar(posLibro,libro);
 
-			_prestamoArchivo.guardar(prestamo);
-			libro.setDisponibles(libro.getDisponibles() - 1);
-			_libroArchivo.modificar(posLibro,libro);
+                cout << "Prestamo realizado con exito!" << endl;
+                cin.ignore();
+			} else {
+			    cout << "No puede realizar prestamo." << endl;
+			    cin.ignore();
+			}
 
-			cout << "Prestamo realizado con exito!" << endl;
 		} else {
 			cout << "El libro no esta disponible para prestamo en este momento." << endl;
 		}
@@ -79,10 +86,14 @@ void PrestamoManager::listarPrestamos(){
 }
 
 void PrestamoManager::listarPrestamosPorIdCliente(int idCliente){
-    vector<Prestamo> prestamos = _prestamoArchivo.leerTodos();
+    vector<Prestamo> prestamos = _prestamoArchivo.leerPorIdUsuario(idCliente);
 
-    for (const auto &prestamo : prestamos) {
-        if (prestamo.getCliente().getId() == idCliente) {
+    if(prestamos.size() >= 0) {
+        cout << "El cliente no posee prestamos. Pulse una tecla para volver. " << endl;
+        cin.ignore();
+        return;
+    } else {
+        for (const auto &prestamo : prestamos) {
             mostrarPrestamo(prestamo);
         }
     }
@@ -90,13 +101,14 @@ void PrestamoManager::listarPrestamosPorIdCliente(int idCliente){
 
 void PrestamoManager::listarPrestamosCliente() {
     string mail, clave;
-    Usuario clienteActivo;
+    Usuario clienteActivo = _usuarioManager.clienteActivo();
 
     system("cls");
 
-    cout << "-----------------------------" << endl;
-    cout << "LISTAR PRESTAMOS DEL CLIENTE" << endl;
-    cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
+    cout << "---------LISTAR PRESTAMOS DEL CLIENTE----------" << endl;
+    cout << "-----------------------------------------------" << endl;
+    cout << endl;
 
     cout << "Para listar sus prestamos, ingrese nuevamente su clave: ";
 		cin >> clave;
@@ -104,23 +116,33 @@ void PrestamoManager::listarPrestamosCliente() {
 		if(_usuarioManager.dobleValidacion(clave)){
 
 			clienteActivo = _usuarioManager.clienteActivo();
-			vector<Prestamo> prestamos = _prestamoArchivo.leerTodos();
+            vector<Prestamo> prestamos = _prestamoArchivo.leerTodos();
+            vector<Prestamo> prestamosDelUsuario;
 
-			bool tienePrestamos = false;
 			for (const auto &prestamo : prestamos) {
-				if (prestamo.getCliente().getId() == clienteActivo.getId()) {
-					mostrarPrestamo(prestamo);
-					tienePrestamos = true;
-				}
-			}
-
-			if (!tienePrestamos) {
-				cout << "El cliente no tiene prestamos registrados." << endl;
-			}
+			if (prestamo.getCliente().getId() == clienteActivo.getId()) {
+                    prestamosDelUsuario.push_back(prestamo);
+                    mostrarPrestamo(prestamo);
+                }
+            }
+            if (prestamosDelUsuario.empty()) {
+                cout << "El cliente no tiene prestamos registrados." << endl;
+                return;
+            }
 		} else {
 			cout << "Credenciales invalidas. Por favor, intente nuevamente." << endl;
 		}
 
+}
+
+void PrestamoManager::listarPrestamosActivos(int idCliente){
+    vector<Prestamo> prestamos = _prestamoArchivo.leerPorIdUsuario(idCliente);
+
+    for (const auto &prestamo : prestamos) {
+        if (!estaVencido(prestamo)) {
+            mostrarPrestamo(prestamo);
+        }
+    }
 }
 
 void PrestamoManager::realizarDevolucion() {
@@ -129,10 +151,10 @@ void PrestamoManager::realizarDevolucion() {
 
     system("cls");
 
-    cout << "-----------------------------" << endl;
-    cout << "REALIZAR DEVOLUCION" << endl;
-    cout << "-----------------------------" << endl;
-
+    cout << "-----------------------------------------------" << endl;
+    cout << "---------------REALIZAR DEVOLUCION-------------" << endl;
+    cout << "-----------------------------------------------" << endl;
+    cout << endl;
     cout << "Para realizar una devolucion ingrese nuevamente su clave: ";
 	cin >> clave;
 
@@ -146,10 +168,10 @@ void PrestamoManager::realizarDevolucion() {
 
 		system("cls");
 
-		cout << "-----------------------------" << endl;
-		cout << "REALIZAR DEVOLUCION" << endl;
-		cout << "-----------------------------" << endl;
-		cout << endl;
+		cout << "-----------------------------------------------" << endl;
+        cout << "---------------REALIZAR DEVOLUCION-------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << endl;
 
 		cout << "Prestamos activos de " << clienteActivo.getNombre() << ":" << endl;
 		cout << endl;
@@ -160,7 +182,6 @@ void PrestamoManager::realizarDevolucion() {
 				mostrarPrestamo(prestamo);
 			}
 		}
-
 
 		if (prestamosActivos.empty()) {
 			cout << "No tiene prestamos activos para devolver." << endl;
@@ -202,6 +223,44 @@ void PrestamoManager::realizarDevolucion() {
 	}
 }
 
+int PrestamoManager::validarPrestamo(const Usuario &cliente) {
+    int idCliente = cliente.getId();
+    Membresia membresiaCliente = _membresiaArchivo.leer(_membresiaArchivo.buscarPorIdUsuario(idCliente));
+    Cliente cl(cliente.getNombre(), cliente.getApellido(), cliente.getTelefono(), cliente.getMail(), cliente.getId(), cliente.getClave(), cliente.getPermisos(), membresiaCliente); // Agrega Membresia según sea necesario
+    TipoMembresia tipoMembresiaCliente = membresiaCliente.getTipoMembresia();
+
+    int prestamosActivos = contarPrestamosActivos(idCliente);
+    int prestamosActivosMax = tipoMembresiaCliente.getLibrosAlaVez();
+    int prestamosPorMesMax = tipoMembresiaCliente.getLibrosXMes();
+
+    // Obtener la fecha actual
+    Fecha fechaActual = Fecha::obtenerFechaActual();
+
+    // Calcular el inicio y fin del mes actual
+    Fecha fechaInicioMes(fechaActual.getDia(), fechaActual.getMes(), fechaActual.getAnio());
+    fechaInicioMes.setDia(1); // Primer día del mes actual
+    Fecha fechaFinMes = fechaInicioMes.sumarMes(1);
+    fechaFinMes.setDia(0); // Último día del mes actual
+
+    int prestamosEnElMes = _prestamoArchivo.buscarPorRangoFecha(fechaInicioMes, fechaFinMes);
+
+    if(prestamosActivos < prestamosActivosMax) {
+        return 1; // Prestamo permitido
+    }
+    if(prestamosEnElMes == prestamosPorMesMax) {
+        return -1; // Máximo de prestamos por mes alcanzado
+    } else if (prestamosActivos == prestamosActivosMax && prestamosEnElMes < prestamosPorMesMax) {
+        return 0; // Máximo de prestamos simultáneos alcanzado
+    }
+
+    return 0; // Condición por defecto, aunque no debería llegar aquí
+}
+
+int PrestamoManager::contarPrestamosActivos(int idCliente){
+    vector<Prestamo> prestamos = _prestamoArchivo.leerPorIdUsuario(idCliente);
+    return prestamos.size();
+}
+
 /*
 bool PrestamoManager::puedePedirPrestamo(int idCliente) {
     vector<Prestamo> prestamos = _prestamoArchivo.leerTodos();
@@ -221,13 +280,13 @@ bool PrestamoManager::puedePedirPrestamo(int idCliente) {
 }*/
 
 void PrestamoManager::mostrarPrestamo(const Prestamo &registro) {
-    cout << "ID Prestamo: " << registro.getIdPrestamo() << endl;
-    cout << "Fecha Prestamo: " << registro.getFechaPrestamo().toString() << endl;
-    cout << "Fecha Devolucion: " << registro.getFechaDevolucion().toString() << endl;
-    cout << "Libro: " << registro.getLibro().getTitulo() << " (ID: " << registro.getLibro().getIdLibro() << ")" << endl;
-    cout << "Cliente: " << registro.getCliente().getNombre() << " (ID: " << registro.getCliente().getId() << ")" << endl;
-    cout << "Devuelto: " << (registro.getDevuelto() ? "Si" : "No") << endl;
-    cout << "-------------------------" << endl;
+    cout << " ID Prestamo: " << registro.getIdPrestamo() << endl;
+    cout << " Fecha Prestamo: " << registro.getFechaPrestamo().toString() << endl;
+    cout << " Fecha Devolucion: " << registro.getFechaDevolucion().toString() << endl;
+    cout << " Libro: " << registro.getLibro().getTitulo() << " (ID: " << registro.getLibro().getIdLibro() << ")" << endl;
+    cout << " Cliente: " << registro.getCliente().getNombre() << " (ID: " << registro.getCliente().getId() << ")" << endl;
+    cout << " Devuelto: " << (registro.getDevuelto() ? "Si" : "No") << endl;
+    cout << "-----------------------------------------------" << endl;
 }
 
 bool PrestamoManager::estaVencido(const Prestamo &prestamo) {

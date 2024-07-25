@@ -36,6 +36,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="AdminManager.cpp" />
+		<Unit filename="AdminManager.h" />
 		<Unit filename="Autor.cpp" />
 		<Unit filename="Autor.h" />
 		<Unit filename="AutorArchivo.cpp" />
@@ -98,6 +100,8 @@
 		<Unit filename="UsuarioLogueado.h" />
 		<Unit filename="UsuarioManager.cpp" />
 		<Unit filename="UsuarioManager.h" />
+		<Unit filename="admin.cpp" />
+		<Unit filename="admin.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="pagomanager.cpp" />
 		<Unit filename="pagomanager.h" />

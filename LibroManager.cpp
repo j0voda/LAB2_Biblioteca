@@ -5,17 +5,18 @@ void LibroManager::menu(){
     do {
         system("cls");
 
-        cout << "-----------------------------" << endl;
-        cout << "ADMINISTRAR LIBROS" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "1. Agregar Libro" << endl;
-        cout << "2. Modificar Libros" << endl;
-        cout << "3. Listar Libro" << endl;
-        cout << "4. Eliminar Libro" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "0. Salir" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "--------------ADMINISTRAR LIBROS---------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Agregar Libro                           |" << endl;
+        cout << "|  2. Modificar Libros                        |" << endl;
+        cout << "|  3. Listar Libro                            |" << endl;
+        cout << "|  4. Eliminar Libro                          |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout<<endl;
-        cout << "Seleccione una opcion: ";
         cin >> opcion;
         cin.ignore();
 
@@ -61,10 +62,10 @@ Libro LibroManager::crearLibro(){
     bool estado;
 
     system("cls");
-    cout << "-----------------------------" << endl;
-	cout << "AGREGAR LIBRO" << endl;
-	cout << "-----------------------------" << endl;
-
+    cout << "-----------------------------------------------" << endl;
+	cout << "-----------------AGREGAR LIBRO-----------------" << endl;
+	cout << "-----------------------------------------------" << endl;
+    cout << endl;
     cout << "Ingrese el titulo del Libro: ";
     getline(cin, titulo);
     cout<<endl;
@@ -147,8 +148,10 @@ Libro LibroManager::crearLibro(){
 void LibroManager::modificarLibro() {
 	system("cls");
 	cout<<endl;
-	cout << "MODIFICAR LIBRO" << endl;
-	cout << "-----------------------------" << endl;
+	cout << "-----------------------------------------------" << endl;
+	cout << "----------------MODIFICAR LIBRO----------------" << endl;
+	cout << "-----------------------------------------------" << endl;
+	cout << endl;
 
     int idLibro;
     cout << "Ingrese el ID del libro a modificar | ";
@@ -186,19 +189,20 @@ void LibroManager::modificarLibro() {
 	system("cls");
     char opcion;
     do {
-		cout << "-----------------------------" << endl;
-		cout << "MODIFICAR LIBRO" << endl;
-		cout << "-----------------------------" << endl;
-        cout << "1. Modificar Titulo" << endl;
-        cout << "2. Modificar Autor" << endl;
-        cout << "3. Modificar Categoria" << endl;
-        cout << "4. Modificar Anio de Publicacion" << endl;
-        cout << "5. Modificar Numero de Ejemplares" << endl;
-        cout << "6. Modificar Disponibles (PRUEBA)" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "0. Finalizar Modificaciones" << endl;
+		cout << "-----------------------------------------------" << endl;
+		cout << "----------------MODIFICAR LIBRO----------------" << endl;
+		cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Modificar Titulo                        |" << endl;
+        cout << "|  2. Modificar Autor                         |" << endl;
+        cout << "|  3. Modificar Categoria                     |" << endl;
+        cout << "|  4. Modificar Anio de Publicacion           |" << endl;
+        cout << "|  5. Modificar Numero de Ejemplares          |" << endl;
+        cout << "|  6. Modificar Disponibles                   |" << endl;
+        cout << "|  0. Finalizar Modificaciones                |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout<<endl;
-        cout << "Seleccione una opcion: ";
         cin >> opcion;
         cin.ignore();
 		switch (opcion) {
@@ -324,30 +328,32 @@ void LibroManager::modificarLibro() {
 
 void LibroManager::mostrarLibro(const Libro &registro) {
 	cout<<endl;
-    cout << "Titulo: " << registro.getTitulo() << endl;
-    cout << "Autor: " << registro.getAutor().getNombre()<< endl;
-    cout << "Categoria: " << registro.getCategoria().getNombre() << endl;
-    cout << "Anio de Publicacion: " << registro.getAnioPublicacion() << endl;
-    cout << "Ejemplares: " << registro.getEjemplares() << endl;
-    cout << "Disponibles: " << registro.getDisponibles() << endl;
-    cout << "Estado: " << (registro.getEstado() ? "Disponible" : "No Disponible") << endl;
-    cout << "ID: " << registro.getIdLibro() << endl;
+    cout << "  Titulo: " << registro.getTitulo() << endl;
+    cout << "  Autor: " << registro.getAutor().getNombre()<< endl;
+    cout << "  Categoria: " << registro.getCategoria().getNombre() << endl;
+    cout << "  Anio de Publicacion: " << registro.getAnioPublicacion() << endl;
+    cout << "  Ejemplares: " << registro.getEjemplares() << endl;
+    cout << "  Disponibles: " << registro.getDisponibles() << endl;
+    cout << "  Estado: " << (registro.getEstado() ? "Disponible" : "No Disponible") << endl;
+    cout << "  ID: " << registro.getIdLibro() << endl;
+    cout << "-----------------------------------------------" << endl;
 	cout<<endl;
-    cout << "-----------------------------" << endl;
 }
 
 void LibroManager::listarLibros() {
 	system("cls");
     int opcion;
-    cout << "Listar libros por: " << endl;
-    cout << "1. Nombre" << endl;
-    cout << "2. Categoria" << endl;
-    cout << "3. Autor" << endl;
-    cout << "4. ID" << endl;
-    cout << "-----------------------------" << endl;
-    cout << "0. Salir" << endl;
+    cout << "-----------------------------------------------" << endl;
+    cout << "|  Listar libros por:                         |" << endl;
+    cout << "|  1. Nombre                                  |" << endl;
+    cout << "|  2. Categoria                               |" << endl;
+    cout << "|  3. Autor                                   |" << endl;
+    cout << "|  4. ID                                      |" << endl;
+    cout << "|  0. Salir                                   |" << endl;
+    cout << "-----------------------------------------------" << endl;
+    cout << "|  Seleccione una opcion:                     |" << endl;
+    cout << "-----------------------------------------------" << endl;
     cout<<endl;
-    cout << "Seleccione una opcion: ";
     cin >> opcion;
     cin.ignore();
 
@@ -438,9 +444,10 @@ void LibroManager::listarLibrosPorID() {
 void LibroManager::eliminarLibro() {
     int idLibro;
     system("cls");
-    cout << "-----------------------------" << endl;
-	cout << "ELIMINAR LIBRO" << endl;
-	cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
+	cout << "--------------ELIMINAR LIBRO-------------------" << endl;
+	cout << "-----------------------------------------------" << endl;
+	cout << endl;
     cout << "Ingrese el ID del libro a eliminar | ";
     cout << "Ingrese 0 si desea listar los libros existentes"<<endl;
     cin >> idLibro;

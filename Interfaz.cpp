@@ -9,11 +9,15 @@ void Interfaz::menuInicio() {
 
     do {
         system("cls");
-        cout << "1. Iniciar sesion" << endl;
-        cout << "2. Registrarse" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "0. Salir" << endl;
-        cout << "Seleccione una opcion: ";
+        cout << "-----------------------------------------------" << endl;
+        cout << "------------------BIBLIOTECA-------------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|    1. Iniciar sesion                        |" << endl;
+        cout << "|    2. Registrarse                           |" << endl;
+        cout << "|    0. Salir                                 |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|   Seleccione una opcion:                    |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cin >> opcion;
         cin.ignore();
 
@@ -42,14 +46,15 @@ void Interfaz::iniciarSesion() {
     {
 		system("cls");
 		cout << "-----------------------------------------------" << endl;
-		cout << "INICIAR SESION" << endl;
+		cout << "---------------INICIAR SESION------------------" << endl;
 		cout << "-----------------------------------------------" << endl;
-		cout << "1. Iniciar Sesion como Bibliotecario" << endl;
-		cout << "2. Iniciar Sesion como Cliente" << endl;
-		cout << "3. Iniciar Sesion como Admin " << endl;
+		cout << "| 1. Iniciar Sesion como Bibliotecario        |" << endl;
+		cout << "| 2. Iniciar Sesion como Cliente              |" << endl;
+		cout << "| 3. Iniciar Sesion como Admin                |" << endl;
+        cout << "| 0. Salir                                    |" << endl;
 		cout << "-----------------------------------------------" << endl;
-        cout << "0. Salir" << endl;
-        cout << "Seleccione una opcion: ";
+        cout << "| Seleccione una opcion:                      |" << endl;
+        cout << "-----------------------------------------------" << endl;
 		cin >> tipoUsuario;
 		cin.ignore();
 
@@ -57,9 +62,14 @@ void Interfaz::iniciarSesion() {
         {
         	case 1:
                 if (_usuarioArchivo.getCantidadRegistrosPorPermiso(1)> 0) {
-					_bibliotecarioManager.listarBibliotecarios();
+					//_bibliotecarioManager.listarBibliotecarios();
 					cout << "Ingrese email: ";
 					getline(cin, email);
+					while(validarMail(email)<1){
+                        cout << "-- Reingrese el mail: ";
+                        cout<<endl;
+                        getline(cin, email);
+                    }
 
 					cout << "Ingrese clave: ";
 					getline(cin, clave);
@@ -77,6 +87,18 @@ void Interfaz::iniciarSesion() {
 						int respuesta;
 						cin >> respuesta;
 						cin.ignore();
+						bool valid = false;
+						do
+                        {
+                            if(cin.good() && (respuesta == 0 || respuesta == 1)){
+                                valid = true;
+                            } else {
+                                cout << "Ingrese un numero válido." << endl;
+                                cin >> respuesta;
+                                cin.ignore();
+                            }
+
+						}while(valid == false);
 						if (respuesta == 0) {
 							_bibliotecarioManager.crearBibliotecario();
 							return iniciarSesion();
@@ -103,9 +125,14 @@ void Interfaz::iniciarSesion() {
 
             case 2:
                 if (_usuarioArchivo.getCantidadRegistrosPorPermiso(2) > 0) {
-					_clienteManager.listarClientes();
+					//_clienteManager.listarClientes();
 					cout << "Ingrese email: ";
 					getline(cin, email);
+					while(validarMail(email)<1){
+                        cout << "-- Reingrese el mail: ";
+                        cout<<endl;
+                        getline(cin, email);
+                    }
 
 					cout << "Ingrese clave: ";
 					getline(cin, clave);
@@ -121,6 +148,19 @@ void Interfaz::iniciarSesion() {
 						int respuesta;
 						cin >> respuesta;
 						cin.ignore();
+						bool valid = false;
+						do
+                        {
+                            if(cin.good() && (respuesta == 0 || respuesta == 1)){
+                                valid = true;
+                            } else {
+                                cout << "Ingrese un numero válido." << endl;
+                                cin >> respuesta;
+                                cin.ignore();
+                            }
+
+						}while(valid == false);
+
 						if (respuesta == 0) {
 							_clienteManager.crearCliente();
 							return iniciarSesion();
@@ -149,12 +189,17 @@ void Interfaz::iniciarSesion() {
                 if (_usuarioArchivo.getCantidadRegistrosPorPermiso(3) > 0) {
 					cout << "Ingrese email: ";
 					getline(cin, email);
+                    while(validarMail(email)<1){
+                        cout << "-- Reingrese el mail: ";
+                        cout<<endl;
+                        getline(cin, email);
+                    }
 
 					cout << "Ingrese clave: ";
 					getline(cin, clave);
 
 					Usuario admin = _usuarioManager.validarLogin(email, clave, 3);
-					if(cliente.getMail() != ""){
+					if(admin.getMail() != ""){
 						cout << "Usuario validado"<<endl;
 						_usuarioLogueado.guardar(admin);
 						menuAdmin();
@@ -167,15 +212,15 @@ void Interfaz::iniciarSesion() {
 						bool valid = false;
 						do
                         {
-                            if(respuesta != 0 && respuesta != 1){
+                            if(cin.good() && (respuesta == 0 || respuesta == 1)){
+                                valid = true;
+                            } else {
                                 cout << "Ingrese un numero válido." << endl;
                                 cin >> respuesta;
                                 cin.ignore();
-                            } else {
-                                valid = true;
                             }
 
-						}while(valid == false)
+						}while(valid == false);
 
 						if(respuesta == 1) {
                             return iniciarSesion();
@@ -211,14 +256,15 @@ void Interfaz::registrarse(){
 
     do {
 		system("cls");
-        cout << "-----------------------------" << endl;
-		cout << "REGISTRAR USUARIOS" << endl;
-		cout << "-----------------------------" << endl;
-		cout << "1. Registrar Bibliotecario" << endl;
-		cout << "2. Registrar Cliente" << endl;
-		cout << "-----------------------------" << endl;
-        cout << "0. Salir" << endl;
-        cout << "Seleccione una opcion: ";
+        cout << "-----------------------------------------------" << endl;
+		cout << "--------------REGISTRAR USUARIOS---------------" << endl;
+		cout << "-----------------------------------------------" << endl;
+		cout << "|  1. Registrar Bibliotecario                 |" << endl;
+		cout << "|  2. Registrar Cliente                       |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+		cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cin >> opcion;
         cin.ignore();
 
@@ -231,6 +277,10 @@ void Interfaz::registrarse(){
                 break;
             case 2:
                 _clienteManager.crearCliente();
+                return;
+                break;
+            case 3:
+                _adminManager.crearAdmin();
                 return;
                 break;
             case 0:
@@ -247,18 +297,63 @@ void Interfaz::menuBibliotecario() {
     int opcion;
     do {
 		system("cls");
-		cout << "-----------------------------" << endl;
-        cout << "MENU BIBLIOTECARIO" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "1. Administrar libros" << endl;
-        cout << "2. Administrar autores" << endl;
-        cout << "3. Administrar categorias" << endl;
-        cout << "4. Administrar usuarios" << endl;
-        cout << "5. Administrar membresias" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "0. Salir" << endl;
-        cout<<endl;
-        cout << "Seleccione una opcion: ";
+		cout << "-----------------------------------------------" << endl;
+        cout << "--------------MENU BIBLIOTECARIO---------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Administrar libros                      |" << endl;
+        cout << "|  2. Administrar autores                     |" << endl;
+        cout << "|  3. Administrar categorias                  |" << endl;
+        cout << "|  4. Administrar clientes                    |" << endl;
+        cout << "|  5. Administrar membresias                  |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cin >> opcion;
+        cin.ignore();
+
+        switch (opcion) {
+            case 1:
+                _libroManager.menu();
+                break;
+            case 2:
+                _autorManager.menu();
+                break;
+            case 3:
+                _categoriaManager.menu();
+                break;
+            case 4:
+                menuAdministrarClientes();
+                break;
+            case 5:
+                menuAdministrarMembresias();
+                break;
+            case 0:
+                cout << "Saliendo..." << endl;
+                break;
+            default:
+                cout << "Opcion no valida. Intente nuevamente." << endl;
+                break;
+        }
+    } while (opcion != 0);
+}
+
+void Interfaz::menuAdmin() {
+    int opcion;
+    do {
+		system("cls");
+		cout << "-----------------------------------------------" << endl;
+        cout << "------------------MENU ADMIN-------------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Administrar libros                      |" << endl;
+        cout << "|  2. Administrar autores                     |" << endl;
+        cout << "|  3. Administrar categorias                  |" << endl;
+        cout << "|  4. Administrar usuarios                    |" << endl;
+        cout << "|  5. Administrar membresias                  |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cin >> opcion;
         cin.ignore();
 
@@ -294,17 +389,18 @@ void Interfaz::menuAdministrarUsuarios(){
     {
         system("cls");
 
-        cout << "-----------------------------" << endl;
-        cout << "ADMINISTRAR USUARIOS" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "1. Agregar Usuario" << endl;
-        cout << "2. Modificar Usuario" << endl;
-        cout << "3. Listar Clientes" << endl;
-        cout << "4. Listar Bibliotecarios" << endl;
-        cout << "5. Eliminar Usuario" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "0. Salir" << endl;
-        cout << "Seleccione una opcion: ";
+        cout << "-----------------------------------------------" << endl;
+        cout << "-------------ADMINISTRAR USUARIOS--------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Agregar Usuario                         |" << endl;
+        cout << "|  2. Modificar Usuario                       |" << endl;
+        cout << "|  3. Listar Clientes                         |" << endl;
+        cout << "|  4. Listar Bibliotecarios                   |" << endl;
+        cout << "|  5. Eliminar Usuario                        |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cin >> opcion;
         cin.ignore();
 
@@ -348,23 +444,78 @@ void Interfaz::menuAdministrarUsuarios(){
     } while (opcion != 0);
 }
 
+void Interfaz::menuAdministrarClientes(){
+    int opcion;
+    do
+    {
+        system("cls");
+
+        cout << "-----------------------------------------------" << endl;
+        cout << "--------------ADMINISTRAR CLIENTES-------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Agregar Cliente                         |" << endl;
+        cout << "|  2. Modificar Cliente                       |" << endl;
+        cout << "|  3. Listar Clientes                         |" << endl;
+        cout << "|  4. Eliminar Cliente                        |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cin >> opcion;
+        cin.ignore();
+
+
+        switch(opcion)
+        {
+            case 1:
+            	registrarse();
+                system("pause");
+                break;
+
+            case 2:
+                _usuarioManager.modificarCliente();
+                system("pause");
+                break;
+
+            case 3:
+                _usuarioManager.listarUsuariosPorPermisos(2);
+                system("pause");
+                break;
+
+            case 4:
+                _usuarioManager.eliminarCliente();
+                system("pause");
+                break;
+
+            case 0:
+                cout << "Saliendo del programa." << endl;
+                break;
+
+            default:
+                cout << "Opcion invalida. Intente de nuevo." << endl;
+                break;
+
+        }
+    } while (opcion != 0);
+}
+
 void Interfaz::menuAdministrarMembresias() {
 	int opcion;
 	do {
 		system("cls");
 
-		cout << "------------------------------------------" << endl;
-		cout << "ADMINISTRAR TIPOS DE MEMBRESIAS" << endl;
-		cout << "------------------------------------------" << endl;
-		cout << "1. Agregar Nuevo Tipo de Membresia" << endl;
-		cout << "2. Modificar Tipo de Membresia" << endl;
-		cout << "3. Listar Tipos de Membresias" << endl;
-		cout << "4. Desactivar / Activar Tipo de Membresia" << endl;
-		cout << "5. Eliminar Tipo de Membresia" << endl;
-		cout << "------------------------------------------" << endl;
-		cout << "0. Salir" << endl;
-		cout<<endl;
-		cout << "Seleccione una opcion: ";
+		cout << "-----------------------------------------------" << endl;
+		cout << "---------ADMINISTRAR TIPOS DE MEMBRESIA--------" << endl;
+		cout << "-----------------------------------------------" << endl;
+		cout << "|  1. Agregar Nuevo Tipo de Membresia         |" << endl;
+		cout << "|  2. Modificar Tipo de Membresia             |" << endl;
+		cout << "|  3. Listar Tipos de Membresias              |" << endl;
+		cout << "|  4. Desactivar / Activar Tipo de Membresia  |" << endl;
+		cout << "|  5. Eliminar Tipo de Membresia              |" << endl;
+		cout << "|  0. Salir                                   |" << endl;
+		cout << "-----------------------------------------------" << endl;
+		cout << "|  Seleccione una opcion:                     |" << endl;
+		cout << "-----------------------------------------------" << endl;
 		cin >> opcion;
 		cin.ignore();
 
@@ -410,21 +561,21 @@ void Interfaz::menuCliente() {
     int opcion;
     do {
 		system("cls");
-		cout << "-----------------------------" << endl;
-        cout << "MENU CLIENTE" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "1. Ver todos los libros" << endl;
-        cout << "2. Ver libros disponibles" << endl;
-        cout << "3. Solicitar prestamo" << endl;
-        cout << "4. Realizar devolucion" << endl;
-        cout << "5. Mi membresia" << endl;
-        cout << "6. Ver historial de prestamos" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "0. Salir" << endl;
+		cout << "-----------------------------------------------" << endl;
+        cout << "------------------MENU CLIENTE-----------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Ver todos los libros                    |" << endl;
+        cout << "|  2. Ver libros disponibles                  |" << endl;
+        cout << "|  3. Solicitar prestamo                      |" << endl;
+        cout << "|  4. Realizar devolucion                     |" << endl;
+        cout << "|  5. Mi membresia                            |" << endl;
+        cout << "|  6. Ver historial de prestamos              |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cout<<endl;
-        _usuarioLogueado.mostrarUsuarioLogueado();
-        cout<<endl;
-        cout << "Seleccione una opcion: ";
+        //_usuarioLogueado.mostrarUsuarioLogueado();
         cin >> opcion;
         cin.ignore();
 
@@ -466,19 +617,26 @@ void Interfaz::menuCliente() {
 
 void Interfaz::menuMiMembresia() {
     int opcion;
+    bool valid = false;
     do {
         system("cls");
 
-        cout << "-----------------------------" << endl;
-        cout << "ADMINISTRAR MI MEMBRESIA" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "1. Ver Estado de Membresía" << endl;
-        cout << "2. Realizar Pago" << endl;
-        cout << "3. Cambiar Tipo de Membresía" << endl;
-        cout << "0. Salir" << endl;
-        cout << "-----------------------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "-----------ADMINISTRAR MI MEMBRESIA------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Ver Estado de Membresía                 |" << endl;
+        cout << "|  2. Realizar Pago                           |" << endl;
+        cout << "|  3. Cambiar Tipo de Membresía               |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << endl;
         cin >> opcion;
 
+        if(cin.good()) {
+          valid = true;
+        }
         switch (opcion) {
             case 1:
                 _membresiaManager.verEstadoMembresia();
@@ -500,8 +658,17 @@ void Interfaz::menuMiMembresia() {
                 system("pause");
                 break;
         }
-    } while (opcion != 0);
+    } while (valid == false);
 }
 
+int Interfaz::validarMail(const string &mail){
+	regex pattern(R"(([^@]+)@([\w-]+\.(com|org|net|ar|com\.ar)))");
+	if(!regex_match(mail,pattern)){
+		cout << "Formato de correo invalido." <<endl;
+        return -1;
+	}
+
+    return 1;
+}
 
 

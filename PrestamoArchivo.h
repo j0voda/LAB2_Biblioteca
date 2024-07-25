@@ -17,6 +17,8 @@ public:
 	int buscarById(int id);
 	Prestamo leer(int index);
 	vector<Prestamo> leerTodos();
+	vector<Prestamo> leerPorIdUsuario(int idUsuario);
+	int buscarPorRangoFecha(const Fecha& fechaInicio, const Fecha& fechaFin);
 	int getCantidadRegistros();
 	int getNuevoID();
 	void actualizar(const vector<Prestamo> &prestamos);

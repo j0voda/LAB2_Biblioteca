@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-
+#include "AdminManager.h"
 #include "Bibliotecario.h"
 #include "Cliente.h"
 #include "UsuarioManager.h"
@@ -24,6 +24,7 @@ class Interfaz {
 private:
     UsuarioManager _usuarioManager;
 	UsuarioArchivo _usuarioArchivo;
+	AdminManager _adminManager;
     BibliotecarioManager _bibliotecarioManager;
     ClienteManager _clienteManager;
     LibroManager _libroManager;
@@ -42,14 +43,17 @@ public:
 
     ///Bibliotecario
     void menuBibliotecario();
-    void menuAdministrarUsuarios();
+    void menuAdministrarClientes();
     void menuAdministrarMembresias();
 
     ///Cliente
     void menuCliente();
 	void menuMiMembresia();
 
-
+    ///Admin
+    void menuAdmin();
+    void menuAdministrarUsuarios();
     //void menuCliente();
     //void registro();
+    int validarMail(const string &mail);
 };

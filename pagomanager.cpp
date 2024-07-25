@@ -17,14 +17,14 @@ void PagoManager::listarPagosPorUsuario(){
 
 void PagoManager::mostrarPago(const Pago &pago) {
     system("cls");
-    cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
     cout << "ID: " << pago.getIdPago() << endl;
     cout << "Nro Membresia: " << pago.getIdMembresia()<< endl;
     cout << "Monto: " << pago.getMonto()<< endl;
     cout << "Nro Tarjeta:  " << pago.getMetodoPago()<< endl;
     cout << "Fecha: " << pago.getFecha().toString() << endl;
 	cout<<endl;
-    cout << "-----------------------------" << endl;
+    cout << "-----------------------------------------------" << endl;
     cin.ignore();
 }
 
@@ -36,10 +36,9 @@ bool PagoManager::registrarPago(int idMembresia, float montoMembresia){
     int idNuevo = _pagoArchivo.getCantidadRegistros() + 1;
 
     system("cls");
-    cout << "-----------------------------" << endl;
-	cout << "GENERAR PAGO" << endl;
-	cout << "-----------------------------" << endl;
-
+    cout << "-----------------------------------------------" << endl;
+	cout << "-------------------GENERAR PAGO----------------" << endl;
+	cout << "-----------------------------------------------" << endl;
     bool valid = false;
     int digits = 0;
     do
@@ -97,11 +96,8 @@ bool PagoManager::registrarPago(int idMembresia, float montoMembresia){
 }
 
 bool PagoManager::validarNumeroTarjeta(const string &numeroTarjeta) {
-    cout << numeroTarjeta << endl;
-    cin.ignore();
     // 16 digitos
     int len = strlen(numeroTarjeta.c_str());
-    cout << len << endl;
     if (len > 16 || len < 16)
         return false;
 

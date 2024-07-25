@@ -13,7 +13,7 @@ bool PrestamoArchivo::guardar(const Prestamo &prestamo){
 
 bool PrestamoArchivo::modificar(int index, const Prestamo &prestamo){
    FILE *pFile;
-   pFile = fopen(this->_nombreArchivo, "rb+");
+   pFile = fopen(this->_nombreArchivo, "wb");
    if(pFile == nullptr){
       return false;
    }
@@ -69,6 +69,22 @@ vector<Prestamo> PrestamoArchivo::leerTodos() {
     return prestamos;
 }
 
+vector<Prestamo> PrestamoArchivo::leerPorIdUsuario(int idUsuario) {
+    vector<Prestamo> prestamos;
+    Prestamo prestamo;
+    FILE* pFile = fopen(this->_nombreArchivo, "rb");
+    if (!pFile) {
+        return prestamos;
+    }
+    while (fread(&prestamo, sizeof(Prestamo), 1, pFile)) {
+        if(prestamo.getCliente().getId() == idUsuario){
+            prestamos.push_back(prestamo);
+        }
+    }
+    fclose(pFile);
+    return prestamos;
+}
+
 int PrestamoArchivo::getCantidadRegistros() {
     FILE* pFile = fopen(this->_nombreArchivo, "rb");
     if (!pFile) {
@@ -99,6 +115,21 @@ void PrestamoArchivo::actualizar(const vector<Prestamo> &prestamos) {
         fwrite(&prestamo, sizeof(Prestamo), 1, pFile);
     }
     fclose(pFile);
+}
+
+int PrestamoArchivo::buscarPorRangoFecha(const Fecha& fechaInicio, const Fecha& fechaFin) {
+    vector<Prestamo> prestamos = leerTodos();
+    int conteo = 0;
+
+    for (const auto& prestamo : prestamos) {
+
+		Fecha fechaPrestamo = prestamo.getFechaPrestamo();
+        if ( !(fechaPrestamo < fechaInicio) && !(fechaPrestamo > fechaFin)) {
+            conteo++;
+        }
+    }
+
+    return conteo;
 }
 
 /*

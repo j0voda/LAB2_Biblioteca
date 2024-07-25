@@ -9,15 +9,16 @@ void CategoriaManager::menu(){
     {
         system("cls");
 
-        cout << "-----------------------------" << endl;
-        cout << "ADMINISTRAR CATEGORIAS" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "1. Agregar Categoria" << endl;
-        cout << "2. Listar Categorias" << endl;
-        cout << "3. Eliminar Categoria" << endl;
-        cout << "-----------------------------" << endl;
-        cout << "0. Salir" << endl;
-        cout << "Seleccione una opcion: ";
+        cout << "-----------------------------------------------" << endl;
+        cout << "-------------ADMINISTRAR CATEGORIAS------------" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  1. Agregar Categoria                       |" << endl;
+        cout << "|  2. Listar Categorias                       |" << endl;
+        cout << "|  3. Eliminar Categoria                      |" << endl;
+        cout << "|  0. Salir                                   |" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "|  Seleccione una opcion:                     |" << endl;
+        cout << "-----------------------------------------------" << endl;
         cin >> opcion;
         cin.ignore();
 
@@ -26,9 +27,10 @@ void CategoriaManager::menu(){
         {
             case 1:
             	system("cls");
-				cout << "-----------------------------" << endl;
-				cout << "AGREGAR CATEGORIA" << endl;
-				cout << "-----------------------------" << endl;
+				cout << "-----------------------------------------------" << endl;
+				cout << "--------------AGREGAR CATEGORIA----------------" << endl;
+				cout << "-----------------------------------------------" << endl;
+				cout << endl;
 				agregarCategoria();
                 system("pause");
                 break;
@@ -92,17 +94,19 @@ void CategoriaManager::listarCategorias() {
 }
 
 void CategoriaManager::mostrarCategoria(const Categoria& categoria) {
-	cout << "-----" << endl;
+	cout << "-----------------------------------------------" << endl;
     cout << "ID: " << categoria.getId()<< " | Nombre: " << categoria.getNombre() << endl;
+    cout << "-----------------------------------------------" << endl;
 }
 
 void CategoriaManager::eliminarCategoria() {
     int idCategoria;
     system("cls");
-    cout << "-----------------------------" << endl;
-	cout << "ELIMINAR CATEGORIA" << endl;
-	cout << "-----------------------------" << endl;
-    cout << "Ingrese el ID de la categoria a eliminar: ";
+    cout << "-----------------------------------------------" << endl;
+	cout << "--------------ELIMINAR CATEGORIA---------------" << endl;
+	cout << "-----------------------------------------------" << endl;
+    cout << "|  Ingrese el ID de la categoria a eliminar:  |";
+    cout << "-----------------------------------------------" << endl;
     cin >> idCategoria;
     cin.ignore();
 
